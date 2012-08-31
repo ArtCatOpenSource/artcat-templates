@@ -1,0 +1,3 @@
+h1. ArtCat Hosting Templates
+
+These are free and open-source templates used for "ArtCat Hosting":http://hosting.artcat.com/ artist and art gallery websites.
