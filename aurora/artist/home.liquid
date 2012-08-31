@@ -1,0 +1,49 @@
+{% if website.home_page_image_only? %}
+<div id="homepage" class="clearfix full">
+{% else %}
+<div id="homepage" class="clearfix">
+{% endif %}
+
+  <div class="homepage-image-feature-container">
+
+    {% assign home_image = website.home_page_image %}
+
+    <!-- This unfortunate block of code is required to horizontally center the image and its caption. There's no cleaner way, I'm afraid -->
+    <div class="clearfix outer-center"> <!-- Apply class of .left if you don't want image and caption to be centered -->
+      <div class="inner-center">
+        {% if home_image %}
+        <a href="{{ home_image['link']}}"><img src="{{ home_image['xlarge_image'] }}" alt="{{ home_image['caption'] | escape }}" /></a>
+        {% endif %}
+        <div class="homepage-caption">{{ home_image['caption'] | textilize }}</div>
+      </div>
+    </div>      
+          
+  </div>
+
+  {% unless website.home_page_image_only? %}
+
+  <div class="homepage-sidebar-feature">
+
+    {{ website.home_page_announcement | textilize }}
+
+    {% for news in website.home_page_news %}
+      {% if news.title %}
+        <h3><a href="{{ news.page_url }}">{{ news.title }}</a></h3>
+      {% endif %}
+      {% if news.display_date %}
+        <p class="news_date">{{ news.display_date }}</p>
+      {% endif %}
+    
+      {% if news.summary %}
+        {{ news.summary | textilize }}
+      {% else %}
+        {{ news.body.truncate(250) | textilize }}
+      {% endif %}
+
+      <p><a href="{{ news.page_url }}"><strong>more &raquo;</strong></a></p>
+    {% endfor %}
+  </div>
+
+  {% endunless %}
+		
+</div>
