@@ -1,0 +1,16 @@
+<div id="SecondaryColumn"> 
+<div class="exhibition-description">{{ image_set.description | textilize }}</div> 
+</div>
+
+<div id="PrimaryColumn"> 
+<h1>{{ image_set.name | escape }}</h1>
+
+<br />
+
+{% for image in images %}
+<div class="thumb-float">
+  <div class="thumb-img"><a href="{{ image.page_url }}"><img src="{{ image.legacy_thumb_url }}" alt="{{ image.caption | escape }}" /></a></div>
+  <p class="thumb-caption">{{ image.caption | escape }}</a></p>
+</div>
+{% endfor %}
+</div>

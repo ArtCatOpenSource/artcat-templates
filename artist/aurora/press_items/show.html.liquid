@@ -1,0 +1,17 @@
+<div id="breadcrumb">
+  <a href="/press_items">Press</a> &gt; <h3>{{ press_item.title }}</h3>
+</div>
+
+
+<div id="static">
+
+	<div class="press">
+  
+  {% if press_item.has_display_date? %}
+  <p class="press_item_date">{{ press_item.display_date }}<p>
+  {% endif %}
+  
+  {{ press_item.body | textilize }}
+
+  </div>
+</div>

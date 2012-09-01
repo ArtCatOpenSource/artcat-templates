@@ -1,0 +1,20 @@
+<div id="breadcrumb">
+  <a href="/news">News</a>  
+  {% if news.has_title? %} 
+  &gt; <h3>{{ news.title }}</h3>
+  {% endif %}
+</div>
+
+<div id="static">
+
+  <div class="news">
+
+  {% if news.has_date? %}
+  <p class="news_date">{{ news.date }}<p>
+  {% endif %}
+
+  {{ news.body | textilize }}
+
+  </div>
+
+</div>

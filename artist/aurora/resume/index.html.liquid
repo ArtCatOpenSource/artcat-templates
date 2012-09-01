@@ -1,0 +1,32 @@
+<div id="static">
+
+	<!-- RESUMÉ -->
+	<div class="resume">
+
+	  <div class="resume-head">{{ resume.head | textilize }}</div>
+	  
+	  {% for category in resume.resume_categories %}	  
+	    <h3>{{ category.name }}</h3>
+	    <table>
+	      {% assign show_date = '' %}
+	      {% for item in category.resume_items %}
+	      <tr>
+	        <td class="year">
+	          {% if show_date != item.date %}
+	            {% assign show_date = item.date %}
+	            {{ show_date }}
+	          {% endif %}
+	        </td>
+	        <td class="content">
+	            {{ item.text | textilize_inline }}
+	        </td>
+	      </tr>
+	      {% endfor %}
+	    </table>
+	  {% endfor %}
+	</div>
+	
+</div>
+
+	  
+	  
