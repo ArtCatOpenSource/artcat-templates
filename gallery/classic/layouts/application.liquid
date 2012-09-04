@@ -13,7 +13,19 @@
   <body>
     <div id="Navigation"> 
       <div class="SiteName"><a href="/">{% if website.logo_url %} <img src="{{ website.logo_url}}" alt="{{ website_title | escape }}" />{% else %}{{ website_title | escape }}{% endif %}</a></div>
-      {% client_navigation %}
+
+      <ul class="NavList">
+        {% for nav in website.nav_links %}
+          {% if nav.path == active_section %}
+          <li class="CurrentPosition">
+          {% else %}
+          <li>
+          {% endif %}
+            <a href="{{ nav.path | escape }}">{{ nav.name | escape }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+
     </div>
     <div id="Content">
       {{ content_for_layout }}
