@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>{{ website_title | escape }} - {{ page_title | escape }}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+    <meta name="author" content="www.artcat.com" />
+    <meta name="description" content="{{ website_description | escape }}" />
+    <meta name="keywords" content="{{ website_keywords | escape }}" />
+    <script type="text/javascript" src="http://cdn.production.artcat.com/classic-assets/common.js"></script>
+    <script type="text/javascript" src="http://cdn.production.artcat.com/classic-assets/qtobject.js"></script>
+    <link rel="Stylesheet" rev="Stylesheet" type="text/css" href="http://cdn.production.artcat.com/classic-assets/default-gallery.css" />
+  </head>
+  <body>
+    <div id="Navigation"> 
+      <div class="SiteName"><a href="/">{% if website.logo_url %} <img src="{{ website.logo_url}}" alt="{{ website_title | escape }}" />{% else %}{{ website_title | escape }}{% endif %}</a></div>
+      {% client_navigation %}
+    </div>
+    <div id="Content">
+      {{ content_for_layout }}
+    </div> <!-- id=Content -->
+
+    <div id="Credits"> 
+      <div class="ArtCatCredit">Powered by <a href="{{ referral_link | escape }}">ArtCat</a></div>
+      <div class="copyright">{{ website_footer }}</div>
+    </div>
+    {% google_code %}
+  </body>
+</html>
+
