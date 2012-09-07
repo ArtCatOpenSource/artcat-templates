@@ -33,4 +33,32 @@
 {% endunless %}
 
   <div id="PrimaryColumn"> 
+    {% for exhibition in exhibitions %}
+    <h1 class="home-exhibition-title"><a href="{{ exhibition.page_url }}">{{ exhibition.title | escape }}</a></h1>
+    <div class="exhibition-subtitle">{{ exhibition.subtitle | escape }}</div>
+
+    <div class="exhibition-dates">
+      {% if exhibition.start_and_end_year_same? %}
+        {{ exhibition.start_date | date: "%B %e" }}
+      {% else %}
+        {{ exhibition.start_date | date: "%B %e, %Y" }}
+      {% endif %}
+      - {{ exhibition.end_date | date: "%B %e, %Y" }}
+    </div>
+
+      {% if exhibition.featured_work %}
+        {% assign work = exhibition.featured_work %}
+        <a href="{{ exhibition.page_url }}"><img src="{{ work.featured_image.legacy_url }}" alt="{{ exhibition.title | escape }}" /></a>  
+        <p>{{ work.artist.name }}, <em>{{ work.title }}</em>, {{ work.date }} </p>
+        <p>
+        {{ work.medium }}{% if work.size %}, {{ work.size }} {% endif %}
+        </p>
+      {% elsif exhibition.images %}
+        {{ assign image = exhibition.images.first }}
+        <a href="{{ exhibition.page_url }}"><img src="{{ image.legacy_url }}" alt="{{ image.caption | escape }}" /></a>  
+        <div class="caption">{{ image.caption | textilize }}</div>
+      {% endif %}
+
+
+    {% endfor %}
   </div>
