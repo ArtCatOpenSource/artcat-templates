@@ -37,3 +37,29 @@
 {% endfor %}
 </div>
 
+{% if future %}
+<div id="SecondaryColumn">
+  <h2>Future Exhibitions</h2>
+
+  {% for exhibition in future %}
+    <h1><a href="{{ exhibition.page_url }}">{{ exhibition.title }}</a></h1>
+    {% if exhibition.subtitle %}
+    <div class="exhibition-subtitle">{{ exhibition.subtitle }}</div>
+    {% endif %}
+    <div class="exhibition-dates">
+    {% if exhibition.start_and_end_year_same? %}
+      {{ exhibition.start_date | date: "%B %e" }}
+    {% else %}
+      {{ exhibition.start_date | date: "%B %e, %Y" }}
+    {% endif %}
+    - {{ exhibition.end_date | date: "%B %e, %Y" }}
+    </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+
+
+
+
+
