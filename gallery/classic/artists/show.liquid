@@ -18,16 +18,16 @@
     {% endfor %}
   {% endif %}
 
-  {% if artist.publications != empty %}
+  {% if publications != empty %}
     <h2>Publications</h2>
-    {% for publication in artist.publications %}
+    {% for publication in publications %}
     <p class="publication"><a href="{{ publication.page_url }}">{{ publication.title | escape }}</a></p>
     {% endfor %}
   {% endif %}
 
-  {% if artist.press_items != empty %}
+  {% if press_items != empty %}
     <h2>Selected Bibliography</h2>
-    {% for press_item in artist.press_items %}
+    {% for press_item in press_items %}
     <p class="press">
       <a href="{{ press_item.page_url }}">{{ press_item.title | escape }}{% if press_item.has_display_date? %}, {{ press_item.display_date }}{% endif %}</a>
     </p>
