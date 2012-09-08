@@ -1,0 +1,39 @@
+<div id="SecondaryColumn"> 
+
+{{ exhibition.description | textilize }}
+
+</div>
+
+<div id="PrimaryColumn"> 
+
+<h1><a href="{{ exhibition.page_url }}">{{ exhibition.title | escape }}</a></h1>
+
+<div id="exhibition-images">
+
+  <img src="{{ image.legacy_url }}" alt="{{exhibition.title | escape}} {{ image.caption | escape }}" />
+
+  <div class="exhibition-image-caption">{{ image.caption | textilize }}</div>
+
+  {% if total_images > 1 %}
+  <p>
+    {% if prev %}
+  <a href="{{ prev }}">&lt;&lt; Previous</a> |
+    {% endif %}
+
+    {% for link in image_links %}
+      {% if link.path %}
+        <a href="{{ link.path }} ">{{ link.name }}</a>
+      {% else %}
+        <strong>{{ link.name }}</strong>
+      {% endif %}
+    {% endfor %}
+
+    {% if next %}
+  | <a href="{{ next }}">Next &gt;&gt;</a>
+    {% endif %}
+  </p>
+  {% endif %}
+
+</div> <!-- exhibition-images -->
+
+</div>
