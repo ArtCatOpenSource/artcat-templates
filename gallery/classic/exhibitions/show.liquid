@@ -20,7 +20,7 @@
   </div>
   {% endif %}
 
-  {% if exhibition.images %}
+  {% if total_images > 0 %}
     <h2>Installation Views</h2>
     {% for image in exhibition.images %}
       <div class="thumb-float">
@@ -33,7 +33,7 @@
 
   {% endif %}
 
-  {% if exhibition.visible_works %}
+  {% if total_works > 0 %}
     <h2>Works</h2>
     {% for work in exhibition.visible_works %}
       <div class="thumb-float">

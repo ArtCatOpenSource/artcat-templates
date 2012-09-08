@@ -1,0 +1,22 @@
+<div id="PrimaryColumn"> 
+
+  {% if is_inventory %}
+  <p>Works also available by</p>
+  {% endif %}
+
+  {% for artist in artists %}
+    <div class="artist-list"><a href="{{ artist.page_url }}">{{ artist.name }}</a></div>
+  {% endfor %}
+
+  {% if have_active %}
+  <br />
+  <p><a href="/artists/all">List All Artists</a></p>
+  {% endif %}
+
+  {% if have_inventory %}
+  <br />
+  <p><a href="/artists/inventory">Works also available by</a></p>
+  {% endif %}
+
+</div>
+
