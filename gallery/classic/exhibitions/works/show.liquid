@@ -59,5 +59,27 @@
   <p class="caption">{{ image.caption | textlize_inline }}</p>
   {% endif %}
 {% endif %}
+
+{% if total_works > 1 %}
+<p>
+  {% if prev %}
+<a href="{{ prev }}">&lt;&lt; Previous</a> |
+  {% endif %}
+
+  {% for link in work_links %}
+    {% if link.path %}
+      <a href="{{ link.path }} ">{{ link.name }}</a>
+    {% else %}
+      <strong>{{ link.name }}</strong>
+    {% endif %}
+  {% endfor %}
+
+  {% if next %}
+| <a href="{{ next }}">Next &gt;&gt;</a>
+  {% endif %}
+</p>
+
+{% endif %}
+
 </div>
 
