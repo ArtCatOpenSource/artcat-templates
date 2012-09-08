@@ -1,7 +1,7 @@
 <div id="SecondaryColumn">
 
 {% if work.has_media? %}
-<p class="work-data"><a href="{{ exhibition.page_url }}/{{ work.fragment_url }}">Play Media</a></p>
+<p class="work-data"><a href="{{ artist.page_url }}/{{ work.fragment_url }}">Play Media</a></p>
 <br/>
 {% endif %}
 
@@ -10,7 +10,7 @@
 <ul class="artist-details">
 
   {% for image in work.visible_images %}
-  <li><a href="{{ exhibition.page_url }}/{{ work.fragment_url }}/{{forloop.index}}"><img src="{{ image.legacy_thumb_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a><p class="thumb-caption">{{ image.caption | escape }}</p></li>
+  <li><a href="{{ artist.page_url }}/{{ work.fragment_url }}/{{forloop.index}}"><img src="{{ image.legacy_thumb_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a><p class="thumb-caption">{{ image.caption | escape }}</p></li>
   {% endfor %}
 
 </ul>
@@ -34,7 +34,7 @@
 
 {{ work.description | textilize }}
 
-{% if work.ref_number %}
+{% if work.ref_number != empty %}
 <br />
 <p class="work-data">ref: {{ work.ref_number }}</p>
 {% endif %}
@@ -43,7 +43,7 @@
 
 <div id="PrimaryColumn">
 
-<h1><a title="Return to {{ exhibition.title | escape }}" href="{{ exhibition.page_url }}">{{ exhibition.title | escape }}</a></h1>
+<h1><a title="Return to {{ artist.name | escape }}" href="{{ artist.page_url }}">{{ artist.name | escape }}</a></h1>
 
 {% if show_media %}
   {% if work.embed_code_html %}
