@@ -41,5 +41,20 @@
 
   <h1 class="artist-list">{{ artist.name }}</h1>
 
+  {% for s in series %}
+    {% assign work = s.featured_work %}
+    <div class="thumb-float">
+      <div class="thumb-img"><a href="{{ s.page_url }}"><img src="{{ work.featured_image.legacy_thumb_url }}" alt="{{ s.title | escape }}"/></a></div>
+      <p class="thumb-caption">{{ s.title| escape }}</p>
+    </div>
+  {% endfor %}
+
+  {% for work in works %}
+    <div class="thumb-float">
+      <div class="thumb-img"><a href="{{ artist.page_url }}/{{ work.fragment_url }}"><img src="{{ work.featured_image.legacy_thumb_url }}" alt="{{ work.title | escape }}"/></a></div>
+      <p class="thumb-caption">{{ work.title| escape }}, {{ work.date }}</p>
+    </div>
+  {% endfor %}
+
 </div>
 
