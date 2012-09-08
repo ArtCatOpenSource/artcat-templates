@@ -1,0 +1,49 @@
+<div id="SecondaryColumn"> 
+  <div class="exhibition-description">{{ exhibition.description | textilize }}</div> 
+</div>
+
+<div id="PrimaryColumn">
+  <h1>{{ exhibition.title | escape }}</h1>
+  <div class="exhibition-subtitle">{{ exhibition.subtitle }}</div>
+  <div class="exhibition-dates">
+  {% if exhibition.start_and_end_year_same? %}
+    {{ exhibition.start_date | date: "%B %e" }}
+  {% else %}
+    {{ exhibition.start_date | date: "%B %e, %Y" }}
+  {% endif %}
+  - {{ exhibition.end_date | date: "%B %e, %Y" }}
+  </div>
+  {% if exhibition.opening_date %}
+  <div class="exhibition-opening">
+    Opens {{ exhibition.opening_date | date: "%B %e"}},
+    {{ exhibition.opening_start | date: "%l:%M %p "}} - {{ exhibition.opening_end | date: "%l:%M %p "}}
+  </div>
+  {% endif %}
+
+  {% if exhibition.images %}
+    <h2>Installation Views</h2>
+    {% for image in exhibition.images %}
+      <div class="thumb-float">
+        <div class="thumb-img"><a href="#"><img src="{{ image.legacy_thumb_url }}" alt="{{ image.caption | escape }}"/></a></div>
+        <p class="thumb-caption">{{ caption }}</p>
+      </div>
+    {% endfor %}
+
+    <br class="clear" />
+
+  {% endif %}
+
+  {% if exhibition.visible_works %}
+    <h2>Works</h2>
+    {% for work in exhibition.visible_works %}
+      <div class="thumb-float">
+        <div class="thumb-img"><a href="#"><img src="{{ work.featured_image.legacy_thumb_url }}" alt="{{ work.caption | escape }}"/></a></div>
+        <p class="thumb-caption">{{ work.artist.name | escape }}, <em>{{ work.title | escape }}</em>, {{ work.date }}</p>
+      </div>
+    {% endfor %}
+
+    <br class="clear" />
+  {% endif %}
+
+</div>
+
