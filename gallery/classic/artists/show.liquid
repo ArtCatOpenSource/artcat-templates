@@ -1,0 +1,45 @@
+<div id="SecondaryColumn"> 
+
+  {{ artist.description | textilize }}
+
+  {% if artist.doc_url %}
+    <p><a target="_blank" href="{{ artist.doc_url }}">Download Resume</a> (Word)</p>
+  {% endif %}
+
+  {% if artist.pdf_url %}
+    <p><a target="_blank" href="{{ artist.pdf_url }}">Download Resume</a> (PDF)</p>
+  {% endif %}
+
+  {% if exhibitions != empty %}
+    <h2>Exhibitions</h2>
+    {% for exhibition in exhibitions %}
+    <p><a href="{{ exhibition.page_url }}">{{ exhibition.title | escape }}
+      ({{ exhibition.start_date || date:"%Y" }})</p>
+    {% endfor %}
+  {% endif %}
+
+  {% if artist.publications != empty %}
+    <h2>Publications</h2>
+    {% for publication in artist.publications %}
+    <p class="publication"><a href="{{ publication.page_url }}">{{ publication.title | escape }}</a></p>
+    {% endfor %}
+  {% endif %}
+
+  {% if artist.press_items != empty %}
+    <h2>Selected Bibliography</h2>
+    {% for press_item in artist.press_items %}
+    <p class="press">
+      <a href="{{ press_item.page_url }}">{{ press_item.title | escape }}{% if press_item.has_display_date? %}, {{ press_item.display_date }}{% endif %}</a>
+    </p>
+    {% endfor %}
+  {% endif %}
+
+
+</div>
+
+<div id="PrimaryColumn"> 
+
+  <h1 class="artist-list">{{ artist.name }}</h1>
+
+</div>
+
