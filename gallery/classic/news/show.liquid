@@ -1,0 +1,14 @@
+<div id="PrimaryColumn"> 
+
+  {% if news.has_title? %} 
+  <h2 class="news">{{ news.title | escape }}</h2>
+  {% endif %}
+
+  {% if news.has_date? %}
+  <p class="news-added">{{ news.display_date }}</p>
+  {% endif %}
+
+  {{ news.body | textilize }}
+
+</div>
+

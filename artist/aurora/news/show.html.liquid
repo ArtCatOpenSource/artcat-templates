@@ -10,7 +10,7 @@
   <div class="news">
 
   {% if news.has_date? %}
-  <p class="news_date">{{ news.date }}<p>
+  <p class="news_date">{{ news.display_date }}<p>
   {% endif %}
 
   {{ news.body | textilize }}

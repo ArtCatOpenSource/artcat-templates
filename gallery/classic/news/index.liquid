@@ -1,0 +1,28 @@
+<div id="PrimaryColumn"> 
+
+<div class="news-list-item">
+{% for n in news %}
+  {% if n.has_title? %}
+  <h2 class="news"><a href="{{ n.page_url }}">{{ n.title | escape }}</a></h2>
+  {% endif %}
+  <div class="news-details">
+
+  {% if n.has_date? %}
+  <p class="news-added">{{ n.display_date }}<p>
+  {% endif %}
+
+  <div class="news-summary">
+  {% if n.has_summary? %}
+    {{ n.summary | textilize }}
+  {% else %}
+    {{ n.body | truncate:250 | textilize }}
+  {% endif %}
+  </div>
+
+ <p class="news-more"><a href="{{ n.page_url }}">more &gt;&gt;</a></p>
+
+  </div>
+{% endfor %}
+
+</div>
+
