@@ -1,0 +1,77 @@
+<div id="SecondaryColumn">
+
+{% if work.has_media? %}
+<p class="work-data"><a href="{{ artist.page_url }}/{{ work.fragment_url }}">Play Media</a></p>
+<br/>
+{% endif %}
+
+{% if work.has_alternate_views? %}
+
+<ul class="artist-details">
+
+  {% for image in work.visible_images %}
+  <li><a href="{{ series.page_url }}/{{ work.fragment_url }}/{{forloop.index}}"><img src="{{ image.legacy_thumb_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a><p class="thumb-caption">{{ image.caption | escape }}</p></li>
+  {% endfor %}
+
+</ul>
+
+<br class="clear" />
+
+{% endif %}
+
+<p class="work-title">{{ work.title }}</p>
+<p class="work-data">{{ work.date }}</p>
+<p class="work-data">{{ work.medium }}</p>
+<p class="work-data">{{ work.size }}</p>
+
+{{ work.description | textilize }}
+
+{% if work.ref_number != empty %}
+<br />
+<p class="work-data">ref: {{ work.ref_number }}</p>
+{% endif %}
+
+</div>
+
+<div id="PrimaryColumn">
+
+<h1 class="artist-list"><a title="Return to {{ artist.name | escape }}: {{ series.title | escape }}" href="{{ series.page_url }}">{{ artist.name | escape }}: {{ series.title | escape }}</a></h1>
+
+{% if show_media %}
+  {% if work.embed_code_html %}
+    {{ work.embed_code_html }}
+  {% elsif work.audio? %}
+  <a href="{{ work.media.audio_url }}" class="audio-link">audio file</a>
+  {% else %}
+  {% video_embed('large') %}
+  {% endif %}
+{% else %}
+  <img src="{{ image.legacy_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
+  {% if image.caption %}
+  <p class="caption">{{ image.caption | textlize_inline }}</p>
+  {% endif %}
+{% endif %}
+
+{% if total_works > 1 %}
+<p>
+  {% if prev %}
+<a href="{{ prev }}">&lt;&lt; Previous</a> |
+  {% endif %}
+
+  {% for link in work_links %}
+    {% if link.path %}
+      <a href="{{ link.path }} ">{{ link.name }}</a>
+    {% else %}
+      <strong>{{ link.name }}</strong>
+    {% endif %}
+  {% endfor %}
+
+  {% if next %}
+| <a href="{{ next }}">Next &gt;&gt;</a>
+  {% endif %}
+</p>
+
+{% endif %}
+
+</div>
+
