@@ -1,3 +1,6 @@
 h1. ArtCat Hosting Templates
 
 These are free and open-source templates used for "ArtCat Hosting":http://hosting.artcat.com/ artist and art gallery websites.
+
+They use the "Liquid":http://liquidmarkup.org/ templating language.
+
