@@ -1,0 +1,20 @@
+  <div id="PrimaryColumn"> 
+{% for publication in publications %}
+
+<div class="publication-box">
+<table>
+<tr>
+<td class="publication-box-thumb">
+  {% if publication.has_image? %}
+    <a href="{{ publication.page_url }}"><img src="{{ publication.first_image.legacy_thumb_url }}" alt="{{ publication.title | escape }}" /></a>
+  {% endif %}
+</td>
+<td>
+  <h1><a href="{{ publication.page_url }}">{{ publication.title | escape }}</a></h1>
+  <p class="publication-date">{{ publication.date }}</p>
+</td>
+</tr>
+</table>
+</div> <!-- publication-box -->
+{% endfor %}
+  </div>

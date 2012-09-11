@@ -1,0 +1,40 @@
+{% if publication.has_links? %}
+  <div id="SecondaryColumn"> 
+
+{% if exhibitions != empty %}
+  <h2>Exhibitions</h2>
+  {% for exhibition in exhibitions %}
+    <p><a href="{{ exhibition.page_url }}">{{ exhibition.title | escape }} ({{ exhibition.start_date | date:"%Y" }})</a></p>
+  {% endfor %}
+  <br />
+{% endif %}
+
+{% if artists != empty %}
+  <h2>Artists</h2>
+  {% for artist in artists %}
+    <p><a href="{{ artist.page_url }}">{{ artist.name }}</a></p>
+  {% endfor %}
+{% endif %}
+
+  </div>
+
+{% endif %}
+
+  <div id="PrimaryColumn"> 
+
+  <h2 class="publication">{{ publication.title | escape }}</h2>
+
+  <div>
+
+    <p class="publication-date">{{ publication.date }}</p>
+
+    {% if publication.has_image? %}
+    <img src="{{ publication.first_image.legacy_url }}" alt="{{ publication.title | escape }}" />
+    {% endif %}
+
+    {{ publication.description | textilize }}
+
+  </div>
+
+  </div>
+
