@@ -1,0 +1,10 @@
+<div id="PrimaryColumn">
+  {{ page.body | textilize }}
+</div>
+
+{% if page.path == 'about' or page.path == 'contact' %}
+<div id="SecondaryColumn">
+  <h2>Send an Inquiry</h2>
+  <p>Send an e-mail to <a href="mailto:{{ website.contact_email}} ">{{ website.contact_name }}</a></p>
+</div>
+{% endif %}
