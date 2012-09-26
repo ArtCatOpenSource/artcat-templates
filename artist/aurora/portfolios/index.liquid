@@ -1,7 +1,7 @@
 <ul id="works" class="clearfix">
   {% for portfolio in portfolios %}
     <li>
-      <a href="{{ portfolio.page_url }}"><img src="{{ portfolio.featured_thumb_url }}" alt="{{portfolio.name | escape}}" /></a>
+      <a href="{{ portfolio.page_url }}"><img style="max-width: 150px" src="{{ portfolio.featured_thumb_url }}" alt="{{portfolio.name | escape}}" /></a>
       <h3>{{portfolio.name | escape}}</h3>
     </li>
   {% endfor %}
