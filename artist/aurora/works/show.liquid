@@ -65,7 +65,7 @@
 
         {% for image in work.visible_images %}
         <li>
-          <a href="{{ work.page_url}}/{{forloop.index}}"><img src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a>
+          <div class="limit-thumb150"><a href="{{ work.page_url}}/{{forloop.index}}"><img src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a></div>
           <p>{{ image.caption | escape }}</p>
         </li>
         {% endfor %}     
