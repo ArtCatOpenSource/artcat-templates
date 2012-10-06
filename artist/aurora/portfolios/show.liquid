@@ -18,7 +18,7 @@
   {% endif %}
   {% for work in works %}
     <li>
-      <div class="limit-thumb150"><a href="{{ work.page_url }}"><img src="{{ work.featured_thumb_url }}" alt="{{ work.title | escape }}" /></a></div>
+      <div class="limit-thumb150"><a href="{{ work.page_url }}"><img style="max-width:150px" src="{{ work.featured_thumb_url }}" alt="{{ work.title | escape }}" /></a></div>
       <p>{{ work.title | escape }}</p>
     </li>
   {% endfor %}
