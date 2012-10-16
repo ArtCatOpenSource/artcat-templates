@@ -4,5 +4,5 @@ These are free and open-source templates used for "ArtCat Hosting":http://hostin
 
 They use the "Liquid":http://liquidmarkup.org/ templating language.
 
-Any non-template assets needed, such as CSS or Javascript files, should be put in the assets directory, and a file with a list of the asset file names called files.txt (one file per line) should be put in the assets directory.
+Any non-template assets needed, such as CSS or Javascript files, should be put in the assets directory, and a file with a list of the asset file names called files.txt (one file per line) should be put in the assets directory. CSS files will be loaded into the template, in the order specified in files.txt, using the tag @{% client_css %}@. Similarly, Javascript files will be put into the template where the tag @{% client_css %}@ appears.
 
