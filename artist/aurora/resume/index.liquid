@@ -3,6 +3,12 @@
 	<!-- RESUMÉ -->
 	<div class="resume">
 
+	  <div class="resume-files">
+	  	{% for file in resume.file_assets %}
+	  	<p><a href="{{ file.url }}">{{ file.name }}</a></p>
+	  	{% endfor %}
+	  </div>
+
 	  <div class="resume-head">{{ resume.head | textilize }}</div>
 	  
 	  {% for category in resume.resume_categories %}	  

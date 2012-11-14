@@ -181,6 +181,12 @@ td { vertical-align: top; }
     .links p a {text-decoration: none;}
     .links p { padding: 0; margin: 4px 0;}
 
+  /*RESUME*/
+
+    .resume-files { float: right; }
+    .resume-files p { margin: 0; }
+    #static .resume-files a { text-decoration: none; }
+
 
   /*CLIENT-EDITABLE STYLES VIA BACK-END INTERFACE*/
 
