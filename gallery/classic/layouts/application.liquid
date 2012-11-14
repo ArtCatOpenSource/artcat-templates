@@ -6,9 +6,7 @@
     <meta name="author" content="www.artcat.com" />
     <meta name="description" content="{{ website_description | escape }}" />
     <meta name="keywords" content="{{ website_keywords | escape }}" />
-    <script type="text/javascript" src="http://cdn.production.artcat.com/classic-assets/common.js"></script>
-    <script type="text/javascript" src="http://cdn.production.artcat.com/classic-assets/qtobject.js"></script>
-    <link rel="Stylesheet" rev="Stylesheet" type="text/css" href="/classic-assets/default-gallery.css" />
+    {% client_css %}
   </head>
   <body>
     <div id="Navigation"> 
@@ -35,6 +33,7 @@
       <div class="ArtCatCredit">Powered by <a href="{{ referral_link | escape }}">ArtCat</a></div>
       <div class="copyright">{{ website_footer }}</div>
     </div>
+    {% client_js %}
     {% google_code %}
   </body>
 </html>
