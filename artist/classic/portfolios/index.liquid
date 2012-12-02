@@ -1,0 +1,10 @@
+<div id="FullColumn">
+  {% for portfolio in portfolios %}
+    <div class="thumb-float">
+      <div class="thumb-img">
+        <a href="{{ portfolio.page_url }}"><img style="max-width: 150px" src="{{ portfolio.featured_thumb_url }}" alt="{{portfolio.name | escape}}" /></a>
+      </div>
+      <p class="thumb-caption">{{portfolio.name | escape}}</p>
+    </div>
+  {% endfor %}
+</div>
