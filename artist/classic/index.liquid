@@ -32,12 +32,12 @@
   </div>
 {% endunless %}
 
-{% assign home_image = website.home_page_image %}
+  {% assign home_image = website.home_image %}
 
   <div id="PrimaryColumn"> 
     {% if home_image %}
     <div id="home-image">
-       <a href="{{ home_image['link']}}"><img src="{{ home_image['legacy_image'] }}" alt="{{ home_image['caption'] | escape }}" /></a>
+      <a href="{{ website.home_image_link }}"><img src="{{ home_image.large_url }}" alt="{{ home_image.caption | escape }}" /></a>
        <div class="caption">{{ home_image['caption'] | textilize }}</div>
    </div>
   {% endif %}
