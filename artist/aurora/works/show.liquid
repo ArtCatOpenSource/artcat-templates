@@ -40,6 +40,9 @@
 
   <div class="viewer_details">
     <h3>{{ work.title | escape }} <br />
+      {% if work.date != '' %}
+      {{ work.date }}<br />
+      {% endif %}
       {% if work.has_medium? %} {{ work.medium | escape }}<br /> {% endif %}
       {{ work.size | escape }}
     </h3>
