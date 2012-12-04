@@ -129,7 +129,7 @@ td { vertical-align: top; }
   /*PORTFOLIO CONTENTS*/
 
     #portfolio-contents {margin-right:-10px}
-    #portfolio-contents li {width: 150px; min-height: 100px; display: inline-block; text-align: center; vertical-align: top; margin: 0px 6px 10px 0px;}
+    #portfolio-contents li {width: 150px; min-height: 100px; display: inline-block; text-align: left; vertical-align: top; margin: 0px 6px 10px 0px;}
     #portfolio-contents li p {margin-top:.5rem;}
     .work-thumb { min-height: 150px; }
   
