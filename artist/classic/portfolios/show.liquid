@@ -5,7 +5,7 @@
 <div id="SecondaryColumn">
 {{ portfolio.description | textilize }}
 
-{% if portfolio.has_press? %}}
+{% if portfolio.has_press? %}
   <h2>Press</h2>
   {% for press_item in portfolio.press_items %}
   <p class="press"><a href="{{ press_item.page_url }}">{{ press_item.title | escape }}</a></p>
