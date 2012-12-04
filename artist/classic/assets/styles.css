@@ -329,3 +329,13 @@ ul.press li {
   height: 150px;
   padding-bottom: 5px;
 }
+
+.limit-thumb150 { 
+	max-width: 150px; 
+	max-height: 150px;
+}
+
+.limit-thumb120 { 
+	max-width: 120px; 
+	max-height: 120px;
+}

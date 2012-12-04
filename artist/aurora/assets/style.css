@@ -180,6 +180,7 @@ td { vertical-align: top; }
     .press_items_index .press { margin-left: 8px;}
     .links p a {text-decoration: none;}
     .links p { padding: 0; margin: 4px 0;}
+    .about { width: 60%; }
 
   /*RESUME*/
 
