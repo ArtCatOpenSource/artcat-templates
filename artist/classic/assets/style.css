@@ -265,8 +265,8 @@ label {
 
 .thumb-float {
   float:left;
-	width: 165px; 
-	height: 190px; 
+	width: 140px; 
+	height: 180px; 
 	padding: 10px 10px 10px 0px;
 	margin: 0px;
  	text-align: center;
@@ -326,13 +326,13 @@ ul.press li {
 }
 
 .thumb-img {
-  height: 150px;
+  height: 140px;
   padding-bottom: 5px;
 }
 
-.limit-thumb150 { 
-	max-width: 150px; 
-	max-height: 150px;
+.limit-thumb140 { 
+	max-width: 140px; 
+	max-height: 140px;
 }
 
 .limit-thumb120 { 
