@@ -59,7 +59,7 @@
           {% if work.audio? %}
             <a href="{{ work.page_url }}">audio file</a>
           {% elsif work.embed_code_html %}
-            <a href="{{ work.page_url }}"><img style="max-width:150px" class="limit-thumb150" src="{{ work.embed_thumb_url }}" alt="video" /></a><p>video</p>
+            <a href="{{ work.page_url }}"><img style="max-width:140px" class="limit-thumb140" src="{{ work.embed_thumb_url }}" alt="video" /></a><p>video</p>
           {% else %}
             <a href="{{ work.page_url }}"><img src="{{ media_thumb_url }}" alt="video" /></a><p>video</p>
           {% endif %}
@@ -68,7 +68,7 @@
 
         {% for image in work.visible_images %}
         <li>
-          <div class="limit-thumb150"><a href="{{ work.page_url}}/{{forloop.index}}"><img src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a></div>
+          <div class="limit-thumb140"><a href="{{ work.page_url}}/{{forloop.index}}"><img src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a></div>
           <p>{{ image.caption | escape }}</p>
         </li>
         {% endfor %}     

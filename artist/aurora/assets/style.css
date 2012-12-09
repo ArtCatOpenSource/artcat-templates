@@ -123,15 +123,15 @@ td { vertical-align: top; }
   /*WORKS*/
 
     #works {margin-right:-10px;}
-    #works li {width: 150px; min-height: 100px; display: inline-block; vertical-align: top; margin: 10px 10px 10px 0px; text-align: center;}
+    #works li {width: 140px; min-height: 100px; display: inline-block; vertical-align: top; margin: 10px 10px 10px 0px; text-align: center;}
     #works h3 {font-size:.8125rem; margin-top:.5rem;}
 
   /*PORTFOLIO CONTENTS*/
 
     #portfolio-contents {margin-right:-10px}
-    #portfolio-contents li {width: 150px; min-height: 100px; display: inline-block; text-align: left; vertical-align: top; margin: 0px 6px 10px 0px;}
+    #portfolio-contents li {width: 140px; min-height: 100px; display: inline-block; text-align: left; vertical-align: top; margin: 0px 6px 10px 0px;}
     #portfolio-contents li p {margin-top:.5rem;}
-    .work-thumb { min-height: 150px; }
+    .work-thumb { min-height: 140px; }
   
     /*Sidebar*/
     #portfolio-contents .about-this-portfolio {min-height:0; float:right; border:1px solid #d1d1d1; padding:10px; width:294px; background-color:white;}
@@ -147,7 +147,7 @@ td { vertical-align: top; }
     #work-detail .prev a:hover, #work-detail .next a:hover {color:black; text-decoration: underline}
     #work-detail .viewer img {max-width:810px; max-height:600px;}
     #work-detail .caption {font-size:.6375rem; margin-top:.4375rem;}
-    .limit-thumb150 { width: 150px; height: 150px;}
+    .limit-thumb140 { width: 140px; height: 140px;}
 
     /*Work Details*/
     #work-detail .viewer_details {width:810px; margin:0 auto; }
@@ -159,9 +159,9 @@ td { vertical-align: top; }
     #work-detail .viewer_alternate_views h4 {font-size:.6875rem; text-transform: uppercase; color: #9b9b9b; margin-bottom:5px}
     #work-detail .viewer_alternate_views ul {margin-right:-12px;}
     #work-detail .viewer_alternate_views ul li {min-height: 100px; display: inline-block; text-align: center; vertical-align: top; margin: 0px 6px 10px 0px;}
-    #work-detail .viewer_alternate_views ul li p {font-size:.75rem; margin:.4rem 0; max-width: 150px; }
+    #work-detail .viewer_alternate_views ul li p {font-size:.75rem; margin:.4rem 0; max-width: 140px; }
     #work-detail .viewer_alternate_views ul li img {margin-bottom:5px;}
-    #work-detail .media-file-link { heigth: 150px; width :150px; padding-top: 66px; text-align: center; }
+    #work-detail .media-file-link { heigth: 140px; width :140px; padding-top: 66px; text-align: center; }
     #work-detail .media-file-link a { text-decoration: none; color: #333; font-weight: bold; }
 
   /*STATIC PAGES*/
