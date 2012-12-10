@@ -29,7 +29,7 @@
     <p class="publication-date">{{ publication.date }}</p>
 
     {% if publication.has_image? %}
-    <img src="{{ publication.first_image.legacy_url }}" alt="{{ publication.title | escape }}" />
+    <img src="{{ publication.first_image.large_url }}" alt="{{ publication.title | escape }}" />
     {% endif %}
 
     {{ publication.description | textilize }}

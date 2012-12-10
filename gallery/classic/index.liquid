@@ -48,14 +48,14 @@
 
       {% if exhibition.featured_work %}
         {% assign work = exhibition.featured_work %}
-        <a href="{{ exhibition.page_url }}"><img src="{{ work.featured_image.legacy_url }}" alt="{{ exhibition.title | escape }}" /></a>  
+        <a href="{{ exhibition.page_url }}"><img src="{{ work.featured_image.large_url }}" alt="{{ exhibition.title | escape }}" /></a>  
         <p>{{ work.artist.name }}, <em>{{ work.title }}</em>, {{ work.date }} </p>
         <p>
         {{ work.medium }}{% if work.size %}, {{ work.size }} {% endif %}
         </p>
       {% elsif exhibition.images %}
         {% assign image = exhibition.images.first %}
-        <a href="{{ exhibition.page_url }}"><img src="{{ image.legacy_url }}" alt="{{ image.caption | escape }}" /></a>  
+        <a href="{{ exhibition.page_url }}"><img src="{{ image.large_url }}" alt="{{ image.caption | escape }}" /></a>  
         <div class="caption">{{ image.caption | textilize }}</div>
       {% endif %}
 

@@ -6,7 +6,7 @@
 <tr>
 <td class="publication-box-thumb">
   {% if publication.has_image? %}
-    <a href="{{ publication.page_url }}"><img src="{{ publication.first_image.legacy_thumb_url }}" alt="{{ publication.title | escape }}" /></a>
+    <a href="{{ publication.page_url }}"><img src="{{ publication.first_image.thumb_url }}" alt="{{ publication.title | escape }}" /></a>
   {% endif %}
 </td>
 <td>

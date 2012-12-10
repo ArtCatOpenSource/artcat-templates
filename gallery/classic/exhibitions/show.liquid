@@ -24,7 +24,7 @@
     <h2>Installation Views</h2>
     {% for image in exhibition.images %}
       <div class="thumb-float">
-        <div class="thumb-img"><a href="{{ exhibition.page_url }}/{{ image.fragment_url }}"><img src="{{ image.legacy_thumb_url }}" alt="{{ image.caption | escape }}"/></a></div>
+        <div class="thumb-img"><a href="{{ exhibition.page_url }}/{{ image.fragment_url }}"><img src="{{ image.thumb_url }}" alt="{{ image.caption | escape }}"/></a></div>
         <p class="thumb-caption">{{ image.caption }}</p>
       </div>
     {% endfor %}
@@ -37,7 +37,7 @@
     <h2>Works</h2>
     {% for work in exhibition.visible_works %}
       <div class="thumb-float">
-        <div class="thumb-img"><a href="{{ exhibition.page_url }}/{{ work.fragment_url }}"><img src="{{ work.featured_image.legacy_thumb_url }}" alt="{{ work.title | escape }}"/></a></div>
+        <div class="thumb-img"><a href="{{ exhibition.page_url }}/{{ work.fragment_url }}"><img src="{{ work.featured_image.thumb_url }}" alt="{{ work.title | escape }}"/></a></div>
         <p class="thumb-caption">{{ work.artist.name | escape }}, <em>{{ work.title | escape }}</em>, {{ work.date }}</p>
       </div>
     {% endfor %}

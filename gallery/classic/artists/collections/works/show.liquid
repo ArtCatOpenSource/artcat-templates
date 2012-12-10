@@ -10,7 +10,7 @@
 <ul class="artist-details">
 
   {% for image in work.visible_images %}
-  <li><a href="{{ series.page_url }}/{{ work.fragment_url }}/{{forloop.index}}"><img src="{{ image.legacy_thumb_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a><p class="thumb-caption">{{ image.caption | escape }}</p></li>
+  <li><a href="{{ collection.page_url }}/{{ work.fragment_url }}/{{forloop.index}}"><img src="{{ image.thumb_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a><p class="thumb-caption">{{ image.caption | escape }}</p></li>
   {% endfor %}
 
 </ul>
@@ -35,7 +35,7 @@
 
 <div id="PrimaryColumn">
 
-<h1 class="artist-list"><a title="Return to {{ artist.name | escape }}: {{ series.title | escape }}" href="{{ series.page_url }}">{{ artist.name | escape }}: {{ series.title | escape }}</a></h1>
+<h1 class="artist-list"><a title="Return to {{ artist.name | escape }}: {{ collection.title | escape }}" href="{{ collection.page_url }}">{{ artist.name | escape }}: {{ collection.title | escape }}</a></h1>
 
 {% if show_media %}
   {% if work.embed_code_html %}
@@ -46,7 +46,7 @@
   {% video_embed('large') %}
   {% endif %}
 {% else %}
-  <img src="{{ image.legacy_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
+  <img src="{{ image.large_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
   {% if image.caption %}
   <p class="caption">{{ image.caption | textlize_inline }}</p>
   {% endif %}

@@ -10,7 +10,7 @@
 <ul class="artist-details">
 
   {% for image in work.visible_images %}
-  <li><a href="{{ artist.page_url }}/{{ work.fragment_url }}/{{forloop.index}}"><img src="{{ image.legacy_thumb_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a><p class="thumb-caption">{{ image.caption | escape }}</p></li>
+  <li><a href="{{ artist.page_url }}/{{ work.fragment_url }}/{{forloop.index}}"><img src="{{ image.thumb_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a><p class="thumb-caption">{{ image.caption | escape }}</p></li>
   {% endfor %}
 
 </ul>
@@ -54,7 +54,7 @@
   {% video_embed('large') %}
   {% endif %}
 {% else %}
-  <img src="{{ image.legacy_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
+  <img src="{{ image.large_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
   {% if image.caption %}
   <p class="caption">{{ image.caption | textlize_inline }}</p>
   {% endif %}
