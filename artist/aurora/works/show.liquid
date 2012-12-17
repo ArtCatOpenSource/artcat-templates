@@ -66,7 +66,7 @@
           </li>
         {% endif %}
 
-        {% for image in work.visible_images %}
+        {% for image in work.images %}
         <li>
           <div class="limit-thumb140"><a href="{{ work.page_url}}/{{forloop.index}}"><img src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a></div>
           <p>{{ image.caption | escape }}</p>

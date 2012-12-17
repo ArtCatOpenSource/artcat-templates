@@ -20,7 +20,7 @@
   <ul class="gallery-details">
 
 
-    {% for image in work.visible_images %}
+    {% for image in work.images %}
     <li class="limit-thumb120"><a href="{{ work.page_url}}/{{forloop.index}}"><img class="limit-thumb120" src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a><p>{{ img.caption | escape }}</p></li>
     {% endfor %}
 

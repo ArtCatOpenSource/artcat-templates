@@ -9,7 +9,7 @@
 
 <ul class="artist-details">
 
-  {% for image in work.visible_images %}
+  {% for image in work.images %}
   <li><a href="{{ collection.page_url }}/{{ work.fragment_url }}/{{forloop.index}}"><img src="{{ image.thumb_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a><p class="thumb-caption">{{ image.caption | escape }}</p></li>
   {% endfor %}
 
