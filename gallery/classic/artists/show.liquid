@@ -2,13 +2,9 @@
 
   {{ artist.description | textilize }}
 
-  {% if artist.doc_url %}
-    <p><a target="_blank" href="{{ artist.doc_url }}">Download Resume</a> (Word)</p>
-  {% endif %}
-
-  {% if artist.pdf_url %}
-    <p><a target="_blank" href="{{ artist.pdf_url }}">Download Resume</a> (PDF)</p>
-  {% endif %}
+  {% for file in artist.file_assets %}
+    <p><a target="_blank" href="{{ file.url }}">{{ file.name | escape }}</a></p>
+  {% endfor %}
 
   {% if exhibitions != empty %}
     <h2>Exhibitions</h2>
