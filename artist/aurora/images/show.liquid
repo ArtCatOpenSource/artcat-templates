@@ -1,17 +1,29 @@
-<div id="SecondaryColumn"> 
-  <div class="exhibition-description">{{ image.caption }}</div> 
-    <p>
-    {% if prev %}
-    <a href="{{prev}}">&lt;&lt; Previous</a> |
-    {% endif %}
-    {{ img_idx }} of {{ total_image_count }}
-    {% if next %}
-    | <a href="{{next}}">Next &gt;&gt;</a>
-    {% endif %}
-    </p>
+<div id="breadcrumb">
+  <a href="/image_sets">Image Sets</a> > <a href="{{ image_set.page_url}} ">{{ image_set.name | escape }}</a> {% if image.has_caption? %} > <h3>{{ image.caption | escape }}</h3>{% endif %}
 </div>
 
-<div id="PrimaryColumn"> 
-  <h1><a href="{{image_set.page_url}}">{{ image_set.name | escape }}</a></h1>
-  <img src="{{ image.large_url}}" alt="{{ image.caption | esscape }}" />
+<div id="work-detail">
+
+  <div class="viewer">      
+    <div class="prev">
+      {% if prev %}
+      <a href="{{ prev }}">Prev</a>
+      {% endif %}
+    </div>
+    <div class="image-container clearfix">
+      <div class="outer-center"> 
+        <div class="inner-center">
+          <img src="{{ image.xlarge_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
+          {% if image.caption %}
+          <p class="caption">{{ image.caption | textlize_inline }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="next">
+      {% if next %}
+      <a href="{{ next }}">Next</a>
+      {% endif %}
+    </div>
+  </div>
 </div>

@@ -164,6 +164,13 @@ td { vertical-align: top; }
     #work-detail .media-file-link { heigth: 140px; width :140px; padding-top: 66px; text-align: center; }
     #work-detail .media-file-link a { text-decoration: none; color: #333; font-weight: bold; }
 
+
+  /* IMAGE SETS */
+
+    #image_sets {margin-right:-10px;}
+    #image_sets li {width: 140px; min-height: 100px; display: inline-block; vertical-align: top; margin: 10px 10px 10px 0px; text-align: center;}
+    #image_sets h3 {font-size:.8125rem; margin-top:.5rem;}
+
   /*STATIC PAGES*/
 
     #static {margin-top:10px}

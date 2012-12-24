@@ -1,19 +1,9 @@
-<div id="PrimaryColumn"> 
-
+<ul id="image_sets" class="clearfix">
   {% for image_set in image_sets %}
-  <div class="exhibition-box">
-    <table width="100%">
-      <tr>
-        <td class="exhibition-box-thumb">
-          <a href="{{ image_set.page_url }}"><img src="{{ image_set.main_thumb_url }}" alt="{{image_set.name }}" /></a>
-        </td>
-        <td>
-          <h1 class="image_set"><a href="{{ image_set.page_url }}">{{ image_set.name }}</a></h1>
-          <div class="exhibition-shortdesc">{{ image_set.description | textilize }}</div> 
-        </td>
-      </tr>
-    </table>
-  </div> <!-- exhibition-box -->
-  {% endfor %}
-
+    <li>
+      <div class="work-thumb"><a href="{{ image_set.page_url }}"><img src="{{ image_set.main_thumb_url }}" alt="{{image_set.name }}" /></a>
 </div>
+      <h3>{{image_set.name | escape}}</h3>
+    </li>
+  {% endfor %}
+</ul>
