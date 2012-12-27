@@ -34,7 +34,7 @@
 
 {{ work.description | textilize }}
 
-{% if work.ref_number %}
+{% if work.ref_number != empty %}
 <br />
 <p class="work-data">ref: {{ work.ref_number }}</p>
 {% endif %}
