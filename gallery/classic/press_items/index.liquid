@@ -1,6 +1,6 @@
 <div id="PrimaryColumn"> 
 
-  {% unless artist_press == 'empty' %}
+  {% unless artist_press == empty %}
     <h1>Artists</h1>
     {% for ap in artist_press %}
       <h2><a href="{{ ap.artist.page_url }}">{{ ap.artist.name | escape }}</a></h2>
@@ -12,10 +12,10 @@
     {% endfor %}
   {% endunless %}
 
-  {% unless exhibition_press == 'empty' %}
+  {% unless exhibition_press == empty %}
     <h1>Exhibitions</h1>
     {% for ep in exhibition_press %}
-      <h2><a href="{{ ep.exhibition.page_url }}">{{ ep.exhibition.name | escape }}</a></h2>
+      <h2><a href="{{ ep.exhibition.page_url }}">{{ ep.exhibition.title | escape }}</a></h2>
       <ul class="press">
         {% for press in ep.press_items %}
         <li><a href="{{ press.page_url }}">{{ press.title | escape }}</a></li>
@@ -24,7 +24,7 @@
     {% endfor %}
   {% endunless %}
 
-  {% unless general_press == 'empty' %}
+  {% unless general_press == empty %}
     <h1>Gallery</h1>
     <ul class="press">
       {% for press in general_press %}
