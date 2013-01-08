@@ -145,7 +145,7 @@ td { vertical-align: top; }
     #work-detail .prev, #work-detail .next {text-align: center; display: table-cell; vertical-align: middle; font-size: .875rem; font-weight: bold; text-transform: uppercase; width:75px;position:relative;z-index:999}
     #work-detail .prev a, #work-detail .prev a:visited, #work-detail .next a, #work-detail .next a:visited {text-decoration:none; color: #9b9b9b}
     #work-detail .prev a:hover, #work-detail .next a:hover {color:black; text-decoration: underline}
-    #work-detail .viewer img {max-width:810px; max-height:600px;}
+    #work-detail .viewer img {max-width:810px; max-height:800px;}
     #work-detail .caption {font-size:.6375rem; margin-top:.4375rem;}
     .limit-thumb140 { width: 140px; height: 140px;}
 
