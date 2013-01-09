@@ -1,0 +1,49 @@
+<div id="PrimaryColumn"> 
+{% for exhibition in exhibitions %}
+  <div class="exhibition-box">
+  <table width="100%">
+  <tr>
+  <td class="exhibition-box-thumb">
+    {% assign work = exhibition.featured_work %}
+    {% assign image = exhibition.images.first %}
+    {% if work %}
+      <a href="{{ exhibition.page_url }}"><img src="{{ work.featured_image.thumb_url }}" alt="{{ exhibition.title | escape }}" /></a>
+    {% elsif image %}
+      <a href="{{ exhibition.page_url }}"><img src="{{ image.thumb_url }}" alt="{{ exhibition.title | escape }}" /></a>
+    {% endif %}
+  </td>
+  <td>
+    <h1><a href="{{ exhibition.page_url }}">{{ exhibition.title }}</a></h1>
+    {% if exhibition.subtitle %}
+    <div class="exhibition-subtitle">{{ exhibition.subtitle }}</div>
+    {% endif %}
+    {% if exhibition.short_description %}
+    <div class="exhibition-shortdesc">{{ exhibition.short_description | textilize }}</div> 
+    {% endif %}
+    
+    <div class="exhibition-dates">
+    {% if exhibition.start_and_end_year_same? %}
+      {{ exhibition.start_date | date: "%B %e" }}
+    {% else %}
+      {{ exhibition.start_date | date: "%B %e, %Y" }}
+    {% endif %}
+    - {{ exhibition.end_date | date: "%B %e, %Y" }}
+    </div>
+
+  </td>
+  </tr>
+  </table>
+  </div> <!-- exhibition-box -->
+{% endfor %}
+</div>
+
+<div id="SecondaryColumn">
+  <h2><a href="/exhibitions">Current and Past Exhibitions</h2>
+</div>
+
+
+
+
+
+
+
