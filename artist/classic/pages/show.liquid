@@ -6,7 +6,7 @@
   <div id="SecondaryColumn">
     {% if page.path == 'about' %}
     <h2>Contact</h2>
-    <p>Send an email to <a href="{{ website.contact_email }}">{{ website.contact_name }}</a></p>
+    <p>Send an email to <a href="mailto:{{ website.contact_email }}">{{ website.contact_name }}</a></p>
     {% endif %}
   </div>
   
