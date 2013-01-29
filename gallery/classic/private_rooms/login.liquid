@@ -1,0 +1,22 @@
+<div id="PrimaryColumn"> 
+
+  <p class="error">{{ error }}</p>
+
+  <form action="/private_rooms/login_create" method = "post">
+
+  <table border="0" cellspacing="3" cellpadding="3" class="formtable">
+    <tr>
+      <td class="label" valign="top"><label for="credential_0">User name</label>  </td>
+      <td class="widget" valign="top"> <input maxlength="50" name="username" id="username" type="text" size="20" /> </td>
+    </tr> 
+    <tr>
+      <td class="label" valign="top"><label for="credential_1">Password</label>  </td>
+      <td class="widget" valign="top"> <input maxlength="50" name="password" id="password" type="password" size="20" /> </td>
+    </tr> 
+    <tr>
+      <td class="label" valign="top"><label for="continue"></label>  </td>
+      <td class="widget" valign="top"> <input value="continue" name="continue" id="continue" type="submit" /></td>
+    </tr> 
+  </table>
+
+  </form>

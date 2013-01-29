@@ -1,0 +1,26 @@
+{% if room.description != '' %}
+<div id="SecondaryColumn"> 
+<div class="exhibition-description">{{ private_room.description | textilize }}</div> 
+</div>
+{% endif %}
+
+<div id="PrimaryColumn"> 
+
+<h1>{{ private_room.name }} [<a href="/private_rooms/logout">logout</a>]</h1>
+
+<h2>Works</h2>
+
+  {% for work in works %}
+    <div class="thumb-float">
+      <div class="thumb-img"><a href="{{ private_room.page_url }}/{{ work.fragment_url }}"><img src="{{ work.featured_image.thumb_url }}" alt="{{ work.title | escape }}"/></a></div>
+      <p class="thumb-caption">
+        {{ work.artist.name }}, {{ work.title }}
+        {% if private_room.show_price and work.price %}
+          <br/>Price: {{ work.price }}
+        {% endif %}
+      </p>
+    </div>
+  {% endfor %}
+
+</div> <!-- PrimaryColumn -->
+
