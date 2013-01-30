@@ -1,0 +1,36 @@
+{% if exhibitions != empty or artists != empty %}
+  <div id="SecondaryColumn"> 
+
+  {% unless exhibitions == empty %}
+  <h2>Exhibitions</h2>
+    {% for exhibition in exhibitions %}
+      <p><a href="{{ exhibition.page_url }}">{{ exhibition.title }} ({{ exhibition.start_date | date: "%Y" }})</a></p>
+    {% endfor %}
+  {% endunless %}
+
+  {% unless artists == empty %}
+  <h2>Artists</h2>
+    {% for artist in artists %}
+      <p><a href="{{ artist.page_url }}">{{ artist.name }}</a></p>
+    {% endfor %}
+  {% endunless %}
+
+  </div>
+{% endif %}
+
+  <div id="PrimaryColumn"> 
+
+    <h2 class="press">{{ press_item.title }}</h2>
+
+    <div>
+
+      {% if press_item.has_display_date? %}
+      <p class="press-added">{{ press_item.display_date }}<p>
+      {% endif %}
+      
+      {{ press_item.body | textilize }}
+
+    </div>
+
+  </div>
+
