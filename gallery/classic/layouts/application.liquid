@@ -6,6 +6,11 @@
     <meta name="author" content="www.artcat.com" />
     <meta name="description" content="{{ website_description | escape }}" />
     <meta name="keywords" content="{{ website_keywords | escape }}" />
+    {% if website.favicon_url %}  
+    <link rel="shortcut icon" href="{{ website.favicon_url }}">
+    {% else %}
+    <link rel="shortcut icon" href="/favicon.ico">
+    {% endif %}
     {% client_css %}
   </head>
   <body>

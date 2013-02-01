@@ -4,7 +4,11 @@
     <title>{{ website_title | escape }} {% if page_title %} - {{ page_title | escape }} {% endif %}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="author" content="www.artcat.com" />
+    {% if website.favicon_url %}  
+    <link rel="shortcut icon" href="{{ website.favicon_url }}">
+    {% else %}
     <link rel="shortcut icon" href="/favicon.ico">
+    {% endif %}
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <meta name="description" content="{{ website_description | escape }}" />

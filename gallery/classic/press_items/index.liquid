@@ -6,7 +6,7 @@
       <h2><a href="{{ ap.artist.page_url }}">{{ ap.artist.name | escape }}</a></h2>
       <ul class="press">
         {% for press in ap.press_items %}
-        <li><a href="{{ press.page_url }}">{{ press.title | escape }}</a></li>
+        <li><a href="{{ press.page_url }}"{% if press.is_file? or press.is_link? %} target="_blank" {% endif %}>{{ press.title | escape }}</a></li>
         {% endfor %}
       </ul>
     {% endfor %}
@@ -28,7 +28,7 @@
     <h1>Gallery</h1>
     <ul class="press">
       {% for press in general_press %}
-      <li><a href="{{ press.page_url }}">{{ press.title | escape }}</a></li>
+      <li><a href="{{ press.page_url }}"{% if press.is_file? or press.is_link? %} target="_blank" {% endif %}>{{ press.title | escape }}</a></li>
       {% endfor %}
     </ul>
   {% endunless %}
