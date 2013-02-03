@@ -48,7 +48,7 @@
   {% for work in works %}
     <div class="thumb-float">
       <div class="thumb-img"><a href="{{ artist.page_url }}/{{ work.fragment_url }}"><img src="{{ work.featured_image.thumb_url }}" alt="{{ work.title | escape }}"/></a></div>
-      <p class="thumb-caption">{{ work.title| escape }}, {{ work.date }}</p>
+      <p class="thumb-caption">{{ work.title| escape }}{% unless work.date == '' %}, {{ work.date }}{% endunless %}</p>
     </div>
   {% endfor %}
 
