@@ -339,3 +339,24 @@ ul.press li {
 	max-width: 120px; 
 	max-height: 120px;
 }
+
+.contact-table {
+	margin-top: 20px;
+}
+
+.contact-table td {
+	padding-right: 10px;
+}
+
+.contact-table input, .contact-table textarea {
+	width: 180px;
+}
+
+.contact-table textarea {
+	height: 200px;
+}
+
+.error, .thanks {
+	font-weight: bold;
+	color: red;
+}

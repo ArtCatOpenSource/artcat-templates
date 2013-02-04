@@ -1,3 +1,63 @@
 <div class="{{ page.path }}">
 {{ page.body | textilize }}
 </div>
+
+ {% if page.show_contact_form %}
+   <div class="contact-form">
+
+    {% if thanks %}
+    <p class="thanks">Thank you for your message.</p>
+    {% else %}
+
+    <h3>Contact</h3>
+
+    {% if contact_error %}
+    <p class="error">You must fill out the entire form with valid values</p>
+    {% endif %}
+
+    <form method="post">
+      <table border="0" class="contact-table">
+        <tr>
+          <td class="label" valign="top">
+            <label>Your Name</label>
+          </td>
+          <td>
+            <input type="text" id="name" name="name"/>
+          </td>
+        </tr>
+        <tr>
+          <td class="label" valign="top">
+            <label>Your E-mail</label>
+          </td>
+          <td>
+            <input type="text" id="email" name="email"/>
+          </td>
+        </tr>
+        <tr>
+          <td class="label" valign="top">
+            <label>Subject</label>
+          </td>
+          <td>
+            <input type="text" id="subject" name="subject"/>
+          </td>
+        </tr>
+        <tr>
+          <td class="label" valign="top">
+            <label>Message</label>
+          </td>
+          <td>
+            <textarea id="message" name="message"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td class="label" valign="top">
+          </td>
+          <td>
+            <input type="submit" />
+          </td>
+        </tr>
+      </table>
+    </form>
+    {% endif %}
+  </div>
+{% endif %}
