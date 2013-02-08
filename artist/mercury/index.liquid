@@ -1,1 +1,31 @@
-HOME PAGE
+<div class="image_area">
+  {% if website.home_image %}
+    <a href="{{ website.home_image_link }}"><img src="{{ website.home_image.large_url }}" alt="{{ website.home_image.caption | escape }}" /></a>
+    <div class="caption">
+      {{ website.home_image.caption | textilize }}
+    </div><!-- closes .caption -->
+  {% endif %}
+</div><!-- closes .image_area -->
+
+<div class="body_copy">
+
+  {{ website.home_page_announcement | textilize }}
+
+  {% for news in website.home_page_news %}
+    {% if news.title %}
+      <h4>{{ news.title }}</h4>
+    {% endif %}
+    {% if news.display_date %}
+      <p class="news_date">{{ news.display_date }}</p>
+    {% endif %}
+  
+    {% if news.summary %}
+      {{ news.summary | textilize }}
+    {% else %}
+      {{ news.body.truncate(250) | textilize }}
+    {% endif %}
+
+    <p><a href="{{ news.page_url }}">More &raquo;</a></p>
+  {% endfor %}
+
+</div><!-- .body_copy -->
