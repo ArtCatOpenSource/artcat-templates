@@ -15,7 +15,7 @@ $(document).ready(function() {
   });
 
   function vertically_center_images() {
-    var images_in_works_page = $('.portfolios_index .contains_image img').toArray();
+    var images_in_works_page = $('.portfolios .contains_image img').toArray();
     var images_in_works_page_length = images_in_works_page.length;
 
     for (var i=0; i<images_in_works_page_length; i++) {

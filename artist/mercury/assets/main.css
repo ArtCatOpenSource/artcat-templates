@@ -222,7 +222,7 @@ h4 {
   line-height: 12px;
 }
 
-.portfolios_index .footer_wrapper p {
+.portfolios .footer_wrapper p {
   margin-top: 10px;
 }
 
@@ -257,35 +257,35 @@ h4 {
 /* WORKS GRID
 ---------------------------------------------------------------------------*/
 
-.portfolios_index h2 {
+.portfolios h2 {
   margin-bottom: 30px;
 }
 
-.portfolios_index ul {
+.portfolios ul {
   padding: 0;
 }
 
-.portfolios_index ul ul {
+.portfolios ul ul {
   overflow: hidden;
   margin-bottom: 40px;
 }
 
-.portfolios_index #main li {
+.portfolios #main li {
   list-style: none;
 }
 
-.portfolios_index #main li li {
+.portfolios #main li li {
   list-style: none;
   float: left;
   margin: 0 25px 0 5px;
   width: 210px;
 }
 
-.portfolios_index #main li li.last_in_row {
+.portfolios #main li li.last_in_row {
   margin-right: 0;
 }
 
-.portfolios_index #main a.contains_image {
+.portfolios #main a.contains_image {
   background: #f1f1f1;
   width: 210px;
   height: 202px;
@@ -295,11 +295,11 @@ h4 {
   margin-bottom: 12px;
 }
 
-.portfolios_index #main a.contains_image:hover {
+.portfolios #main a.contains_image:hover {
   border-bottom-color: #09f;
 }
 
-.portfolios_index a img {
+.portfolios a img {
   max-width: 202px;
   max-height: 202px;
   overflow: hidden;
@@ -308,13 +308,13 @@ h4 {
   vertical-align: middle;
 }
 
-.portfolios_index p {
+.portfolios p {
   margin: 0;
   font-size: 12px;
   line-height: 16px;
 }
 
-.portfolios_index #main p a {
+.portfolios #main p a {
   font-size: 14px;
 }
 

@@ -1,0 +1,24 @@
+<h2>{{ portfolio.name }}</h2>
+
+<ul class="image_grid">
+  {% for work in works %}
+    {% assign column = forloop.index | modulo:4 %}
+    {% if column == 1 %}
+     <li class="row">
+       <ul>
+    {% endif %}
+         <li{% if column == 0 %} class="last_in_row"{% endif %}>
+           <a class="contains_image" href="{{ work.page_url }}"><img src="{{ work.featured_thumb_url }}" alt="{{work.title | escape}}" /></a>
+           <p><a href="{{ work.page_url }}">{{ work.title }}</a></p>
+         </li>
+    {% if column == 0 %}
+      </ul>
+     </li> <!-- .row -->
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<div class="body_text">
+  {{ portfolio.description | textilize }}
+</div>
+
