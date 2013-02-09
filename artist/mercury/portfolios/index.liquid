@@ -1,20 +1,17 @@
 <ul class="image_grid">
   {% for portfolio in portfolios %}
-    {% assign column = index | module:4 %}
+    {% assign column = forloop.index | modulo:4 %}
     {% if column == 1 %}
      <li class="row">
        <ul>
     {% endif %}
-
-       <li{% if column == 0 %} class="last_in_row"{% endif %}>
-         <a class="contains_image" href="{{ portfolio.page_url }}"><img src="{{ portfolio.featured_thumb_url }}" alt="{{portfolio.name | escape}}" /></a>
-         <p><a href="{{ portfolio.page_url }}">{{portfolio.name }}</a></p>
-       </li>
-
-    {% if column == 1 %}
+         <li{% if column == 0 %} class="last_in_row"{% endif %}>
+           <a class="contains_image" href="{{ portfolio.page_url }}"><img src="{{ portfolio.featured_thumb_url }}" alt="{{portfolio.name | escape}}" /></a>
+           <p><a href="{{ portfolio.page_url }}">{{portfolio.name }}</a></p>
+         </li>
+    {% if column == 0 %}
       </ul>
      </li> <!-- .row -->
     {% endif %}
-
   {% endfor %}
 </ul>
