@@ -485,55 +485,55 @@ h4 {
 /* TEXT PAGE -- RESUME
 ---------------------------------------------------------------------------*/
 
-.text_page .left_column {
+.resume .left_column {
   width: 540px;
 /*  background: red;*/
   float: left;
   margin: 0 100px 0 0;
 }
 
-.text_page .right_column {
+.resume .right_column {
   width: 300px;
   height: 200px;
   float: left;
 /*  background: red;*/
 }
 
-.text_page {
+.resume {
   text-align: left;
   font-size: 14px;
   color: #333;
 }
 
-.text_page table {
+.resume table {
   margin-bottom: 60px;
 }
 
-.text_page table a {
+.resume table a {
   color: #09f;
 }
 
-.text_page table a:hover {
+.resume table a:hover {
   text-decoration: underline;
 }
 
-.text_page th {
+.resume th {
   font-weight: normal;
   padding: 0 0 20px 5px;
 }
 
-.text_page td {
-  padding: 0 0 14px 5px;
+.resume td {
+  padding: 0 0 8px 5px;
   vertical-align: top;
 }
 
-.text_page th strong {
+.resume th strong {
   font-size: 18px;
   display: block;
   padding-bottom: 5px;
 }
 
-.text_page .date {
+.resume .date {
   width: 55px;
   padding: 0 20px 0 5px;
   color: #777;

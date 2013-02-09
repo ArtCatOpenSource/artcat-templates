@@ -1,0 +1,37 @@
+<div class="left_column">
+
+  {% for category in resume.resume_categories %}    
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2"><strong>{{ category.name }}</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% assign show_date = '' %}
+    {% for item in category.resume_items %}
+    <tr>
+      <td class="date">
+        {% if show_date != item.date %}
+          {% assign show_date = item.date %}
+          {{ show_date }}
+        {% endif %}
+      </td>
+      <td>{{ item.text | textilize_inline }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endfor %}
+
+</div>
+
+<div class="right_column">
+  {% for file in resume.file_assets %}
+  <p><a href="{{ file.url }}">{{ file.name }}</a></p>
+  {% endfor %}
+
+   <div class="resume_head">{{ resume.head | textilize }}</div>
+
+</div>
+
