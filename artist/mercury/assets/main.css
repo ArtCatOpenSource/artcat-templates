@@ -318,70 +318,70 @@ h4 {
   font-size: 14px;
 }
 
-/* DETAIL
+/* Work Show
 ---------------------------------------------------------------------------*/
 
-.detail h2 {
+.works_show h2 {
   margin: -10px 0 30px 0;
 }
 
-.detail .left_side {
+.works_show .left_side {
   width: 620px;
   float: left;
   margin: 0 100px 0 0;
 }
 
-.detail .caption {
+.works_show .caption {
   width: 540px;
 }
 
-.detail .body_text {
+.works_show .body_text {
   margin-left: 160px;
   width: 380px;
 }
 
-.detail h4 {
+.works_show h4 {
   margin-bottom: 10px;
 }
 
-.detail .right_side ul {
+.works_show .right_side ul {
   padding: 0;
   margin: 0;
 }
 
-.detail .right_side li {
+.works_show .right_side li {
   list-style: none;
 }
 
-.detail .right_side .controls {
+.works_show .right_side .controls {
   overflow: hidden;
 }
 
-.detail .right_side .controls li {
+.works_show .right_side .controls li {
   width: 100px;
   float: left;
 }
 
-.detail .right_side .controls li {
+.works_show .right_side .controls li {
   color: #ccc;
   font-size: 14px;
   font-weight: bold;
 }
 
-.detail .right_side li a {
+.works_show .right_side li a {
   font-size: 14px;
 }
 
-.detail .right_side li.prev {
+.works_show .right_side li.next {
   text-align: right;
 }
 
-.detail .right_side li.grid_button,
-.detail .right_side li.column_button {
+.works_show .right_side li.grid_button,
+.works_show .right_side li.column_button {
   width: 13px;
 }
 
-.detail .right_side li.grid_button a {
+.works_show .right_side li.grid_button a {
   width: 13px;
   height: 13px;
   display: block;
@@ -389,17 +389,17 @@ h4 {
   background: url(../img/sprite.png) -1px -1px no-repeat;
 }
 
-.detail .right_side li.grid_button a:hover {
+.works_show .right_side li.grid_button a:hover {
   background: url(../img/sprite.png) -18px -1px no-repeat;
 }
 
-.detail .right_side {
+.works_show .right_side {
   width: 220px;
   float: left;
   margin-top: -3px;
 }
 
-.detail .image_column {
+.works_show .image_column {
   height: 500px;
   clear: left;
   overflow: scroll;
@@ -408,7 +408,7 @@ h4 {
   border-bottom: 1px solid #ccc;
 }
 
-.detail .image_column .contains_image {
+.works_show .image_column .contains_image {
   background: #f1f1f1;
   width: 210px;
   padding: 4px;
@@ -417,32 +417,32 @@ h4 {
   margin-bottom: 12px;
 }
 
-.detail .image_column .contains_image img {
+.works_show .image_column .contains_image img {
   display: block;
   margin: auto;
 }
 
-.detail .image_column .contains_image:hover,
-.detail .grid_column .contains_image:hover {
+.works_show .image_column .contains_image:hover,
+.works_show .grid_column .contains_image:hover {
   background-color: #09f;
 }
 
-.detail .image_column .contains_image.on_state,
-.detail .grid_column .contains_image.on_state {
+.works_show .image_column .contains_image.on_state,
+.works_show .grid_column .contains_image.on_state {
   background-color: #222;
 }
 
-.detail .grid_column {
+.works_show .grid_column {
   clear: left;
   margin-top: 33px;
 }
 
-.detail .grid_column {
+.works_show .grid_column {
   clear: left;
   margin-top: 33px;
 }
 
-.detail .grid_column .contains_image {
+.works_show .grid_column .contains_image {
   background: #f1f1f1;
   width: 90px;
   height: 90px;
@@ -453,23 +453,23 @@ h4 {
   float: left;
 }
 
-.detail .grid_column .contains_image img {
+.works_show .grid_column .contains_image img {
   max-width: 90px;
   max-height: 90px;
   display: block;
   margin: 0 auto;
 }
 
-.detail .grid_column .contains_image {
+.works_show .grid_column .contains_image {
   margin-right: 24px;
   margin-bottom: 24px;
 }
 
-.detail .grid_column .contains_image.odd {
+.works_show .grid_column .contains_image.odd {
   margin-right: 0;
 }
 
-.detail .right_side li.column_button a {
+.works_show .right_side li.column_button a {
   width: 13px;
   height: 13px;
   display: block;
@@ -477,7 +477,7 @@ h4 {
   background: url(../img/sprite.png) -1px -18px no-repeat;
 }
 
-.detail .right_side li.column_button a:hover {
+.works_show .right_side li.column_button a:hover {
   background: url(../img/sprite.png) -18px -18px no-repeat;
 }
 

@@ -1,0 +1,70 @@
+<div class="left_side">
+  <h2><a href="{{ portfolio.page_url}} ">{{ portfolio.name | escape }}</a>{% if work.has_title? %} | {{ work.title }} {% endif %}</h2>
+
+  {% if show_media %}
+    {% if work.embed_code_html %}
+      {{ work.embed_code_html }}
+    {% elsif work.audio? %}
+    <a href="{{ work.media.audio_url }}" class="audio-link">audio file</a>
+    {% else %}
+    {% video_embed('large') %}
+    {% endif %}
+  {% else %}
+  <img src="{{ image.large_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
+
+    <div class="caption">
+
+      {% if image.caption %}
+      <p>{{ image.caption | textlize_inline }}</p>
+      {% endif %}
+
+      <p>
+      {% if work.date != '' %}
+      {{ work.date }}<br />
+      {% endif %}
+      {% if work.has_medium? %} {{ work.medium | escape }}<br /> {% endif %}
+      {{ work.size | escape }}
+      </p>
+
+    </div>
+
+    <div class="body_text">
+    {{ work.description | textilize }}
+    </div>
+
+
+  {% endif %}
+
+</div><!-- .left_side -->
+
+<div class="right_side">
+  <div class="controls">
+    <ul>
+      <li class="prev">
+        {% if work.previous_work %}
+        <a href="{{ work.previous_work.page_url }}">&larr; Prev</a>
+        {% else %}
+        &larr; Prev
+        {% endif %}
+      </li>
+      <li class="next">
+        {% if work.next_work %}
+        <a href="{{ work.next_work.page_url }}">Next &rarr;</a>
+        {% else %}
+        Next &rarr;
+        {% endif %}
+      </li>
+    </ul>
+  </div><!-- .controls -->
+
+  {% if work.has_alternate_views? %}
+  <div class="grid_column">
+    <ul>
+      {% for image in work.images %}
+      <li><a class="contains_image" href="{{ work.page_url}}/{{forloop.index}}"><img src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" /></a></li>
+      {% endfor %}
+    </ul>
+  </div><!-- .grid_column -->
+  {% endif %}
+</div><!-- .right_side -->
+
