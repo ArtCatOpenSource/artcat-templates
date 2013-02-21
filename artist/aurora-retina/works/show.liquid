@@ -1,0 +1,80 @@
+<div id="breadcrumb">
+  <a href="/portfolios">Works</a> > <a href="{{ portfolio.page_url}} ">{{ portfolio.name | escape }}</a> {% if work.has_title? %} > <h3>{{ work.title | escape }}</h3>{% endif %}
+</div>
+
+<div id="work-detail">
+
+  <div class="viewer">      
+    <div class="prev">
+      {% if work.previous_work %}
+      <a title="{{ work.previous_work.title | escape}}" href="{{ work.previous_work.page_url }}">Prev</a>
+      {% endif %}
+    </div>
+    <div class="image-container clearfix">
+      <div class="outer-center"> 
+        <div class="inner-center">
+
+          {% if show_media %}
+            {% if work.embed_code_html %}
+              {{ work.embed_code_html }}
+            {% elsif work.audio? %}
+            <a href="{{ work.media.audio_url }}" class="audio-link">audio file</a>
+            {% else %}
+            {% video_embed('large') %}
+            {% endif %}
+          {% else %}
+            <img src="{{ image.xlarge_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
+              {% if image.caption %}
+              <p class="caption">{{ image.caption | textlize_inline }}</p>
+              {% endif %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="next">
+      {% if work.next_work %}
+      <a title="{{ work.next_work.title | escape}}" href="{{ work.next_work.page_url }}">Next</a>
+      {% endif %}
+    </div>        
+  </div>        
+
+  <div class="viewer_details">
+    <h3>{{ work.title | escape }} <br />
+      {% if work.date != '' %}
+      {{ work.date }}<br />
+      {% endif %}
+      {% if work.has_medium? %} {{ work.medium | escape }}<br /> {% endif %}
+      {{ work.size | escape }}
+    </h3>
+    {{ work.description | textilize }}
+  </div>
+
+  {% if work.has_alternate_views? %}
+  <div class="viewer_alternate_views"> 
+          
+      <h4>Alternate Views</h4>
+      <ul>
+          {% if work.has_media? or work.embed_code_html %}
+          <li>
+          {% if work.audio? %}
+            <a href="{{ work.page_url }}">audio file</a>
+          {% elsif work.embed_code_html %}
+            <a href="{{ work.page_url }}"><img style="max-width:140px" class="limit-thumb140" src="{{ work.embed_thumb_url }}" alt="video" /></a><p>video</p>
+          {% else %}
+            <a href="{{ work.page_url }}"><img src="{{ media_thumb_url }}" alt="video" /></a><p>video</p>
+          {% endif %}
+          </li>
+        {% endif %}
+
+        {% for image in work.images %}
+        <li>
+          <div class="limit-thumb140"><a href="{{ work.page_url}}/{{forloop.index}}"><img src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a></div>
+          <p>{{ image.caption | escape }}</p>
+        </li>
+        {% endfor %}     
+      </ul>       
+  </div>
+  {% endif %}
+
+
+</div>

@@ -1,0 +1,13 @@
+<div id="static">
+
+  <div class="press">
+
+  <ul>
+  {% for press_item in press_items %}
+    <li><a href="{{ press_item.page_url }}">{{ press_item.title }}</a></li>
+  {% endfor %}
+  </ul>
+
+  </div>
+
+</div>
