@@ -1,0 +1,22 @@
+<h1><a title="Return to {{ image_set.name | escape }}" href="{{ image_set.page_url}}">{{ image_set.name }}</a></h1>
+
+<div id="PrimaryColumn">
+
+<img src="{{ image.large_url }}" alt="{{ image.caption | escape }}" />
+
+<p class="caption">{{ image.caption | textlize_inline }}</p>
+
+{% if total_image_count > 1 %}
+<p class="prevnext">
+  {% if prev %}
+<a href="{{ prev }}">&lt;&lt;</a>
+  {% endif %}
+&nbsp;&nbsp;
+  {% if next %}
+  <a href="{{ next }}">&gt;&gt;</a>
+  {% endif %}
+</p>
+{% endif %}
+
+</div>
+

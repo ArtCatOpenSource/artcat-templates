@@ -1,0 +1,27 @@
+<h1>{{ image_set.name | escape}}</h1>
+
+{% if image_set.has_description? %}
+
+<div id="SecondaryColumn">
+{{ image_set.description | textilize }}
+</div>
+
+<div id="PrimaryColumn">
+{% else %}
+<div id="FullColumn">
+{% endif %}
+
+{% for image in images %}
+
+<div class="thumb-float">
+  <div class="thumb-img">
+
+  <a href="{{ image.page_url }}"><img style="max-width:150px" src="{{ image.thumb_url }}" alt="{{ image.caption | escape }}" /></a>
+  </div>
+
+  <p class="thumb-caption">{{ image.caption | escape }}</p>
+</div>
+
+{% endfor %}
+
+</div>

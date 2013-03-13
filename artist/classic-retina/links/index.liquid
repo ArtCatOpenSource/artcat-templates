@@ -1,0 +1,14 @@
+<div id="PrimaryColumn"> 
+
+{% for category in link_categories %}   
+
+<h2 class="link">{{ category.name }}</h2>
+
+  {% for link in category.links %}
+    <p class="link"><a href="{{ link.url | escape }}">{{ link.name | escape }}</a></p>
+
+  {% endfor %}
+  <br />
+{% endfor %}
+
+</div>

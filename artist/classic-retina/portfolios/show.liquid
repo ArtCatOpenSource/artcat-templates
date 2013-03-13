@@ -1,0 +1,34 @@
+<h1>{{ portfolio.name | escape}}</h1>
+
+{% if portfolio.has_description? or portfolio.has_press? %}
+
+<div id="SecondaryColumn">
+{{ portfolio.description | textilize }}
+
+{% if portfolio.has_press? %}
+  <h2>Press</h2>
+  {% for press_item in portfolio.press_items %}
+  <p class="press"><a href="{{ press_item.page_url }}">{{ press_item.title | escape }}</a></p>
+  {% endfor %}
+{% endif %}
+</div>
+
+<div id="PrimaryColumn">
+{% else %}
+<div id="FullColumn">
+{% endif %}
+
+{% for work in works %}
+
+<div class="thumb-float">
+  <div class="thumb-img">
+
+  <a href="{{ work.page_url }}"><img style="max-width:150px" src="{{ work.featured_thumb_url }}" alt="{{ work.title | escape }}" /></a>
+  </div>
+
+  <p class="thumb-caption">{{ work.title | escape }}</p>
+</div>
+
+{% endfor %}
+
+</div>

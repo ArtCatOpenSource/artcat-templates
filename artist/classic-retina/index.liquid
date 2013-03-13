@@ -1,0 +1,44 @@
+{% unless website.home_page_image_only? %}
+  <div id="SecondaryColumn"> 
+
+  {% if website.home_page_announcement != '' %}
+    {{ website.home_page_announcement | textilize }}
+    <br />
+  {% endif %}
+
+  <!-- news -->
+  {% unless website.home_page_news == empty %}
+    <div class="newsblock">
+    {% for news in website.home_page_news %}
+      {% if news.title %}
+      <h2 class="news"><a href="{{ news.page_url }}">{{ news.title | escape }}</a></h2>
+      {% endif %}
+      {% if news.display_date %}
+      <p class="news-added">{{ news.display_date }}</p>
+      {% endif %}
+
+      <div>
+        {% if news.summary != '' %}
+          {{ news.summary | textilize }}
+        {% else %}
+          {{ news.body | truncate:250 | textilize }}
+        {% endif %}
+        <p><a href="{{ news.page_url }}">more &gt;&gt;</a></p>
+      </div>
+    {% endfor %}
+    </div>
+  {% endunless %}
+
+  </div>
+{% endunless %}
+
+  {% assign home_image = website.home_image %}
+
+  <div id="PrimaryColumn"> 
+    {% if home_image %}
+    <div id="home-image">
+      <a href="{{ website.home_image_link }}">{% responsive_large_image('home_image') %}</a>
+       <div class="caption">{{ home_image.caption | textilize }}</div>
+   </div>
+  {% endif %}
+  </div>
