@@ -104,7 +104,6 @@ td { vertical-align: top; }
   /*HOMEPAGE*/
 
     .homepage-image-feature-container {float:left; width:720px;}
-    .homepage-image-feature-container img {max-width:720px;} /*Prevents image from overlapping sidebar*/
     .homepage-caption {font-size:.7375rem; margin-top:.4375rem;text-align:center;}
 
     /*Sidebar*/
@@ -117,7 +116,6 @@ td { vertical-align: top; }
 
     /*For full image width*/
     #homepage.full .homepage-image-feature-container {width: 100%;}
-    #homepage.full .homepage-image-feature-container img {max-width:960px;} /*Prevents image from exceeding site width*/
     #homepage.full .homepage-sidebar-feature {display: none !important; visibility: hidden; } /*Hides sidebar*/
 
   /*WORKS*/
