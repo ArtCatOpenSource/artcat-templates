@@ -7,7 +7,7 @@
     {% assign work = exhibition.featured_work %}
     {% assign image = exhibition.images.first %}
     {% if work %}
-      <a href="{{ exhibition.page_url }}"><img src="{{ work.featured_image.thumb_url }}" alt="{{ exhibition.title | escape }}" /></a>
+      <a href="{{ exhibition.page_url }}"><img src="{{ work.featured_thumb_url }}" alt="{{ exhibition.title | escape }}" /></a>
     {% elsif image %}
       <a href="{{ exhibition.page_url }}"><img src="{{ image.thumb_url }}" alt="{{ exhibition.title | escape }}" /></a>
     {% endif %}

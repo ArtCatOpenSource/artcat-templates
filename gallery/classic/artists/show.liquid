@@ -40,14 +40,14 @@
   {% for c in collections %}
     {% assign work = c.featured_work %}
     <div class="thumb-float">
-      <div class="thumb-img"><a href="{{ c.page_url }}"><img src="{{ work.featured_image.thumb_url }}" alt="{{ c.title | escape }}"/></a></div>
+      <div class="thumb-img"><a href="{{ c.page_url }}"><img src="{{ work.featured_thumb_url }}" alt="{{ c.title | escape }}"/></a></div>
       <p class="thumb-caption">{{ c.title | escape }}</p>
     </div>
   {% endfor %}
 
   {% for work in works %}
     <div class="thumb-float">
-      <div class="thumb-img"><a href="{{ artist.page_url }}/{{ work.fragment_url }}"><img src="{{ work.featured_image.thumb_url }}" alt="{{ work.title | escape }}"/></a></div>
+      <div class="thumb-img"><a href="{{ artist.page_url }}/{{ work.fragment_url }}"><img src="{{ work.featured_thumb_url }}" alt="{{ work.title | escape }}"/></a></div>
       <p class="thumb-caption">{{ work.title| escape }}{% unless work.date == '' %}, {{ work.date }}{% endunless %}</p>
     </div>
   {% endfor %}
