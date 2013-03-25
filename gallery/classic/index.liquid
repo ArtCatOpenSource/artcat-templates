@@ -53,6 +53,13 @@
         - {{ exhibition.end_date | date: "%B %e, %Y" }}
       </div>
 
+      {% if exhibition.opening_date %}
+      <div class="exhibition-opening">
+        Opens {{ exhibition.opening_date | date: "%A, %B %e"}},
+        {{ exhibition.opening_start | date: "%l:%M %p "}} - {{ exhibition.opening_end | date: "%l:%M %p "}}
+      </div>
+      {% endif %}
+
         {% if exhibition.featured_work %}
           {% assign work = exhibition.featured_work %}
           <a href="{{ exhibition.page_url }}"><img src="{{ work.featured_image.large_url }}" alt="{{ exhibition.title | escape }}" /></a>  
