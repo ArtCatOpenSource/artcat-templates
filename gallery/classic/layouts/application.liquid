@@ -13,7 +13,7 @@
     {% endif %}
     {% client_css %}
   </head>
-  <body>
+  <body class="{{ body_class }}">
     <div id="Navigation"> 
       <div class="SiteName"><a href="/">{% if website.logo_url %} <img src="{{ website.logo_url}}" alt="{{ website_title | escape }}" />{% else %}{{ website_title | escape }}{% endif %}</a></div>
 
