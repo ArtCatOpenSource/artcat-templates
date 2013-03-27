@@ -1,21 +1,21 @@
 $(document).ready(function() {
 
-  $('.detail .grid_column .contains_image').filter(':odd').addClass('odd');
+  $('.works_show .grid_column .contains_image').filter(':odd').addClass('odd');
 
-  $('.detail .grid_button').click(function() {
+  $('.works_show .grid_button').click(function() {
     $('.image_column').addClass('display_none');
     $('.grid_column').removeClass('display_none');
     $(this).removeClass('grid_button').addClass('column_button');
   });
 
-  $('.detail .column_button').click(function() {
+  $('.works_show .column_button').click(function() {
     $('.grid_column').addClass('display_none');
     $('.image_column').removeClass('display_none');
     $(this).removeClass('column_button').addClass('grid_button');
   });
 
   function vertically_center_images() {
-    var images_in_works_page = $('.portfolios .contains_image img').toArray();
+    var images_in_works_page = $('li.row .contains_image img').toArray();
     var images_in_works_page_length = images_in_works_page.length;
 
     for (var i=0; i<images_in_works_page_length; i++) {
