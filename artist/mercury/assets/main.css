@@ -193,7 +193,12 @@ h4 {
   clear: left;
 }
 
+.caption { 
+  margin: 11px 0; 
+}
+
 .caption p {
+  margin: 0;
   font-size: 11px;
   line-height: 14px;
   color: #666;
