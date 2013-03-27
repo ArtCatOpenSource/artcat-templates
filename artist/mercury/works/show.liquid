@@ -1,5 +1,5 @@
 <div class="left_side">
-  <h2><a href="{{ portfolio.page_url}} ">{{ portfolio.name | escape }}</a>{% if work.has_title? %} | {{ work.title }} {% endif %}</h2>
+  <h2><a href="{{ portfolio.page_url}} ">{{ portfolio.name | escape }}</a>{% if work.has_title? %} &raquo; {{ work.title }} {% endif %}</h2>
 
   {% if show_media %}
     {% if work.embed_code_html %}
