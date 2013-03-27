@@ -254,6 +254,15 @@ h4 {
   margin-left: 670px;
 }
 
+.client_index .image_area_full { 
+  margin-right: 0; width: 940px; 
+} 
+
+.client_index .image_area_full img { 
+  width: 100%; 
+}
+
+
 /* WORKS GRID
 ---------------------------------------------------------------------------*/
 

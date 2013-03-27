@@ -1,3 +1,16 @@
+{% if website.home_page_image_only? %}
+
+<div class="image_area_full">
+  {% if website.home_image %}
+    <a href="{{ website.home_image_link }}"><img src="{{ website.home_image.xlarge_url }}" alt="{{ website.home_image.caption | escape }}" /></a>
+    <div class="caption">
+      {{ website.home_image.caption | textilize }}
+    </div><!-- closes .caption -->
+  {% endif %}
+</div><!-- closes .image_area -->
+
+{% else %}
+
 <div class="image_area">
   {% if website.home_image %}
     <a href="{{ website.home_image_link }}"><img src="{{ website.home_image.large_url }}" alt="{{ website.home_image.caption | escape }}" /></a>
@@ -29,3 +42,5 @@
   {% endfor %}
 
 </div><!-- .body_copy -->
+
+{% endif %}
