@@ -72,7 +72,7 @@ td { vertical-align: top; }
 
     #header-container,#main, .footer-container {width:960px; margin:0 auto; position:relative;} /*Sets general site widths*/
     body {font-size:.8125rem; color:#333333;} /*Body color and size*/
-    #main {padding:.625rem 0 2rem 0; min-height:400px; }
+    #main {min-height: 400px; padding: 0.625rem 0 2rem; position: relative;}
 
     /*Breadcrumb*/
     #breadcrumb {font-size: .625rem; font-weight:bold; color:#333333; margin-bottom:.925rem;}
@@ -188,7 +188,7 @@ td { vertical-align: top; }
     .links p a {text-decoration: none;}
     .links p { padding: 0; margin: 4px 0;}
     .about { width: 60%; }
-    .contact-form { float: right; margin-top: -34px;}
+    .contact-form { position: absolute;right: 0; top: .625rem;}
     .contact-table { margin-top: 10px;}
     .contact-table label { padding-right: 10px; }
     .contact-table td { padding-top: 5px; }
