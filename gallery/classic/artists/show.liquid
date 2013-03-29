@@ -3,13 +3,13 @@
   {{ artist.description | textilize }}
 
   {% for file in artist.file_assets %}
-    <p><a target="_blank" href="{{ file.url }}">{{ file.name | escape }}</a></p>
+    <p><a target="_blank" href="{{ file.url }}">{{ file.name }}</a></p>
   {% endfor %}
 
   {% if exhibitions != empty %}
     <h2>Exhibitions</h2>
     {% for exhibition in exhibitions %}
-    <p><a href="{{ exhibition.page_url }}">{{ exhibition.title | escape }}
+    <p><a href="{{ exhibition.page_url }}">{{ exhibition.title }}
       ({{ exhibition.start_date || date:"%Y" }})</p>
     {% endfor %}
   {% endif %}
@@ -17,7 +17,7 @@
   {% if publications != empty %}
     <h2>Publications</h2>
     {% for publication in publications %}
-    <p class="publication"><a href="{{ publication.page_url }}">{{ publication.title | escape }}</a></p>
+    <p class="publication"><a href="{{ publication.page_url }}">{{ publication.title }}</a></p>
     {% endfor %}
   {% endif %}
 
@@ -25,7 +25,7 @@
     <h2>Selected Bibliography</h2>
     {% for press_item in press_items %}
     <p class="press">
-      <a href="{{ press_item.page_url }}">{{ press_item.title | escape }}{% if press_item.has_display_date? %}, {{ press_item.display_date }}{% endif %}</a>
+      <a href="{{ press_item.page_url }}">{{ press_item.title }}{% if press_item.has_display_date? %}, {{ press_item.display_date }}{% endif %}</a>
     </p>
     {% endfor %}
   {% endif %}
