@@ -27,7 +27,13 @@
     <![endif]-->
 
     <section id="header">
-      <h1><a href="/">{{ website_title }}</a></h1>
+      <h1>
+        {% if website.logo_url %}
+        <a href="/"><img src="{{ website.logo_url}}" alt="{{ website_title | escape }}" /></a>
+        {% else %}
+        <a href="/">{{ website_title }}</a>
+        {% endif %}
+      </h1>
       {% client_navigation %}
     </section>
 
