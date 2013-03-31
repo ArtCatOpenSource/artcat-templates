@@ -3,14 +3,26 @@
 
   {% if show_media %}
     {% if work.embed_code_html %}
-      {{ work.embed_code_html }}
+      {% if work.has_alternate_views? %}
+        {{ work.embed_code_html_large }}
+      {% else %}
+        {{ work.embed_code_html }}
+      {% endif %}
     {% elsif work.audio? %}
     <a href="{{ work.media.audio_url }}" class="audio-link">audio file</a>
     {% else %}
-    {% video_embed('large') %}
+      {% if work.has_alternate_views? %}
+        {% video_embed('large') %}
+      {% else %}
+        {% video_embed('xlarge') %}
+      {% endif %}
     {% endif %}
   {% else %}
-  <img src="{{ image.large_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
+    {% if work.has_alternate_views? %}
+      <img src="{{ image.large_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
+    {% else %}
+      <img src="{{ image.xlarge_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
+    {% endif %}
 
     <div class="caption">
 
