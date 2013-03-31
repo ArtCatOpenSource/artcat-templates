@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(window).load(function() {
 
   $('.works_show .grid_column .contains_image').filter(':odd').addClass('odd');
 
