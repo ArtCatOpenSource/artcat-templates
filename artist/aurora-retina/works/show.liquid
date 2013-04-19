@@ -15,8 +15,8 @@
         <div class="inner-center">
 
           {% if show_media %}
-            {% if work.embed_code_html %}
-              {{ work.embed_code_html }}
+            {% if work.embed_code_html_xlarge %}
+              {{ work.embed_code_html_xlarge }}
             {% elsif work.audio? %}
             <a href="{{ work.media.audio_url }}" class="audio-link">audio file</a>
             {% else %}

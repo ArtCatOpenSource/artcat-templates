@@ -50,8 +50,8 @@
 <h1><a title="Return to {{ private_room.name | escape }}" href="{{ private_room.page_url }}">{{ private_room.name | escape }}</a></h1>
 
 {% if show_media %}
-  {% if work.embed_code_html %}
-    {{ work.embed_code_html }}
+  {% if work.embed_code_html_large %}
+    {{ work.embed_code_html_large }}
   {% elsif work.audio? %}
   <a href="{{ work.media.audio_url }}" class="audio-link">audio file</a>
   {% else %}

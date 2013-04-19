@@ -38,8 +38,8 @@
 <h1 class="artist-list"><a title="Return to {{ artist.name | escape }}: {{ collection.title | escape }}" href="{{ collection.page_url }}">{{ artist.name | escape }}: {{ collection.title | escape }}</a></h1>
 
 {% if show_media %}
-  {% if work.embed_code_html %}
-    {{ work.embed_code_html }}
+  {% if work.embed_code_html_large %}
+    {{ work.embed_code_html_large }}
   {% elsif work.audio? %}
   <a href="{{ work.media.audio_url }}" class="audio-link">audio file</a>
   {% else %}

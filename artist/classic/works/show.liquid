@@ -2,11 +2,11 @@
 
 <div id="SecondaryColumn">
 
-  {% if work.has_media? or work.embed_code_html %}
+  {% if work.has_media? or work.embed_code_html_large %}
 <p class="work-data">
   {% if work.audio? %}
     <a href="{{ work.page_url }}">audio file</a>
-  {% elsif work.embed_code_html %}
+  {% elsif work.embed_code_html_large %}
     <a href="{{ work.page_url }}"><img class="limit-thumb120" src="{{ work.embed_thumb_url }}" alt="video" /></a><p>video</p>
   {% else %}
     <a href="{{ work.page_url }}"><img class="limit-thumb120" src="{{ media_thumb_url }}" alt="video" /></a><p>video</p>
@@ -45,8 +45,8 @@
 <div id="PrimaryColumn">
 
 {% if show_media %}
-  {% if work.embed_code_html %}
-    {{ work.embed_code_html }}
+  {% if work.embed_code_html_large %}
+    {{ work.embed_code_html_large }}
   {% elsif work.audio? %}
   <a href="{{ work.media.audio_url }}" class="audio-link">audio file</a>
   {% else %}
