@@ -2,7 +2,7 @@
 
 <div id="SecondaryColumn">
 
-  {% if work.has_media? or work.embed_code_html_large %}
+  {% if work.has_media_or_embed? %}
 <p class="work-data">
   {% if work.audio? %}
     <a href="{{ work.page_url }}">audio file</a>

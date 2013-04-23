@@ -54,14 +54,14 @@
           
       <h4>Alternate Views</h4>
       <ul>
-          {% if work.has_media? or work.embed_code_html %}
+          {% if work.has_media_or_embed? %}
           <li>
           {% if work.audio? %}
             <a href="{{ work.page_url }}">audio file</a>
           {% elsif work.embed_code_html %}
             <a href="{{ work.page_url }}"><img style="max-width:140px" class="limit-thumb140" src="{{ work.embed_thumb_url }}" alt="video" /></a><p>video</p>
           {% else %}
-            <a href="{{ work.page_url }}"><img src="{{ media_thumb_url }}" alt="video" /></a><p>video</p>
+            <a href="{{ work.page_url }}"><img class="limit-thumb140" src="{{ work.embed_thumb_url }}" alt="video" /></a><p>video</p>
           {% endif %}
           </li>
         {% endif %}
