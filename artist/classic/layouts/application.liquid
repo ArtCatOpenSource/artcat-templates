@@ -14,6 +14,12 @@
     <meta name="description" content="{{ website_description | escape }}" />
     <meta name="keywords" content="{{ website_keywords | escape }}" />
     {% client_css %}
+    {% if theme_customize %}
+    <style>
+    body { background-color: {{ theme_customize.background_color }} }
+    .SiteName a { color: {{ theme_customize.title_color }} }
+    </style>
+    {% endif %}
   </head>
   <body>
     <div id="Navigation"> 

@@ -1,7 +1,15 @@
 <div id="SecondaryColumn">
 
-{% if work.has_media? %}
-<p class="work-data"><a href="{{ private_room.page_url }}/{{ work.fragment_url }}">Play Media</a></p>
+{% if work.has_media_or_embed? %}
+<p class="work-data">
+  {% if work.audio? %}
+    <a href="{{ private_room.page_url }}/{{ work.fragment_url }}">audio file</a>
+  {% elsif work.embed_code_html_large %}
+    <a href="{{ private_room.page_url }}/{{ work.fragment_url }}"><img class="limit-thumb140" src="{{ work.embed_thumb_url }}" alt="video" /></a><p>video</p>
+  {% else %}
+    <a href="{{ private_room.page_url }}/{{ work.fragment_url }}"><img class="limit-thumb140" src="{{ media_thumb_url }}" alt="video" /></a><p>video</p>
+  {% endif %}
+</p>
 <br/>
 {% endif %}
 

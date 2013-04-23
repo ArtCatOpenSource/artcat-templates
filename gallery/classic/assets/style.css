@@ -352,6 +352,11 @@ ul.press li {
   padding-bottom: 5px;
 }
 
+.limit-thumb140 { 
+	max-width: 140px; 
+	max-height: 140px;
+}
+
 .contact-table {
 	margin-top: 20px;
 }

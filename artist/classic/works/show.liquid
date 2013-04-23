@@ -7,9 +7,9 @@
   {% if work.audio? %}
     <a href="{{ work.page_url }}">audio file</a>
   {% elsif work.embed_code_html_large %}
-    <a href="{{ work.page_url }}"><img class="limit-thumb120" src="{{ work.embed_thumb_url }}" alt="video" /></a><p>video</p>
+    <a href="{{ work.page_url }}"><img class="limit-thumb140" src="{{ work.embed_thumb_url }}" alt="video" /></a><p>video</p>
   {% else %}
-    <a href="{{ work.page_url }}"><img class="limit-thumb120" src="{{ media_thumb_url }}" alt="video" /></a><p>video</p>
+    <a href="{{ work.page_url }}"><img class="limit-thumb140" src="{{ media_thumb_url }}" alt="video" /></a><p>video</p>
   {% endif %}
 </p>
 <br/>
