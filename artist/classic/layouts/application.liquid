@@ -18,6 +18,10 @@
     <style>
     body { background-color: {{ theme_customize.background_color }} }
     .SiteName a { color: {{ theme_customize.title_color }} }
+    ul.NavList li { border-left: 1px solid {{ theme_customize.background_color }} }
+    ul.NavList li.CurrentPosition { border-left: 1px solid {{ theme_customize.background_color }} }
+    img { border: 2px solid {{ theme_customize.background_color }} }
+    a:hover img { border: 2px solid {{ theme_customize.background_color }} 
     </style>
     {% endif %}
   </head>
