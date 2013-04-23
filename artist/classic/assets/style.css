@@ -15,7 +15,7 @@ a:hover {
 	text-decoration: none;
 }
 body {
-	background: #FFFFFF;
+	background-color: #FFFFFF;
 	margin: 0px;
 	padding: 0px;
 	left: 0px;
@@ -26,7 +26,6 @@ body {
 	color: #333;
 }
 #Navigation {
-	background: #FFFFFF;
 	margin: 0px;
 	padding: 12px 0px;
 	width: 100%;
@@ -34,7 +33,6 @@ body {
 	clear: both;
 }
 #Content {
-	background: #FFFFFF;
 	padding: 0px;
 	width: 960px;
         min-height: 500px;
@@ -79,7 +77,6 @@ body {
 	clear: none;
 }
 #ContactForm {
-	background: #CCCCCC;
 	margin: 0;
 	padding: 10px;
 	width: 290px;
@@ -90,7 +87,6 @@ body {
 	color: #333333;
 }
 #Credits {
-	background: #FFFFFF;
 	margin: 20px 0px 0px;
 	padding: 0px 0px 10px 0px;
 	width: 100%;
