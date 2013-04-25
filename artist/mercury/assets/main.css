@@ -496,6 +496,10 @@ h4 {
   background: url(../img/sprite.png) -18px -18px no-repeat;
 }
 
+.limit-thumb140 { max-width: 140px; max-height: 140px;}
+.limit-thumb90 { max-width: 90px; max-height: 90px;}
+
+
 /* TEXT PAGE -- GENERAL
 ---------------------------------------------------------------------------*/
 

@@ -72,6 +72,18 @@
   {% if work.has_alternate_views? %}
   <div class="grid_column">
     <ul>
+      {% if work.has_media_or_embed? %}
+      <li>
+      {% if work.audio? %}
+        <a href="{{ work.page_url }}">audio file</a>
+      {% elsif work.embed_code_html %}
+        <a class="contains_image" href="{{ work.page_url }}"><img class="limit-thumb90" src="{{ work.embed_thumb_url }}" alt="video" /></a>
+      {% else %}
+        <a class="contains_image" href="{{ work.page_url }}"><img class="limit-thumb90" src="{{ work.embed_thumb_url }}" alt="video" /></a>
+      {% endif %}
+      </li>
+      {% endif %}
+
       {% for image in work.images %}
       <li><a class="contains_image" href="{{ work.page_url}}/{{forloop.index}}"><img src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" /></a></li>
       {% endfor %}
