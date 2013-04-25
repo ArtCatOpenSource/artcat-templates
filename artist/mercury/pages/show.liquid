@@ -9,37 +9,44 @@
 {% if page.show_contact_form %}
 <div class="generic_widget">
 
-  {% if contact_error %}
-  <p class="error">You must fill out the entire form with valid values</p>
+  {% if thanks %}
+  <p class="thanks">Thank you for your message.</p>
+  {% else %}
+
+    <h3>Contact {{ @website.contact_name }}</h3>
+
+    {% if contact_error %}
+    <p class="error">You must fill out the entire form with valid values</p>
+    {% endif %}
+
+    <form class="contact_widget" method="post">
+      <ul>
+
+        <li class="name_contact">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="First and Last Name" value="">
+        </li>
+
+        <li class="email_contact">
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" placeholder="name@example.com" value="">
+        </li>
+
+        <li class="subject_contact">
+          <label for="subject">Subject</label>
+          <input type="text" name="subject" id="subject" value="">
+        </li>
+
+        <li class="message_contact">
+          <label for="message">Message</label>
+          <textarea type="textarea" rows="4" name="message" id="message" value=""></textarea>
+        </li>
+
+      </ul>
+
+      <input id="send_button_contact_widget" name="commit" type="submit" value="Send" />
+    </form><!-- closes .contact_widget -->
   {% endif %}
-
-  <form class="contact_widget" method="post">
-    <ul>
-
-      <li class="name_contact">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" placeholder="First and Last Name" value="">
-      </li>
-
-      <li class="email_contact">
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email" placeholder="name@example.com" value="">
-      </li>
-
-      <li class="subject_contact">
-        <label for="subject">Subject</label>
-        <input type="text" name="subject" id="subject" value="">
-      </li>
-
-      <li class="message_contact">
-        <label for="message">Message</label>
-        <textarea type="textarea" rows="4" name="message" id="message" value=""></textarea>
-      </li>
-
-    </ul>
-
-    <input id="send_button_contact_widget" name="commit" type="submit" value="Send" />
-  </form><!-- closes .contact_widget -->
 </div>
 {% endif %} 
 </div>

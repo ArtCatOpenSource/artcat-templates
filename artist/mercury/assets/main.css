@@ -159,6 +159,7 @@ h4 {
 
 #header #navigation h2 {
   margin: 0;
+  text-transform: lowercase;
 }
 
 #header #navigation {
@@ -498,6 +499,12 @@ h4 {
 /* TEXT PAGE -- GENERAL
 ---------------------------------------------------------------------------*/
 
+.pages {
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
 .pages .left_column {
   width: 540px;
   float: left;
@@ -509,13 +516,11 @@ h4 {
   float: left;
 }
 
-.pages {
-  text-align: left;
-  font-size: 14px;
-  color: #333;
+.pages .right_column h3 {
+  margin-bottom: 1em;
 }
 
-.pages .error {
+.pages .error, .pages .thanks {
   color: red;
   font-size: 12px;
 }
