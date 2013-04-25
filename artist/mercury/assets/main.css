@@ -344,20 +344,23 @@ h4 {
   font-size: 14px;
 }
 
-/* Work Show
+/* Work / Image Show
 ---------------------------------------------------------------------------*/
 
-.works_show h2 {
+.works_show h2,
+.images_show h2 {
   margin: -10px 0 30px 0;
 }
 
-.works_show .left_side {
+.works_show .left_side,
+.images_show .left_side {
   width: 620px;
   float: left;
   margin: 0 100px 0 0;
 }
 
-.works_show .caption {
+.works_show .caption,
+.images_show .caption {
   width: 540px;
 }
 
@@ -370,35 +373,42 @@ h4 {
   margin-bottom: 10px;
 }
 
-.works_show .right_side ul {
+.works_show .right_side ul,
+.images_show .right_side ul {
   padding: 0;
   margin: 0;
 }
 
-.works_show .right_side li {
+.works_show .right_side li,
+.images_show .right_side li {
   list-style: none;
 }
 
-.works_show .right_side .controls {
+.works_show .right_side .controls,
+.images_show .right_side .controls {
   overflow: hidden;
 }
 
-.works_show .right_side .controls li {
+.works_show .right_side .controls li,
+.images_show .right_side .controls li {
   width: 100px;
   float: left;
 }
 
-.works_show .right_side .controls li {
+.works_show .right_side .controls li,
+.images_show .right_side .controls li {
   color: #ccc;
   font-size: 14px;
   font-weight: bold;
 }
 
-.works_show .right_side li a {
+.works_show .right_side li a,
+.images_show .right_side li a {
   font-size: 14px;
 }
 
-.works_show .right_side li.next {
+.works_show .right_side li.next,
+.images_show .right_side li.next {
   text-align: right;
 }
 
@@ -419,7 +429,8 @@ h4 {
   background: url(../img/sprite.png) -18px -1px no-repeat;
 }
 
-.works_show .right_side {
+.works_show .right_side,
+.images_show .right_side {
   width: 220px;
   float: left;
   margin-top: -3px;
