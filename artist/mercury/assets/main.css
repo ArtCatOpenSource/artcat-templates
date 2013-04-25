@@ -269,38 +269,45 @@ h4 {
 }
 
 
-/* WORKS GRID
+/* WORKS OR IMAGES GRID
 ---------------------------------------------------------------------------*/
 
-.portfolios h2 {
+.portfolios h2,
+.image_sets h2 {
   margin-bottom: 30px;
 }
 
-.portfolios ul {
+.portfolios ul,
+.image_sets ul {
   padding: 0;
 }
 
-.portfolios ul ul {
+.portfolios ul ul, 
+.image_sets ul ul {
   overflow: hidden;
   margin-bottom: 40px;
 }
 
-.portfolios #main li {
+.portfolios #main li,
+.image_sets #main li {
   list-style: none;
 }
 
-.portfolios #main li li {
+.portfolios #main li li,
+.image_sets #main li li {
   list-style: none;
   float: left;
   margin: 0 25px 0 5px;
   width: 210px;
 }
 
-.portfolios #main li li.last_in_row {
+.portfolios #main li li.last_in_row,
+.image_sets #main li li.last_in_row {
   margin-right: 0;
 }
 
-.portfolios #main a.contains_image {
+.portfolios #main a.contains_image,
+.image_sets #main a.contains_image {
   background: #f1f1f1;
   width: 210px;
   height: 202px;
@@ -310,11 +317,13 @@ h4 {
   margin-bottom: 12px;
 }
 
-.portfolios #main a.contains_image:hover {
+.portfolios #main a.contains_image:hover,
+.image_sets #main a.contains_image:hover {
   border-bottom-color: #09f;
 }
 
-.portfolios a img {
+.portfolios a img, 
+.image_sets a img {
   max-width: 202px;
   max-height: 202px;
   overflow: hidden;
@@ -323,13 +332,15 @@ h4 {
   vertical-align: middle;
 }
 
-.portfolios p {
+.portfolios p,
+.image_sets p {
   margin: 0;
   font-size: 12px;
   line-height: 16px;
 }
 
-.portfolios #main p a {
+.portfolios #main p a,
+.image_sets #main p a {
   font-size: 14px;
 }
 
