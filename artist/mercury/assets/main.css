@@ -121,7 +121,7 @@ a:hover {
   text-decoration: none;
 }
 
-a.on_state {
+a.selected {
   color: #09f;
 }
 
@@ -182,7 +182,7 @@ h4 {
   padding: 4px 0 0 10px;
 }
 
-#header #navigation li a.on_state {
+#header #navigation li a.selected {
   color: #09f;
 }
 
