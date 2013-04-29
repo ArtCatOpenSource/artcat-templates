@@ -1,0 +1,14 @@
+<h3>{{ press_item.title }}</h3>
+  
+{% if press_item.has_display_date? %}
+<p class="press_item_date">{{ press_item.display_date }}<p>
+{% endif %}
+
+{{ press_item.body | textilize }}
+
+{% unless portfolios == empty %}
+  <h3>Related:</h3>
+  {% for portfolio in portfolios %}
+    <p><a href="{{ portfolio.page_url }}">{{ portfolio.name }}</a></p>
+  {% endfor %}
+{% endunless %}
