@@ -16,7 +16,7 @@
     {% client_css %}
     {% if theme_customize %}
     <style>
-    body { 
+    body, p, p.thumb-caption { 
       color: {{ theme_customize.body_color }}; 
       background-color: {{ theme_customize.background_color }};
       font: {{ theme_customize.body_size }}px {{ theme_customize.body_font }}
@@ -29,7 +29,10 @@
     ul.NavList li.CurrentPosition { border-left: 1px solid {{ theme_customize.background_color }} }
     ul.NavList li.CurrentPosition a { color: {{ theme_customize.active_nav_color }} }
     img { border: 2px solid {{ theme_customize.background_color }} }
-    a:hover img { border: 2px solid {{ theme_customize.background_color }} 
+    a:hover img { border: 2px solid {{ theme_customize.background_color }} }
+    h2, h2.resume { font: bold {{ theme_customize.header_size }}px {{ theme_customize.header_font }}; color: {{ theme_customize.header_color }} }
+    a:link, a:visited, a:active { color: {{ theme_customize.link_color }} }
+    a:hover { color: {{ theme_customize.link_hover_color }} }
     </style>
     {% endif %}
   </head>
