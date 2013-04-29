@@ -19,6 +19,26 @@
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="alternate" type="application/rss+xml"  title="RSS"  href="/feed.rss" />
   {% client_css %}
+  {% if theme_customize %}
+  <style>
+  body {
+    color: {{ theme_customize.body_color }}; 
+    background-color: {{ theme_customize.background_color }};
+    font: {{ theme_customize.body_size }}px {{ theme_customize.body_font }}
+  }
+  #breadcrumb { color: {{ theme_customize.body_color }} }
+  h1.logo { font: bold {{ theme_customize.title_size }}px {{ theme_customize.title_font }};}
+  h1.logo a { color: {{ theme_customize.title_color }} }
+  ul#navigation li a, ul#navigation li a:visited { 
+    color: {{ theme_customize.nav_link_color }}; 
+    font: normal  {{ theme_customize.nav_link_size }}px {{ theme_customize.nav_link_font }} 
+  }
+  ul#navigation li a.selected, ul#navigation li a:visited.selected { color: {{ theme_customize.active_nav_color }} }
+  h3, #static h3 { font: bold {{ theme_customize.header_size }}px {{ theme_customize.header_font }}; color: {{ theme_customize.header_color }} }
+  a:link, a:visited, a:active { color: {{ theme_customize.link_color }} }
+  a:hover { color: {{ theme_customize.link_hover_color }} }
+  </style>
+  {% endif %}
 </head>
 <body class="{{ body_class }}">
 	  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->

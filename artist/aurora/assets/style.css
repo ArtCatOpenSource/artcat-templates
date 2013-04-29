@@ -209,10 +209,10 @@ td { vertical-align: top; }
     #container {background-color:#ffffff;} 
 
     /*Header styles*/
-    header {background-color:#ffffff; border-bottom:1px solid black;} 
+    header {border-bottom:1px solid black;} 
     
     /*Footer styles*/
-    footer {background-color:#ffffff; border-top:1px solid black;} 
+    footer {border-top:1px solid black;} 
     
     /*Link color*/
     a {color:#750000;} 
