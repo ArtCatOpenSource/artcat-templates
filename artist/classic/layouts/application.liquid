@@ -21,6 +21,8 @@
       background-color: {{ theme_customize.background_color }};
       font: {{ theme_customize.body_size }}px {{ theme_customize.body_font }}
     }
+    a:link, a:visited, a:active { color: {{ theme_customize.link_color }} }
+    a:hover { color: {{ theme_customize.link_hover_color }} }
     .SiteName { font: normal {{ theme_customize.title_size }}px {{ theme_customize.title_font }};}
     .SiteName a { color: {{ theme_customize.title_color }} }
     ul.NavList { padding-top: {{ theme_customize.title_size | minus: 14}}px; }
@@ -31,8 +33,6 @@
     img { border: 2px solid {{ theme_customize.background_color }} }
     a:hover img { border: 2px solid {{ theme_customize.background_color }} }
     h2, h2.resume { font: bold {{ theme_customize.header_size }}px {{ theme_customize.header_font }}; color: {{ theme_customize.header_color }} }
-    a:link, a:visited, a:active { color: {{ theme_customize.link_color }} }
-    a:hover { color: {{ theme_customize.link_hover_color }} }
     </style>
     {% endif %}
   </head>
