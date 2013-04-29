@@ -22,9 +22,10 @@ body {
 	top: 0px;
 	right: 0px;
 	bottom: 20px;
+	font: normal 11px/15px Myriad, Verdana, Arial, Helvetica, sans-serif;
+	color: #333;
 }
 #Navigation {
-	background: #FFFFFF;
 	margin: 0px;
 	padding: 12px 0px;
 	width: 100%;
@@ -32,7 +33,6 @@ body {
 	clear: both;
 }
 #Content {
-	background: #FFFFFF;
 	padding: 0px;
   width: 960px;
   min-height: 500px;
@@ -43,7 +43,6 @@ body {
 }
 #ArtColumn {
 	width: 490px;
-	color: #666666;
 	padding: 0px;
 	margin: 10px 0px 0px 10px;
 	float: left;
@@ -51,14 +50,12 @@ body {
 }
 #PrimaryColumn {
 	width: 610px;
-	color: #666666;
 	padding: 0px;
 	margin: 10px 0px 0px 10px;
 	float: left;
 	clear: none;
 }
 #SecondaryColumn {
-	color: #666666;
 	padding: 5px 0 0 0;
 	margin: 10px 0px 0px 10px;
 	width: 290px;
@@ -67,13 +64,11 @@ body {
 }
 #FullColumn {
 	width: 930px;
-	color: #666666;
 	padding: 0px;
 	margin: 10px 0px 0px 10px;
 	clear: none;
 }
 #ContactForm {
-	background: #CCCCCC;
 	margin: 0;
 	padding: 5px 0 0 0;
 	width: 290px;
@@ -84,7 +79,6 @@ body {
 	color: #333333;
 }
 #Credits {
-	background: #FFFFFF;
 	margin: 20px 0px 0px;
 	padding: 0px 0px 10px 0px;
 	width: 100%;
