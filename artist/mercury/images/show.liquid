@@ -1,0 +1,35 @@
+<div class="left_side">
+  <h2><a href="{{ image_set.page_url}} ">{{ image_set.name }}</a>{% if image.has_caption? %} &raquo; {{ image.caption }} {% endif %}</h2>
+
+   <img src="{{ image.xlarge_url }}" alt="{{ image.caption | escape }}" />
+
+  <div class="caption">
+    {% if image.caption %}
+    <p>{{ image.caption | textlize_inline }}</p>
+    {% endif %}
+  </div>
+
+</div><!-- .left_side -->
+
+<div class="right_side">
+  <div class="controls">
+    <ul>
+      <li class="prev">
+        {% if prev %}
+        <a href="{{ prev }}">&larr; Prev</a>
+        {% else %}
+        &larr; Prev
+        {% endif %}
+      </li>
+      <li class="next">
+        {% if next %}
+        <a href="{{ next }}">Next &rarr;</a>
+        {% else %}
+        Next &rarr;
+        {% endif %}
+      </li>
+    </ul>
+  </div><!-- .controls -->
+
+</div><!-- .right_side -->
+

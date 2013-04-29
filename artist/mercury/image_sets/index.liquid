@@ -1,0 +1,17 @@
+<ul class="image_grid">
+  {% for image_set in image_sets %}
+    {% assign column = forloop.index | modulo:4 %}
+    {% if column == 1 %}
+     <li class="row">
+       <ul>
+    {% endif %}
+         <li{% if column == 0 %} class="last_in_row"{% endif %}>
+           <a class="contains_image" href="{{ image_set.page_url }}"><img src="{{ image_set.main_thumb_url }}" alt="{{ image_set.name | escape}}" /></a>
+           <p><a href="{{ image_set.page_url }}">{{ image_set.name }}</a></p>
+         </li>
+    {% if column == 0 %}
+      </ul>
+     </li> <!-- .row -->
+    {% endif %}
+  {% endfor %}
+</ul>

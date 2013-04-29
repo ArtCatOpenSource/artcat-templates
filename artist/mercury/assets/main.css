@@ -121,7 +121,7 @@ a:hover {
   text-decoration: none;
 }
 
-a.on_state {
+a.selected {
   color: #09f;
 }
 
@@ -159,6 +159,7 @@ h4 {
 
 #header #navigation h2 {
   margin: 0;
+  text-transform: lowercase;
 }
 
 #header #navigation {
@@ -181,7 +182,7 @@ h4 {
   padding: 4px 0 0 10px;
 }
 
-#header #navigation li a.on_state {
+#header #navigation li a.selected {
   color: #09f;
 }
 
@@ -268,38 +269,45 @@ h4 {
 }
 
 
-/* WORKS GRID
+/* WORKS OR IMAGES GRID
 ---------------------------------------------------------------------------*/
 
-.portfolios h2 {
+.portfolios h2,
+.image_sets h2 {
   margin-bottom: 30px;
 }
 
-.portfolios ul {
+.portfolios ul,
+.image_sets ul {
   padding: 0;
 }
 
-.portfolios ul ul {
+.portfolios ul ul, 
+.image_sets ul ul {
   overflow: hidden;
   margin-bottom: 40px;
 }
 
-.portfolios #main li {
+.portfolios #main li,
+.image_sets #main li {
   list-style: none;
 }
 
-.portfolios #main li li {
+.portfolios #main li li,
+.image_sets #main li li {
   list-style: none;
   float: left;
   margin: 0 25px 0 5px;
   width: 210px;
 }
 
-.portfolios #main li li.last_in_row {
+.portfolios #main li li.last_in_row,
+.image_sets #main li li.last_in_row {
   margin-right: 0;
 }
 
-.portfolios #main a.contains_image {
+.portfolios #main a.contains_image,
+.image_sets #main a.contains_image {
   background: #f1f1f1;
   width: 210px;
   height: 202px;
@@ -309,11 +317,13 @@ h4 {
   margin-bottom: 12px;
 }
 
-.portfolios #main a.contains_image:hover {
+.portfolios #main a.contains_image:hover,
+.image_sets #main a.contains_image:hover {
   border-bottom-color: #09f;
 }
 
-.portfolios a img {
+.portfolios a img, 
+.image_sets a img {
   max-width: 202px;
   max-height: 202px;
   overflow: hidden;
@@ -322,30 +332,35 @@ h4 {
   vertical-align: middle;
 }
 
-.portfolios p {
+.portfolios p,
+.image_sets p {
   margin: 0;
   font-size: 12px;
   line-height: 16px;
 }
 
-.portfolios #main p a {
+.portfolios #main p a,
+.image_sets #main p a {
   font-size: 14px;
 }
 
-/* Work Show
+/* Work / Image Show
 ---------------------------------------------------------------------------*/
 
-.works_show h2 {
+.works_show h2,
+.images_show h2 {
   margin: -10px 0 30px 0;
 }
 
-.works_show .left_side {
+.works_show .left_side,
+.images_show .left_side {
   width: 620px;
   float: left;
   margin: 0 100px 0 0;
 }
 
-.works_show .caption {
+.works_show .caption,
+.images_show .caption {
   width: 540px;
 }
 
@@ -358,35 +373,42 @@ h4 {
   margin-bottom: 10px;
 }
 
-.works_show .right_side ul {
+.works_show .right_side ul,
+.images_show .right_side ul {
   padding: 0;
   margin: 0;
 }
 
-.works_show .right_side li {
+.works_show .right_side li,
+.images_show .right_side li {
   list-style: none;
 }
 
-.works_show .right_side .controls {
+.works_show .right_side .controls,
+.images_show .right_side .controls {
   overflow: hidden;
 }
 
-.works_show .right_side .controls li {
+.works_show .right_side .controls li,
+.images_show .right_side .controls li {
   width: 100px;
   float: left;
 }
 
-.works_show .right_side .controls li {
+.works_show .right_side .controls li,
+.images_show .right_side .controls li {
   color: #ccc;
   font-size: 14px;
   font-weight: bold;
 }
 
-.works_show .right_side li a {
+.works_show .right_side li a,
+.images_show .right_side li a {
   font-size: 14px;
 }
 
-.works_show .right_side li.next {
+.works_show .right_side li.next,
+.images_show .right_side li.next {
   text-align: right;
 }
 
@@ -407,7 +429,8 @@ h4 {
   background: url(../img/sprite.png) -18px -1px no-repeat;
 }
 
-.works_show .right_side {
+.works_show .right_side,
+.images_show .right_side {
   width: 220px;
   float: left;
   margin-top: -3px;
@@ -495,6 +518,46 @@ h4 {
   background: url(../img/sprite.png) -18px -18px no-repeat;
 }
 
+.limit-thumb140 { max-width: 140px; max-height: 140px;}
+.limit-thumb90 { max-width: 90px; max-height: 90px;}
+
+
+/* TEXT PAGE -- GENERAL
+---------------------------------------------------------------------------*/
+
+.pages {
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+.pages .left_column {
+  width: 540px;
+  float: left;
+  margin: 0 100px 0 0;
+}
+
+.pages .right_column {
+  width: 300px;
+  float: left;
+}
+
+.pages .right_column h3 {
+  margin-bottom: 1em;
+}
+
+.pages .error, .pages .thanks {
+  color: red;
+  font-size: 12px;
+}
+
+.links h3 { margin-bottom: 0.5em; }
+.links p {
+  margin: 0 0 0.5em 1em;
+}
+
+.press_items p { margin-top: 0; margin-bottom: 0.6em; }
+
 
 /* TEXT PAGE -- RESUME
 ---------------------------------------------------------------------------*/
@@ -513,6 +576,10 @@ h4 {
 /*  background: red;*/
 }
 
+.resume .right_column p.file {
+  margin-top: 0;
+}
+
 .resume {
   text-align: left;
   font-size: 14px;
@@ -520,7 +587,7 @@ h4 {
 }
 
 .resume table {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .resume table a {
@@ -554,66 +621,90 @@ h4 {
   font-weight: bold;
 }
 
-/* MAIL WIDGET
+/* MAIL WIDGET / CONTACT WIDGET
 ---------------------------------------------------------------------------*/
 
-.mail_widget {
-  position: relative;
-  height: 50px;
-  margin-bottom: 70px;
+.mail_widget,
+.contact_widget {
+  margin-bottom: 60px;
 }
 
-.mail_widget_wrapper p {
+.mail_widget_wrapper p,
+.generic_widget p {
   font-size: 14px;
   margin: 0 0 18px 0;
 }
 
-.mail_widget_wrapper h3 {
+.mail_widget_wrapper h3,
+.generic_widget h3 {
   margin: 0 0 5px 0;
 }
 
-.mail_widget_wrapper ul {
+.mail_widget_wrapper ul,
+.generic_widget ul {
   margin: 0;
   padding: 0;
 }
 
-.mail_widget_wrapper li {
+.mail_widget_wrapper li,
+.generic_widget li {
   list-style: none;
   font-weight: bold;
   font-size: 14px;
+  margin-bottom: 14px;
+  clear: left;
 }
 
-.mail_widget_wrapper li label {
-  position: absolute;
-  top: 0;
-  left: 10px;
-  z-index: 10;
-  line-height: 28px;
+.mail_widget_wrapper li label,
+.generic_widget li label {
+  line-height: 30px;
+  width: 65px;
+  margin-right: 15px;
+  display: block;
+  float: left;
 }
 
-.mail_widget_wrapper li input {
-  position: absolute;
-  padding: 0 10px;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  width: 185px;
-  height: 24px;
-  border: 2px solid #e1e1e1;
+.mail_widget_wrapper li.error label,
+.generic_widget li.error label {
+  color: red;
 }
 
-.mail_widget_wrapper li.email {
-  position: absolute;
-  top: 40px;
-  left: 0;
+.mail_widget_wrapper li input,
+.generic_widget li input,
+.generic_widget li textarea {
+  width: 204px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 5px;
+  font-size: 13px;
+  border: 1px solid #e1e1e1;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 
-.mail_widget_wrapper #send_button {
-  position: absolute;
-  top: 40px;
-  left: 210px;
-  margin-left: 8px;
-  height: 28px;
+.mail_widget_wrapper li.error input,
+.generic_widget li.error input,
+.generic_widget li.error textarea {
+  border: 2px solid red;
+}
+
+.generic_widget li textarea {
+  line-height: 18px;
+}
+
+.contact_widget #message {
+  min-height: 140px;
+} 
+
+.mail_widget_wrapper #send_button,
+.generic_widget #send_button_contact_widget {
+  position: relative;
+/*  top: 40px;
+  left: 210px;*/
+  margin-left: 80px;
+  height: 30px;
+  width: 80px;
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   border: 1px solid white;
   -moz-border-radius: 5px;
@@ -631,7 +722,6 @@ h4 {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
   border: 1px solid #0058a4;
 }
-
 
 /* GENERIC WIDGET
 ---------------------------------------------------------------------------*/

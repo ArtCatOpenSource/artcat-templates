@@ -28,7 +28,7 @@
 
 <div class="right_column">
   {% for file in resume.file_assets %}
-  <p><a href="{{ file.url }}">{{ file.name }}</a></p>
+  <p class="file"><a href="{{ file.url }}">{{ file.name }}</a></p>
   {% endfor %}
 
    <div class="resume_head">{{ resume.head | textilize }}</div>
