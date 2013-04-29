@@ -1,0 +1,9 @@
+{% for category in link_categories %}   
+  <h3>{{ category.name }}</h3>
+  {% for link in category.links %}
+  <p><a href="{{ link.url | escape }}">{{ link.name }}</a></p>
+  {% endfor %}
+{% endfor %}
+
+
+      

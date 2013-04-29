@@ -551,6 +551,11 @@ h4 {
   font-size: 12px;
 }
 
+.links h3 { margin-bottom: 0.5em; }
+.links p {
+  margin: 0 0 0.5em 1em;
+}
+
 
 
 /* TEXT PAGE -- RESUME
