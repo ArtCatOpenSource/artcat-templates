@@ -20,6 +20,32 @@
   <link rel="alternate" type="application/rss+xml"  title="RSS"  href="/feed.rss" />
   <script src="http://assets-p.artcat.com/modernizr-2.6.2.min.js" type="text/javascript"></script>
   {% client_css %}
+  {% if theme_customize %}
+  <style>
+  body {
+      color: {{ theme_customize.body_color }}; 
+      background-color: {{ theme_customize.background_color }};
+      font: {{ theme_customize.body_size }}px {{ theme_customize.body_font }}
+    }
+    p, .resume td, .resume td.date { 
+      color: {{ theme_customize.body_color }};
+      font: {{ theme_customize.body_size }}px {{ theme_customize.body_font }}
+    }
+    #header #navigation li a { border-left: 1px solid {{ theme_customize.background_color }} }
+    #breadcrumb { color: {{ theme_customize.body_color }} }
+    #header h1 { font: bold {{ theme_customize.title_size }}px {{ theme_customize.title_font }};}
+    #header h1 a { color: {{ theme_customize.title_color }} }
+    #header ul#navigation li a, #header ul#navigation li a:visited { 
+      color: {{ theme_customize.nav_link_color }}; 
+      font: normal  {{ theme_customize.nav_link_size }}px {{ theme_customize.nav_link_font }} 
+    }
+    #header ul#navigation li a.selected, #header ul#navigation li a:visited.selected { color: {{ theme_customize.active_nav_color }} }
+    h3, .generic_widget h3, .resume th { font: bold {{ theme_customize.header_size }}px {{ theme_customize.header_font }}; color: {{ theme_customize.header_color }} }
+    a:link, a:visited, a:active { color: {{ theme_customize.link_color }} }
+    a:hover { color: {{ theme_customize.link_hover_color }} }
+    </style>
+  </style>
+  {% endif %}
 </head>
 <body class="{{ body_class }}">
     <div class="main_wrapper">
