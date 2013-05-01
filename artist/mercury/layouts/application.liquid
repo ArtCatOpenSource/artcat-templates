@@ -25,12 +25,14 @@
   body {
       color: {{ theme_customize.body_color }}; 
       background-color: {{ theme_customize.background_color }};
-      font: {{ theme_customize.body_size }}px {{ theme_customize.body_font }}
+      font: {{ theme_customize.body_size }}px {{ theme_customize.body_font }};
     }
     p, .resume td, .resume td.date { 
       color: {{ theme_customize.body_color }};
-      font: {{ theme_customize.body_size }}px {{ theme_customize.body_font }}
+      font: {{ theme_customize.body_size }}px {{ theme_customize.body_font }};
     }
+    p { line-height: {{ theme_customize.body_size | plus:5 }}px; }
+    .caption p { font-size: {{ theme_customize.body_size | minus:2 }}px;}
     #header #navigation li a { border-left: 1px solid {{ theme_customize.background_color }} }
     #breadcrumb { color: {{ theme_customize.body_color }} }
     #header h1 { font: bold {{ theme_customize.title_size }}px {{ theme_customize.title_font }};}
