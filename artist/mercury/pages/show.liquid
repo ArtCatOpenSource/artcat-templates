@@ -20,6 +20,7 @@
     {% endif %}
 
     <form class="contact_widget" method="post">
+      <input name="authenticity_token" type="hidden" value="{{ authenticity_token }}" />
       <ul>
 
         <li class="name_contact">

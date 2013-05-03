@@ -17,6 +17,7 @@
       {% endif %}
 
       <form method="post">
+        <input name="authenticity_token" type="hidden" value="{{ authenticity_token }}" />
         <table border="0" class="contact-table">
           <tr>
             <td class="label" valign="top">
