@@ -63,9 +63,9 @@
         {% if exhibition.featured_work %}
           {% assign work = exhibition.featured_work %}
           <a href="{{ exhibition.page_url }}"><img src="{{ work.featured_image.large_url }}" alt="{{ exhibition.title | escape }}" /></a>  
-          <p>{{ work.artist.name }}, <em>{{ work.title }}</em>, {{ work.date }} </p>
+          <p>{{ work.artist.name }}, <em>{{ work.title }}</em>{% if work.date != empty %}, {{ work.date }} {% endif %} </p>
           <p>
-          {{ work.medium }}{% if work.size %}, {{ work.size }} {% endif %}
+          {{ work.medium }}{% if work.size != empty %}, {{ work.size }} {% endif %}
           </p>
         {% elsif exhibition.images %}
           {% assign image = exhibition.images.first %}
