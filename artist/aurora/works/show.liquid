@@ -23,10 +23,10 @@
             {% video_embed('large') %}
             {% endif %}
           {% else %}
-            <img src="{{ image.xlarge_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
-              {% if image.caption %}
-              <p class="caption">{{ image.caption | textlize_inline }}</p>
-              {% endif %}
+            {{ image | responsive_image_xlarge }}
+            {% if image.caption %}
+            <p class="caption">{{ image.caption | textlize_inline }}</p>
+            {% endif %}
           {% endif %}
         </div>
       </div>

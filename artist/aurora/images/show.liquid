@@ -13,7 +13,7 @@
     <div class="image-container clearfix">
       <div class="outer-center"> 
         <div class="inner-center">
-          <img src="{{ image.xlarge_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
+          {{ image | responsive_image_xlarge }}
           {% if image.caption %}
           <p class="caption">{{ image.caption | textlize_inline }}</p>
           {% endif %}
