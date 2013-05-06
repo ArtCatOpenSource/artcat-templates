@@ -37,7 +37,7 @@
   <div id="PrimaryColumn"> 
     {% if home_image %}
     <div id="home-image">
-      <a href="{{ website.home_image_link }}"><img src="{{ home_image.large_url }}" alt="{{ home_image.caption | escape }}" /></a>
+      <a href="{{ website.home_image_link }}">{{ home_image | responsive_image_large }}</a>
        <div class="caption">{{ home_image['caption'] | textilize }}</div>
    </div>
   {% endif %}

@@ -2,7 +2,7 @@
 
 <div id="PrimaryColumn">
 
-<img src="{{ image.large_url }}" alt="{{ image.caption | escape }}" />
+{{ image | responsive_image_large }}
 
 <p class="caption">{{ image.caption | textlize_inline }}</p>
 

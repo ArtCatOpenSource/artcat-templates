@@ -58,7 +58,7 @@
 {% endif %}
 
 {% unless show_media %}
-<img src="{{ image.large_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
+{{ image | responsive_image_large }}
 
 <p class="caption">{{ image.caption | textlize_inline }}</p>
 
