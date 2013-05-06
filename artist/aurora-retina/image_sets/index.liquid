@@ -1,9 +1,0 @@
-<ul id="image_sets" class="clearfix">
-  {% for image_set in image_sets %}
-    <li>
-      <div class="work-thumb"><a href="{{ image_set.page_url }}"><img src="{{ image_set.main_thumb_url }}" alt="{{image_set.name }}" /></a>
-</div>
-      <h3>{{image_set.name | escape}}</h3>
-    </li>
-  {% endfor %}
-</ul>

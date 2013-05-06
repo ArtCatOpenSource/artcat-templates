@@ -1,7 +1,0 @@
-video-js.css
-style.css
-jquery-1.7.1.min.js
-client-plugins.js
-client-script.js
-srcset.min.js
-

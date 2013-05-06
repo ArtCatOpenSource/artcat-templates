@@ -1,4 +1,0 @@
-style.css
-video-js.css
-common.js
-srcset.min.js
