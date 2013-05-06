@@ -36,7 +36,7 @@
     {% if website.home_image_large_url %}
     <!-- override home page with an image -->
     <div id="home-image">
-      <img src="{{ website.home_image_large_url }}" alt="{{ home_caption | escape }}" /></a>
+      <img src="{{ website.home_image_large_url }}" alt="{{ home_caption | escape }}" />
       <div class="caption">{{ website.home_caption | textilize }}</div>
     </div>
     {% else %}
@@ -62,14 +62,15 @@
 
         {% if exhibition.featured_work %}
           {% assign work = exhibition.featured_work %}
-          <a href="{{ exhibition.page_url }}"><img src="{{ work.featured_image.large_url }}" alt="{{ exhibition.title | escape }}" /></a>  
+          <!-- exhibition work -->
+          <a href="{{ exhibition.page_url }}">{{ work.featured_image | responsive_image_large }}</a>  
           <p>{{ work.artist.name }}, <em>{{ work.title }}</em>{% if work.date != empty %}, {{ work.date }} {% endif %} </p>
           <p>
           {{ work.medium }}{% if work.size != empty %}, {{ work.size }} {% endif %}
           </p>
         {% elsif exhibition.images %}
           {% assign image = exhibition.images.first %}
-          <a href="{{ exhibition.page_url }}"><img src="{{ image.large_url }}" alt="{{ image.caption | escape }}" /></a>  
+          <a href="{{ exhibition.page_url }}">{{ image | responsive_image_large }}</a>  
           <div class="caption">{{ image.caption | textilize }}</div>
         {% endif %}
 
