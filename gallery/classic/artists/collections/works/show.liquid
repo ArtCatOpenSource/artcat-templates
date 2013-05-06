@@ -46,7 +46,7 @@
   {% video_embed('large') %}
   {% endif %}
 {% else %}
-  <img src="{{ image.large_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
+  {{ image | responsive_image_large }}
   {% if image.caption %}
   <p class="caption">{{ image.caption | textlize_inline }}</p>
   {% endif %}

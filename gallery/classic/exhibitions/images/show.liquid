@@ -10,7 +10,7 @@
 
 <div id="exhibition-images">
 
-  <img src="{{ image.large_url }}" alt="{{exhibition.title | escape}} {{ image.caption | escape }}" />
+  {{ image | responsive_image_large }}
 
   <div class="exhibition-image-caption">{{ image.caption | textilize }}</div>
 
