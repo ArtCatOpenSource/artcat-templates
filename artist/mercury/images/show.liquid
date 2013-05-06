@@ -1,7 +1,7 @@
 <div class="left_side">
   <h2><a href="{{ image_set.page_url}} ">{{ image_set.name }}</a>{% if image.has_caption? %} &raquo; {{ image.caption }} {% endif %}</h2>
 
-   <img src="{{ image.xlarge_url }}" alt="{{ image.caption | escape }}" />
+  {{ image | responsive_image_xlarge }}
 
   <div class="caption">
     {% if image.caption %}

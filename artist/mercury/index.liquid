@@ -2,7 +2,7 @@
 
 <div class="image_area_full">
   {% if website.home_image %}
-    <a href="{{ website.home_image_link }}"><img src="{{ website.home_image.xlarge_url }}" alt="{{ website.home_image.caption | escape }}" /></a>
+    <a href="{{ website.home_image_link }}">{{ website.home_image | responsive_image_xlarge }}</a>
     <div class="caption">
       {{ website.home_image.caption | textilize }}
     </div><!-- closes .caption -->
@@ -13,7 +13,7 @@
 
 <div class="image_area">
   {% if website.home_image %}
-    <a href="{{ website.home_image_link }}"><img src="{{ website.home_image.large_url }}" alt="{{ website.home_image.caption | escape }}" /></a>
+    <a href="{{ website.home_image_link }}">{{ website.home_image | responsive_image_large }}</a>
     <div class="caption">
       {{ website.home_image.caption | textilize }}
     </div><!-- closes .caption -->

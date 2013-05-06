@@ -19,9 +19,9 @@
     {% endif %}
   {% else %}
     {% if work.has_alternate_views? %}
-      <img src="{{ image.large_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
+      {{ image | responsive_image_large }}
     {% else %}
-      <img src="{{ image.xlarge_url }}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />
+      {{ image | responsive_image_xlarge }}
     {% endif %}
 
     <div class="caption">
