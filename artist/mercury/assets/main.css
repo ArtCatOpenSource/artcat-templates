@@ -724,6 +724,8 @@ h4 {
   border: 1px solid #0058a4;
 }
 
+.contact_widget .honey_contact { display: none; }
+
 /* GENERIC WIDGET
 ---------------------------------------------------------------------------*/
 
