@@ -8,7 +8,7 @@
 {% if portfolio.has_press? %}
   <h2>Press</h2>
   {% for press_item in portfolio.press_items %}
-  <p class="press"><a href="{{ press_item.page_url }}">{{ press_item.title | escape }}</a></p>
+  <p class="press"><a href="{{ press_item.page_url }}">{{ press_item.title | escape }}{% if press_item.date != empty %}, {{ press_item.display_date }}{% endif %}</a></p>
   {% endfor %}
 {% endif %}
 </div>
