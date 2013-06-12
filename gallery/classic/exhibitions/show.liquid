@@ -2,14 +2,14 @@
   <div class="exhibition-description">{{ exhibition.description | textilize }}</div> 
 
   {% unless exhibition.press_items == empty %}
-    <h2>Press</h2>
+    <h2><a id="press">Press</a></h2>
     {% for press in exhibition.press_items %}
       <p class="press"><a href="{{ press.page_url }}">{{ press.title }}</a></p>
     {% endfor %}
   {% endunless %}
 
   {% unless exhibition.publications == empty %}
-    <h2>Publications</h2>
+    <h2><a id="publications">Publications</a></h2>
     {% for publication in exhibition.publications %}
       <p class="publication"><a href="{{ publication.page_url }}">{{ publication.title }}</a></p>
     {% endfor %}
