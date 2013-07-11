@@ -12,7 +12,12 @@
     <div class="clearfix outer-center"> <!-- Apply class of .left if you don't want image and caption to be centered -->
       <div class="inner-center">
         {% if home_image %}
-        <a href="{{ website.home_image_link }}">{{ home_image | responsive_image_xlarge }}</a>
+          <!-- don't link to work if it has since been hidden -->
+          {% if website.home_image_link %}
+            <a href="{{ website.home_image_link }}">{{ home_image | responsive_image_xlarge }}</a>
+          {% else %}
+            {{ home_image | responsive_image_xlarge }}
+          {% endif %}
         {% endif %}
         <div class="homepage-caption">{{ home_image.caption | textilize }}</div>
       </div>

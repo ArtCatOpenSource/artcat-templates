@@ -37,7 +37,12 @@
   <div id="PrimaryColumn"> 
     {% if home_image %}
     <div id="home-image">
-      <a href="{{ website.home_image_link }}">{{ home_image | responsive_image_large }}</a>
+      <!-- don't link to work if it has since been hidden -->
+      {% if website.home_image_link %}
+        <a href="{{ website.home_image_link }}">{{ home_image | responsive_image_large }}</a>
+      {% else %}
+        {{ home_image | responsive_image_large }}
+      {% endif %}
        <div class="caption">{{ home_image['caption'] | textilize }}</div>
    </div>
   {% endif %}
