@@ -68,7 +68,7 @@
           <p>
           {{ work.medium }}{% if work.size != empty %}, {{ work.size }} {% endif %}
           </p>
-        {% elsif exhibition.images %}
+        {% elsif exhibition.images != empty %}
           {% assign image = exhibition.images.first %}
           <a href="{{ exhibition.page_url }}">{{ image | responsive_image_large }}</a>  
           <div class="caption">{{ image.caption | textilize }}</div>
