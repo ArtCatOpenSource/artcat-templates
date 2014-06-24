@@ -86,7 +86,7 @@ td { vertical-align: top; }
   /*HEADER*/
 
     header {overflow:hidden; padding:.475rem .625rem; position:relative;}
-    ul#navigation {float:right; font-weight:bold; position:absolute; bottom:0.3rem; right:0; line-height:1;}
+    ul#navigation {float:right; font-weight:bold; position:absolute; bottom:0.3rem; right:0; line-height:1; text-transform: lowercase;}
     ul#navigation li {float:left; margin-left:.625rem;}
     ul#navigation li h2 {font-size:.8125rem; }
     ul#navigation li a {text-decoration:none;}
@@ -132,7 +132,7 @@ td { vertical-align: top; }
     #portfolio-contents li {width: 140px; min-height: 100px; display: inline-block; text-align: left; vertical-align: top; margin: 0px 6px 10px 0px;}
     #portfolio-contents li p {margin-top:.5rem;}
     .work-thumb { min-height: 140px; }
-  
+
     /*Sidebar*/
     #portfolio-contents .about-this-portfolio {min-height:0; float:right; border:1px solid #d1d1d1; padding:10px; width:294px; background-color:white;}
     #portfolio-contents .about-this-portfolio h1 {margin-bottom:.7em; font-size: .8125rem;}
@@ -209,29 +209,29 @@ td { vertical-align: top; }
   /*CLIENT-EDITABLE STYLES VIA BACK-END INTERFACE*/
 
     /*Body background color*/
-    #container {background-color:#ffffff;} 
+    #container {background-color:#ffffff;}
 
     /*Header styles*/
-    header {border-bottom:1px solid black;} 
-    
+    header {border-bottom:1px solid black;}
+
     /*Footer styles*/
-    footer {border-top:1px solid black;} 
-    
+    footer {border-top:1px solid black;}
+
     /*Link color*/
-    a {color:#750000;} 
-    
+    a {color:#750000;}
+
     /*Link hover color*/
-    a:hover {color:black;} 
-    
+    a:hover {color:black;}
+
     /*Link visited color*/
-    a:visited {color:#750000;} 
-    
-    
+    a:visited {color:#750000;}
+
+
     /*Navigation link style*/
-    ul#navigation li a, ul#navigation li a:visited {color:#333333;} 
-    
+    ul#navigation li a, ul#navigation li a:visited {color:#333333;}
+
     /*Navigation selected style*/
-    ul#navigation li a.selected, ul#navigation li a:visited.selected {color:#750000;} 
+    ul#navigation li a.selected, ul#navigation li a:visited.selected {color:#750000;}
 
 /*END CUSTOM STYLES*/
 
@@ -248,13 +248,13 @@ td { vertical-align: top; }
 .clearfix { *zoom: 1; }
 
 @media print {
-  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
   a, a:visited { text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } 
+  thead { display: table-header-group; }
   tr, img { page-break-inside: avoid; }
   img { max-width: 100% !important; }
   @page { margin: 0.5cm; }
