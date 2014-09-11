@@ -4,14 +4,14 @@
 
 <div id="work-detail">
 
-  <div class="viewer">      
+  <div class="viewer">
     <div class="prev">
       {% if work.previous_work %}
       <a title="{{ work.previous_work.title | escape}}" href="{{ work.previous_work.page_url }}">Prev</a>
       {% endif %}
     </div>
     <div class="image-container clearfix">
-      <div class="outer-center"> 
+      <div class="outer-center">
         <div class="inner-center">
 
           {% if show_media %}
@@ -23,7 +23,7 @@
             {% video_embed('large') %}
             {% endif %}
           {% else %}
-            {{ image | responsive_image_xlarge }}
+            <a class="fancybox" rel="group" href="{{ image.huge_url }}">{{ image | responsive_image_xlarge }}</a>
             {% if image.caption %}
             <p class="caption">{{ image.caption | textlize_inline }}</p>
             {% endif %}
@@ -35,8 +35,8 @@
       {% if work.next_work %}
       <a title="{{ work.next_work.title | escape}}" href="{{ work.next_work.page_url }}">Next</a>
       {% endif %}
-    </div>        
-  </div>        
+    </div>
+  </div>
 
   <div class="viewer_details">
     <h3>{{ work.title | escape }} <br />
@@ -50,8 +50,8 @@
   </div>
 
   {% if work.has_alternate_views? %}
-  <div class="viewer_alternate_views"> 
-          
+  <div class="viewer_alternate_views">
+
       <h4>Alternate Views</h4>
       <ul>
           {% if work.has_media_or_embed? %}
@@ -68,13 +68,12 @@
 
         {% for image in work.images %}
         <li>
-          <div class="limit-thumb140"><a href="{{ work.page_url}}/{{forloop.index}}"><img src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a></div>
+          <div class="limit-thumb140"><a class="fancybox" rel="group" href="{{ image.huge_url }}"><img src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a></div>
           <p>{{ image.caption | escape }}</p>
         </li>
-        {% endfor %}     
-      </ul>       
+        {% endfor %}
+      </ul>
   </div>
   {% endif %}
-
 
 </div>
