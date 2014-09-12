@@ -68,7 +68,7 @@
 
         {% for image in work.images %}
         <li>
-          <div class="limit-thumb140"><a class="fancybox" rel="group" href="{{ image.huge_url }}"><img src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a></div>
+          <div class="limit-thumb140"><a {% if forloop.index != image_idx %}class="fancybox"{% endif %} rel="group" href="{{ image.huge_url }}"><img src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a></div>
           <p>{{ image.caption | escape }}</p>
         </li>
         {% endfor %}
@@ -77,3 +77,10 @@
   {% endif %}
 
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".fancybox").fancybox();
+  });
+</script>
+
