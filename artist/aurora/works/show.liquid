@@ -1,3 +1,12 @@
+<style>
+.fancybox-prev {
+  left: -70px;
+}
+.fancybox-next {
+  right: -70px;
+}
+</style>
+
 <div id="breadcrumb">
   <a href="/portfolios">Works</a> > <a href="{{ portfolio.page_url}} ">{{ portfolio.name | escape }}</a> {% if work.has_title? %} > <h3>{{ work.title | escape }}</h3>{% endif %}
 </div>
@@ -80,7 +89,12 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $(".fancybox").fancybox();
+    $(".fancybox").fancybox({
+      caption: {
+        type: 'outside'
+      },
+      padding: 0
+    });
   });
 </script>
 
