@@ -81,7 +81,7 @@
 
         {% for image in work.images %}
         <li>
-          <div class="limit-thumb140">{% if lightbox %}<a {% if forloop.index != image_idx %}class="fancybox"{% endif %} rel="group" href="{{ image.huge_url }}">{% endif %}<img src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" alt="{{ work.title | escape }} {{ image.caption | escape }}" />{% if lightbox %}</a>{% endif %}</div>
+          <div class="limit-thumb140">{% if lightbox %}<a {% if forloop.index != image_idx %}class="fancybox"{% endif %} rel="group" href="{{ image.huge_url }}">{% else %}<a href="{{ work.page_url}}/{{forloop.index}}">{% endif %}<img src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a></div>
           <p>{{ image.caption | escape }}</p>
         </li>
         {% endfor %}
