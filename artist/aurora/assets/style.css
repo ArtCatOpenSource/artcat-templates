@@ -262,10 +262,9 @@ td { vertical-align: top; }
   h2, h3 { page-break-after: avoid; }
 }
 
-.fancybox-next {
-    right: -60px;
-}
-
 .fancybox-prev {
-    left: -60px;
+  left: -70px;
+}
+.fancybox-next {
+  right: -70px;
 }
