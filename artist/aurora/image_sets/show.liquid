@@ -13,9 +13,8 @@
 
 {% for image in images %}
     <li>
-      <div class="limit-thumb140"><a href="{{ image.page_url }}"><img src="{{ image.thumb_url }}" alt="{{ image.caption | escape }}" /></a></div>
+      <div class="limit-thumb140">{% if lightbox %}<a class="fancybox" rel="group" title="{{ image.caption | escape }}" href="{{ image.huge_url }}">{% else %}<a href="{{ image.page_url }}">{% endif %}<img src="{{ image.thumb_url }}" alt="{{ image.caption | escape }}"/></a></div>
       <p>{{ image.caption | escape }}</p>
     </li>
 
 {% endfor %}
-
