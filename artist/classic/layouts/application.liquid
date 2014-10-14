@@ -4,7 +4,7 @@
     <title>{{ website_title | escape }} {% if page_title %} - {{ page_title | escape }} {% endif %}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="author" content="www.artcat.com" />
-    {% if website.favicon_url %}  
+    {% if website.favicon_url %}
     <link rel="shortcut icon" href="{{ website.favicon_url }}">
     {% else %}
     <link rel="shortcut icon" href="/favicon.ico">
@@ -16,8 +16,8 @@
     {% client_css %}
     {% if theme_customize %}
     <style>
-    body, p, p.thumb-caption { 
-      color: {{ theme_customize.body_color }}; 
+    body, p, p.thumb-caption {
+      color: {{ theme_customize.body_color }};
       background-color: {{ theme_customize.background_color }};
       font: {{ theme_customize.body_size }}px {{ theme_customize.body_font }}
     }
@@ -35,9 +35,17 @@
     h2, h2.resume { font: bold {{ theme_customize.header_size }}px {{ theme_customize.header_font }}; color: {{ theme_customize.header_color }} }
     </style>
     {% endif %}
+
+    {% if lightbox %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/jquery-1.8.2.min.js"><\/script>')</script>
+    <!-- Add fancyBox -->
+    <script type="text/javascript" src="http://assets-p.artcat.com/fancybox3/beta/jquery.fancybox.js"></script>
+    <link rel="stylesheet" href="http://assets-p.artcat.com/fancybox3/beta/jquery.fancybox.css" type="text/css" media="screen" />
+    {% endif %}
   </head>
   <body class="{{ body_class }}">
-    <div id="Navigation"> 
+    <div id="Navigation">
       <div class="SiteName"><a href="/">{% if website.logo_url %} <img src="{{ website.logo_url}}" alt="{{ website_title | escape }}" />{% else %}{{ website_title | escape }}{% endif %}</a></div>
 
       <ul class="NavList">
@@ -57,12 +65,25 @@
       {{ content_for_layout }}
     </div> <!-- id=Content -->
 
-    <div id="Credits"> 
+    <div id="Credits">
       <div class="ArtCatCredit">Powered by <a href="{{ referral_link | escape }}">ArtCat</a></div>
       <div class="copyright">{{ website_footer }}</div>
     </div>
     {% client_js %}
     <script src="http://assets-p.artcat.com/srcset.min.js" type="text/javascript"></script>
+
+    {% if lightbox %}
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $(".fancybox").fancybox({
+          caption: {
+            type: 'outside'
+          },
+          padding: 0
+        });
+      });
+    </script>
+    {% endif %}
     {% google_code %}
   </body>
 </html>

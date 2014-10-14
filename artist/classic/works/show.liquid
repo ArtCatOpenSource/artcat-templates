@@ -21,7 +21,7 @@
 
 
     {% for image in work.images %}
-    <li class="limit-thumb120"><a href="{{ work.page_url}}/{{forloop.index}}"><img class="limit-thumb120" src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a><p>{{ img.caption | escape }}</p></li>
+    <li class="limit-thumb120">{% if lightbox %}<a title="{{ image.caption | escape }}" {% if forloop.index != image_idx %}class="fancybox"{% endif %} rel="group" href="{{ image.huge_url }}">{% else %}<a href="{{ work.page_url}}/{{forloop.index}}">{% endif %}<img class="limit-thumb120" src="{% if website.square_thumbs %}{{ image.square_thumb_url }}{% else %} {{ image.thumb_url }}{% endif %}" alt="{{ work.title | escape }} {{ image.caption | escape }}" /></a><p>{{ img.caption | escape }}</p></li>
     {% endfor %}
 
   </ul>
@@ -58,7 +58,11 @@
 {% endif %}
 
 {% unless show_media %}
-{{ image | responsive_image_large }}
+{% if lightbox %}
+  <a class="fancybox" rel="group" title="{{ image.caption | escape }}" href="{{ image.huge_url }}">{{ image | responsive_image_large }}</a>
+{% else %}
+  {{ image | responsive_image_large }}
+{% endif %}
 
 <p class="caption">{{ image.caption | textlize_inline }}</p>
 
