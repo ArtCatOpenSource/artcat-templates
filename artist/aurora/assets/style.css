@@ -201,6 +201,7 @@ td { vertical-align: top; }
 
   /*RESUME*/
 
+    #static div.resume { width: 700px; }
     .resume-files { float: right; }
     .resume-files p { margin: 0; }
     #static .resume-files a { text-decoration: none; }
