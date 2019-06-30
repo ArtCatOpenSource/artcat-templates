@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="language" content="English" />
+    <title>
+      {{ website_title | escape }} {% if page_title %} -
+      {{ page_title | escape }} {% endif %}
+    </title>
+
+    <meta name="author" content="www.artcat.com" />
+    {% if website.favicon_url %}
+    <link rel="shortcut icon" href="{{ website.favicon_url }}" />
+    {% else %}
+    <link rel="shortcut icon" href="/favicon.ico" />
+    {% endif %}
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS"
+      href="/feed.rss"
+    />
+    <meta name="description" content="{{ website_description | escape }}" />
+    <meta name="keywords" content="{{ website_keywords | escape }}" />
+    {% client_css %} {% client_js %}
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="index.html" class="site-title">{{ website_title | escape }}</a>
+        <ul>
+          {% for nav in website.nav_links %}
+          <li>
+            <a href="{{ nav.path | escape }}">{{ nav.name | escape }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="mobile-icon">
+        <div class="mobile-bars"></div>
+        <div class="mobile-bars"></div>
+        <div class="mobile-bars"></div>
+      </div>
+    </nav>
+    <main>
+      <div class="content">
+        {{ content_for_layout }}
+      </div>
+      <!-- end of div 'content' -->
+    </main>
+    <footer>
+      <div class="footer-wrapper">
+        <div class="footer-text">{{ website_footer }}</div>
+        <div class="footer-text">
+          Powered by <a href="{{ referral_link | escape }}">ArtCat</a>
+        </div>
+      </div>
+    </footer>
+    {% google_code %}
+  </body>
+</html>
