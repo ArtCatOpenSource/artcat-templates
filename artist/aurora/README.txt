@@ -1,4 +1,3 @@
-Aurora template designed for 2012 relaunch of ArtCat Hosting, based on HTML5 Boilerplate. 
+Aurora template designed for 2012 relaunch of ArtCat Hosting, based on HTML5 Boilerplate.
 
-Created by Perry Garvin Studio: http://perrygarvin.com/.
-
+Created by Perry Garvin Studio: https://perrygarvin.com/.
