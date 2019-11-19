@@ -1,6 +1,6 @@
 h1. ArtCat Hosting Themes
 
-These are free and open-source themes used for "ArtCat Hosting":http://hosting.artcat.com/ artist and art gallery websites.
+These are free and open-source themes used for "ArtCat Hosting":https://www.artcat.com/ artist and art gallery websites.
 
 They use the "Liquid":http://liquidmarkup.org/ templating language.
 
@@ -9,5 +9,3 @@ Any non-template assets needed, such as CSS or Javascript files, should be put i
 Modernizr and jQuery are already available without adding those. See this file for an example:
 
 https://github.com/bhoggard/artcat-templates/blob/master/artist/aurora/layouts/application.liquid
-
-
