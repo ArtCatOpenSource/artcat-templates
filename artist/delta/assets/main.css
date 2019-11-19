@@ -39,7 +39,6 @@ iframe,
 figure {
   display: block;
   position: relative;
-  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -276,6 +275,10 @@ main {
 
 .content > p {
   width: 50%;
+}
+
+.home-image {
+  width: 800px;
 }
 
 .image-set {
