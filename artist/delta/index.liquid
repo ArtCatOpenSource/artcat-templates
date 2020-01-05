@@ -19,7 +19,7 @@
 {% else %}
   <div class="column">
     {% if home_image %}
-      <div class="home-image">
+      <div class="home-image-2-column">
         <!-- don't link to work if it has since been hidden -->
         {% if website.home_image_link %}
           <a href="{{ website.home_image_link }}">{{ home_image | responsive_image_large }}</a>
@@ -41,10 +41,9 @@
 
   <!-- news -->
   {% unless website.home_page_news == empty %}
-    <div class="newsblock">
     {% for news in website.home_page_news %}
       {% if news.title %}
-      <h2 class="news"><a href="{{ news.page_url }}">{{ news.title | escape }}</a></h2>
+      <h1><a href="{{ news.page_url }}">{{ news.title | escape }}</a></h1>
       {% endif %}
       {% if news.display_date %}
       <p class="news-added">{{ news.display_date }}</p>
@@ -59,7 +58,6 @@
         <p><a href="{{ news.page_url }}">more &gt;&gt;</a></p>
       </div>
     {% endfor %}
-    </div>
   {% endunless %}
 
   </div>
