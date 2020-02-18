@@ -627,12 +627,19 @@ a.exhibition:hover {
 
 .image-list-item {
   display: inline-block;
-  width: 25%;
   vertical-align: top;
   box-sizing: border-box;
   padding-right: 0.75rem;
   margin-bottom: 1rem;
   text-decoration: none;
+}
+
+.column > .image-list-item {
+  width: 50%;
+}
+
+.column.full-width > .image-list-item {
+  width: 25%;
 }
 
 .image-list-item > h2,
