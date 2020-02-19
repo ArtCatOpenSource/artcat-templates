@@ -1,34 +1,59 @@
-<h1>{{ portfolio.name | escape}}</h1>
+<div class="column full-width">
+  <h1>{{ portfolio.name | escape}}</h1>
+</div>
 
-{% if portfolio.has_description? or portfolio.has_press? %}
-
-<div id="SecondaryColumn">
-{{ portfolio.description | textilize }}
+{% if portfolio.has_description? %}
+  <div class="column">
+    {{ portfolio.description | textilize }}
+  </div>
+{% endif %}
 
 {% if portfolio.has_press? %}
-  <h2>Press</h2>
-  {% for press_item in portfolio.press_items %}
-  <p class="press"><a href="{{ press_item.page_url }}">{{ press_item.title | escape }}{% if press_item.display_date != empty %}, {{ press_item.display_date }}{% endif %}</a></p>
-  {% endfor %}
-{% endif %}
-</div>
-
-<div id="PrimaryColumn">
-{% else %}
-<div id="FullColumn">
-{% endif %}
-
-{% for work in works %}
-
-<div class="thumb-float">
-  <div class="thumb-img">
-
-  <a href="{{ work.page_url }}"><img style="max-width:150px" src="{{ work.featured_thumb_url }}" alt="{{ work.title | escape }}" /></a>
+  <div class="column">
+  {% if portfolio.has_press? %}
+    <h2>Press</h2>
+    {% for press_item in portfolio.press_items %}
+      <a class="list-item" href="{{ press_item.page_url }}">
+        <h3>{{ press_item.title | escape }}{% if press_item.display_date != empty %}, {{ press_item.display_date }}{% endif %}</h3>
+      </a>
+    {% endfor %}
+  {% endif %}
   </div>
+{% endif %}
 
-  <p class="thumb-caption">{{ work.title | escape }}</p>
-</div>
-
+<div class="column full-width">
+{% for work in works %}
+	<div class="image-set grid-item">
+    {% if lightbox %}
+      {{ work.featured_image | responsive_image_xlarge }}"
+    {% else %}
+    <a href="{{ work.page_url }}">
+			<img src="{{ work.featured_thumb_url }}" alt="{{ work.title | escape }}" >
+    </a>
+    {% endif %}
+    <p>{{ work.title | escape }}</p>
+  </div>
 {% endfor %}
-
 </div>
+
+{% if lightbox %}
+<div class="lightbox">
+	<div class="background"></div>
+	<div class="container">
+		<div class="direction prev">
+			<div class="cross"></div>
+		</div>
+		<div class="direction next">
+			<div class="cross"></div>
+			<div class="plus"></div>
+		</div>
+		<div class="counter"></div>
+		<div class="exit">
+			<div class="cross"></div>
+			<div class="plus"></div>
+		</div>
+		<img class="current-image" src="">
+		<div class="lightbox-caption"></div>
+	</div>
+</div>
+{% endif %}
