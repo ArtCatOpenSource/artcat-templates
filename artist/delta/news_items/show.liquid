@@ -1,12 +1,11 @@
-<div id="PrimaryColumn"> 
+<div class="column"> 
   {% if news.has_title? %} 
-  <h2 class="news">{{ news.title }}</h2>
+  <h3>{{ news.title }}</h3>
   {% endif %}
 
   {% if news.has_date? %}
-  <p class="news-added">{{ news.display_date }}<p>
+  <h4>{{ news.display_date }}</h4>
   {% endif %}
 
   {{ news.body | textilize }}
-
 </div>

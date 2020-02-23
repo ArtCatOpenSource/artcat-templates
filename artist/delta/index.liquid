@@ -43,10 +43,10 @@
   {% unless website.home_page_news == empty %}
     {% for news in website.home_page_news %}
       {% if news.title %}
-      <h1><a href="{{ news.page_url }}">{{ news.title | escape }}</a></h1>
+      <h3><a href="{{ news.page_url }}">{{ news.title | escape }}</a></h3>
       {% endif %}
       {% if news.display_date %}
-      <p class="news-added">{{ news.display_date }}</p>
+      <h4>{{ news.display_date }}</h4>
       {% endif %}
 
       <div>
@@ -55,7 +55,6 @@
         {% else %}
           {{ news.body | truncate:250 | textilize }}
         {% endif %}
-        <p><a href="{{ news.page_url }}">more &gt;&gt;</a></p>
       </div>
     {% endfor %}
   {% endunless %}
