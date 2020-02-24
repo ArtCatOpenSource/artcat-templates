@@ -1,39 +1,33 @@
-<div id="resume">
-  <div id="PrimaryColumn"> 
- 	  <table width="480" border="0" cellspacing="0" cellpadding="5">
-      {% for category in resume.resume_categories %}	  
-  	  <tr> 
-				<td colspan="2"><h2 class="resume">{{ category.name }} </h2></td>
-	      {% assign show_date = '' %}
-	      {% for item in category.resume_items %}
-	      <tr>
-    			<td valign="top" class="resume">
-	          {% if show_date != item.date %}
-	            {% assign show_date = item.date %}
-	            {{ show_date }}
-	          {% endif %}
-          </td>
-    			<td valign="top" class="resume"> {{ item.text | textilize_inline }}</td>
-  		  </tr>
-	      {% endfor %}
-      <tr><td colspan="2"></td></tr>
-	    {% endfor %}
-	  </table>
-  </div>
+<div class="column">
+	{{ resume.head | textilize }}
 
-  <div id="SecondaryColumn"> 
+	<p><a href="mailto:{{ website.contact_email }}">{{ website.contact_email }}</a></p>
+	<br />
+	{% for file in resume.file_assets %}
+	<p><a href="{{ file.url }}">{{ file.name }}</a></p>
+	{% endfor %}
 
-    {{ resume.head | textilize }}
-
-    <p><a href="mailto:{{ website.contact_email }}">{{ website.contact_email }}</a></p>
-    <br />
-
-	  	{% for file in resume.file_assets %}
-	  	<p><a href="{{ file.url }}">{{ file.name }}</a></p>
-	  	{% endfor %}
-  </div>
-	
+	<table border="0" cellspacing="0" cellpadding="5">
+		{% for category in resume.resume_categories %}	  
+		<tr> 
+			<td colspan="2"><h2 class="resume">{{ category.name }} </h2></td>
+			{% assign show_date = '' %}
+			{% for item in category.resume_items %}
+			<tr>
+				<td valign="top" class="resume">
+					{% if show_date != item.date %}
+						{% assign show_date = item.date %}
+						{{ show_date }}
+					{% endif %}
+				</td>
+				<td valign="top" class="resume"> {{ item.text | textilize_inline }}</td>
+			</tr>
+			{% endfor %}
+		<tr><td colspan="2"></td></tr>
+		{% endfor %}
+	</table>
 </div>
+
 
 	  
 	  

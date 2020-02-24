@@ -47,6 +47,11 @@ img {
   width: 100%;
 }
 
+.caption {
+  width: 100%;
+  text-align: center;
+}
+
 video {
   object-fit: contain;
   width: 100%;
@@ -621,9 +626,9 @@ a.exhibition:hover {
   margin-left: 0;
 }
 
-.column > h3 {
+/* .column > h3 {
   margin-top: 1rem;
-}
+} */
 
 .image-list-item {
   display: inline-block;
@@ -733,4 +738,12 @@ footer {
 
 .footer-text:nth-of-type(2) {
   text-align: right;
+}
+
+p.press {
+  margin-bottom: 0.5em;
+}
+
+p.press a {
+  text-decoration: none;
 }

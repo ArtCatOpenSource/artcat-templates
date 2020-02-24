@@ -2,7 +2,7 @@
   {% for portfolio in portfolios %}
 		<a href="{{ portfolio.page_url }}" class="image-list-item">
 			{% if website.square_thumbs %}
-				{{ portfolio.featured_image | responsive_image_large_square_thumb }}"
+				{{ portfolio.featured_image | responsive_image_large_square_thumb }}
 			{% else %}
 				{{ portfolio.featured_image | responsive_image_large }}"
 			{% endif %}

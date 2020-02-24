@@ -20,7 +20,6 @@
   <div class="column">
     {% if home_image %}
       <div class="home-image-2-column">
-        <!-- don't link to work if it has since been hidden -->
         {% if website.home_image_link %}
           <a href="{{ website.home_image_link }}">{{ home_image | responsive_image_large }}</a>
         {% else %}
@@ -56,6 +55,7 @@
           {{ news.body | truncate:250 | textilize }}
         {% endif %}
       </div>
+      <br>
     {% endfor %}
   {% endunless %}
 

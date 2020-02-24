@@ -1,7 +1,5 @@
-<div id="PrimaryColumn"> 
-  <ul class="press">
+<div class="column"> 
   {% for press_item in press_items %}
-    <li><a href="{{ press_item.page_url }}">{{ press_item.title }}</a></li>
+    <p class="press"><a href="{{ press_item.page_url }}">{{ press_item.title }}</a></p>
   {% endfor %}
-  </ul>
 </div>

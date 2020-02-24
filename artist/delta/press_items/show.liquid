@@ -1,11 +1,9 @@
-<div id="PrimaryColumn"> 
-
-  <h2 class="press">{{ press_item.title | escape }}</h2>
+<div class="column"> 
+  <h3>{{ press_item.title | escape }}</h3>
 
   {% if press_item.has_display_date? %}
-  <p class="press-added">{{ press_item.display_date }}<p>
+  <h4>{{ press_item.display_date }}</h4>
   {% endif %}
-  
-  {{ press_item.body | textilize }}
 
+  {{ press_item.body | textilize }}
 </div>

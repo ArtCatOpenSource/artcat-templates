@@ -25,7 +25,7 @@
 {% for work in works %}
 	<div class="image-set grid-item">
     {% if lightbox %}
-      {{ work.featured_image | responsive_image_xlarge }}"
+      {{ work.featured_image | responsive_image_xlarge }}
     {% else %}
     <a href="{{ work.page_url }}">
 			<img src="{{ work.featured_thumb_url }}" alt="{{ work.title | escape }}" >
