@@ -299,6 +299,10 @@ main {
   width: 600px;
 }
 
+.home-image-two-column > .caption {
+  padding-right: 1rem;
+}
+
 .image-set {
   display: inline-block;
   width: 14.66%;
