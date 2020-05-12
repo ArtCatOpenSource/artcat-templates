@@ -91,6 +91,13 @@ h6 {
   margin-bottom: 0.5rem;
 }
 
+h5 {
+  font-weight: normal;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
 h1 a,
 h2 a,
 h3 a,

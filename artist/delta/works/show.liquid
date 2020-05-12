@@ -17,6 +17,23 @@
     {{ work.description | textilize }}
 </div>
 
+{% if work.has_alternate_views? %}
+  <div class="column">
+    <h5>Alternate Views</h5>
+    {% for image in work.images %}
+    	<div class="image-set grid-item">
+        <a href="{{ work.page_url }}/{{forloop.index}}">
+          {% if website.square_thumbs %}
+            {{ image | responsive_image_large_square_thumb }}
+          {% else %}
+            {{ image | responsive_image_large }}
+          {% endif %}
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
 {% if total_works > 1 %}
 
 <div class="column full-width">
