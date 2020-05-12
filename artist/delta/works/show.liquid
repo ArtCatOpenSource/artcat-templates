@@ -6,7 +6,9 @@
 </div>
 
 <div class="column">
-  <h3>{{ work.title | escape }}</h3>
+  <h3><a title="Return to {{ portfolio.name | escape }}" href="{{ portfolio.page_url}}">{{ portfolio.name }}</a></h3>
+
+  <h2>{{ work.title | escape }}</h2>
       {% if work.date != '' %}
       <p>{{ work.date }}</p>
       {% endif %}
