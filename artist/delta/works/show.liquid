@@ -1,1 +1,34 @@
-<p>placeholder for works/show template</p>
+<div class="column">
+  <div class="work-detail-image">
+    {{ image | responsive_image_large }}
+  </div>
+  <p class="caption">{{ image.caption | textlize_inline }}</p>
+</div>
+
+<div class="column">
+  <h3>{{ work.title | escape }}</h3>
+      {% if work.date != '' %}
+      <p>{{ work.date }}</p>
+      {% endif %}
+      <p>{% if work.has_medium? %} {{ work.medium | escape }}</p> {% endif %}
+      <p>{{ work.size | escape }}</p>
+    {{ work.description | textilize }}
+</div>
+
+{% if total_works > 1 %}
+
+<div class="column full-width">
+  <div class="pagination">
+		<ul class="pages">
+      {% for link in work_links %}
+        {% if link.path %}
+          <li class="page"><a href="{{ link.path }} ">{{ link.name }}</a></li>
+        {% else %}
+        <li class="page active-page">{{ link.name }}</li>
+        {% endif %}
+      {% endfor %}
+		</ul>
+	</div>
+</div>
+
+{% endif %}
