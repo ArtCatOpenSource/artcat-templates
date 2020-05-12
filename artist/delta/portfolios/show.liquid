@@ -28,7 +28,11 @@
       {{ work.featured_image | responsive_image_xlarge }}
     {% else %}
     <a href="{{ work.page_url }}">
-			<img src="{{ work.featured_thumb_url }}" alt="{{ work.title | escape }}" >
+      {% if website.square_thumbs %}
+        {{ work.featured_image | responsive_image_large_square_thumb }}
+      {% else %}
+        {{ work.featured_image | responsive_image_large }}
+      {% endif %}
     </a>
     {% endif %}
     <p>{{ work.title | escape }}</p>
