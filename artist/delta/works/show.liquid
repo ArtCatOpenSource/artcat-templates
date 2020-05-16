@@ -1,6 +1,16 @@
 <div class="column">
   <div class="work-detail-image">
+  {% if show_media %}
+    {% if work.embed_code_html_xlarge %}
+      {{ work.embed_code_html_xlarge }}
+    {% elsif work.audio? %}
+      <a href="{{ work.media.audio_url }}" class="audio-link">audio file</a>
+    {% else %}
+      {% video_embed('large') %}
+    {% endif %}
+  {% else %}
     {{ image | responsive_image_large }}
+  {% endif %}
   </div>
   <p class="caption">{{ image.caption | textlize_inline }}</p>
 </div>
@@ -20,6 +30,19 @@
 {% if work.has_alternate_views? %}
   <div class="column">
     <h5>Alternate Views</h5>
+
+    {% if work.has_media_or_embed? %}
+      <div class="image-set grid-item">
+      {% if work.audio? %}
+        <a href="{{ work.page_url }}">audio file</a>
+      {% elsif work.embed_code_html_large %}
+        <a href="{{ work.page_url }}"><img style="max-width:140px" class="limit-thumb140" src="{{ work.embed_thumb_url }}" alt="video" /></a><p>video</p>
+      {% else %}
+        <a href="{{ work.page_url }}"><img class="limit-thumb140" src="{{ work.embed_thumb_url }}" alt="video" /></a><p>video</p>
+      {% endif %}
+      </div>
+    {% endif %}
+
     {% for image in work.images %}
     	<div class="image-set grid-item">
         <a href="{{ work.page_url }}/{{forloop.index}}">
