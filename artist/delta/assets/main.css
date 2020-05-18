@@ -770,3 +770,25 @@ p.press {
 p.press a {
   text-decoration: none;
 }
+
+.resume-date {
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+}
+
+.resume-content {
+  display: inline-block;
+  width: 58%;
+  vertical-align: top;
+}
+
+p.resume-content,
+p.resume-date {
+  margin: 0.5%;
+}
+
+h2.resume {
+  padding-top: 0.5em;
+  padding-bottom: 0.25em;
+}

@@ -1,4 +1,4 @@
-<div class="column">
+<div class="column full-width">
 	{{ resume.head | textilize }}
 
 	<p><a href="mailto:{{ website.contact_email }}">{{ website.contact_email }}</a></p>
@@ -7,25 +7,20 @@
 	<p><a href="{{ file.url }}">{{ file.name }}</a></p>
 	{% endfor %}
 
-	<table border="0" cellspacing="0" cellpadding="5">
-		{% for category in resume.resume_categories %}	  
-		<tr> 
-			<td colspan="2"><h2 class="resume">{{ category.name }} </h2></td>
+	{% for category in resume.resume_categories %}	  
+		<h2 class="resume">{{ category.name }} </h2>
 			{% assign show_date = '' %}
 			{% for item in category.resume_items %}
-			<tr>
-				<td valign="top" class="resume">
+				<p class="resume-date">
 					{% if show_date != item.date %}
 						{% assign show_date = item.date %}
 						{{ show_date }}
 					{% endif %}
-				</td>
-				<td valign="top" class="resume"> {{ item.text | textilize_inline }}</td>
-			</tr>
+				</p>
+					<p class="resume-content">{{ item.text | textilize_inline }}</p>
 			{% endfor %}
-		<tr><td colspan="2"></td></tr>
+			<br>
 		{% endfor %}
-	</table>
 </div>
 
 
