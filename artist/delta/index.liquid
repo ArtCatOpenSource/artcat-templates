@@ -1,0 +1,63 @@
+{% assign home_image = website.home_image %}
+
+{% if website.home_page_image_only? %}
+
+  <div class="column full-width">
+    {% if home_image %}
+      <div class="home-image">
+        <!-- don't link to work if it has since been hidden -->
+        {% if website.home_image_link %}
+          <a href="{{ website.home_image_link }}">{{ home_image | responsive_image_xlarge }}</a>
+        {% else %}
+          {{ home_image | responsive_image_xlarge }}
+        {% endif %}
+        <div class="caption">{{ home_image['caption'] | textilize }}</div>
+      </div>
+  {% endif %}
+  </div>
+
+{% else %}
+  <div class="column">
+    {% if home_image %}
+      <div class="home-image-two-column">
+        {% if website.home_image_link %}
+          <a href="{{ website.home_image_link }}">{{ home_image | responsive_image_large }}</a>
+        {% else %}
+          {{ home_image | responsive_image_large }}
+        {% endif %}
+        <div class="caption">{{ home_image['caption'] | textilize }}</div>
+      </div>
+  {% endif %}
+  </div>
+
+
+  <div class="column">
+
+  {% if website.home_page_announcement != '' %}
+    {{ website.home_page_announcement | textilize }}
+    <br />
+  {% endif %}
+
+  <!-- news -->
+  {% unless website.home_page_news == empty %}
+    {% for news in website.home_page_news %}
+      {% if news.title %}
+      <h3><a href="{{ news.page_url }}">{{ news.title | escape }}</a></h3>
+      {% endif %}
+      {% if news.display_date %}
+      <h4>{{ news.display_date }}</h4>
+      {% endif %}
+
+      <div>
+        {% if news.summary != '' %}
+          {{ news.summary | textilize }}
+        {% else %}
+          {{ news.body | truncate:250 | textilize }}
+        {% endif %}
+      </div>
+      <br>
+    {% endfor %}
+  {% endunless %}
+
+  </div>
+{% endif %}

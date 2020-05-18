@@ -1,0 +1,46 @@
+<div class="column">
+  {{ page.body | textilize }}
+</div>
+
+<div class="column">
+  {% if page.show_contact_form %}
+
+    {% if thanks %}
+    <p class="thanks">Thank you for your message.</p>
+    {% else %}
+
+    <h2>Contact</h2>
+
+    {% if contact_error %}
+    <p class="error">You must fill out the entire form with valid values</p>
+    {% endif %}
+
+    <form method="post" class="contact-form">
+      <input name="authenticity_token" type="hidden" value="{{ authenticity_token }}" />
+      <div class="field">
+        <label>Your Name</label>
+        <input type="text" id="name" name="name"/>
+      </div>
+      <div class="field">
+        <label>Your Email</label>
+        <input type="text" id="email" name="email"/>
+      </div>
+      <div class="field">
+        <label>Subject</label>
+        <input type="text" id="subject" name="subject"/>
+      </div>
+      <div class="sweet-honey">
+        <label class="sweet_honey">Spam detector: if you can see this leave it blank</label>
+        <input type="text" id="sweet_honey" name="sweet_honey"/>
+      </div>
+      <div class="field">
+        <label>Message</label>
+        <textarea id="message" name="message"></textarea>
+      </div>
+
+      <input id="submit" type="submit" />
+    </form>
+    {% endif %}
+  {% endif %}
+</div>
+

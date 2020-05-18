@@ -1,0 +1,76 @@
+<div class="column">
+  <div class="work-detail-image">
+  {% if show_media %}
+    {% if work.embed_code_html_xlarge %}
+      {{ work.embed_code_html_xlarge }}
+    {% elsif work.audio? %}
+      <a href="{{ work.media.audio_url }}" class="audio-link">audio file</a>
+    {% else %}
+      {% video_embed('large') %}
+    {% endif %}
+  {% else %}
+    {{ image | responsive_image_large }}
+  {% endif %}
+  </div>
+  <p class="caption">{{ image.caption | textlize_inline }}</p>
+</div>
+
+<div class="column">
+  <h3><a title="Return to {{ portfolio.name | escape }}" href="{{ portfolio.page_url}}">{{ portfolio.name }}</a></h3>
+
+  <h2>{{ work.title | escape }}</h2>
+      {% if work.date != '' %}
+      <p>{{ work.date }}</p>
+      {% endif %}
+      <p>{% if work.has_medium? %} {{ work.medium | escape }}</p> {% endif %}
+      <p>{{ work.size | escape }}</p>
+    {{ work.description | textilize }}
+</div>
+
+{% if work.has_alternate_views? %}
+  <div class="column">
+    <h5>Alternate Views</h5>
+
+    {% if work.has_media_or_embed? %}
+      <div class="image-set grid-item">
+      {% if work.audio? %}
+        <a href="{{ work.page_url }}">audio file</a>
+      {% elsif work.embed_code_html_large %}
+        <a href="{{ work.page_url }}"><img style="max-width:140px" class="limit-thumb140" src="{{ work.embed_thumb_url }}" alt="video" /></a><p>video</p>
+      {% else %}
+        <a href="{{ work.page_url }}"><img class="limit-thumb140" src="{{ work.embed_thumb_url }}" alt="video" /></a><p>video</p>
+      {% endif %}
+      </div>
+    {% endif %}
+
+    {% for image in work.images %}
+    	<div class="image-set grid-item">
+        <a href="{{ work.page_url }}/{{forloop.index}}">
+          {% if website.square_thumbs %}
+            {{ image | responsive_image_large_square_thumb }}
+          {% else %}
+            {{ image | responsive_image_large }}
+          {% endif %}
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% if total_works > 1 %}
+
+<div class="column full-width">
+  <div class="pagination">
+		<ul class="pages">
+      {% for link in work_links %}
+        {% if link.path %}
+          <li class="page"><a href="{{ link.path }} ">{{ link.name }}</a></li>
+        {% else %}
+        <li class="page active-page">{{ link.name }}</li>
+        {% endif %}
+      {% endfor %}
+		</ul>
+	</div>
+</div>
+
+{% endif %}

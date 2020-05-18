@@ -1,0 +1,13 @@
+<div class="column"> 
+
+{% for category in link_categories %}   
+
+  <h3 class="link">{{ category.name }}</h3>
+
+  {% for link in category.links %}
+    <p class="link"><a href="{{ link.url | escape }}">{{ link.name | escape }}</a></p>
+  {% endfor %}
+  <br />
+{% endfor %}
+
+</div>

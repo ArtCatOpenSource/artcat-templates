@@ -1,0 +1,28 @@
+<div class="column full-width">
+	{{ resume.head | textilize }}
+
+	<p><a href="mailto:{{ website.contact_email }}">{{ website.contact_email }}</a></p>
+	<br />
+	{% for file in resume.file_assets %}
+	<p><a href="{{ file.url }}">{{ file.name }}</a></p>
+	{% endfor %}
+
+	{% for category in resume.resume_categories %}	  
+		<h2 class="resume">{{ category.name }} </h2>
+			{% assign show_date = '' %}
+			{% for item in category.resume_items %}
+				<p class="resume-date">
+					{% if show_date != item.date %}
+						{% assign show_date = item.date %}
+						{{ show_date }}
+					{% endif %}
+				</p>
+					<p class="resume-content">{{ item.text | textilize_inline }}</p>
+			{% endfor %}
+			<br>
+		{% endfor %}
+</div>
+
+
+	  
+	  

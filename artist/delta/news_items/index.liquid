@@ -1,0 +1,20 @@
+<div class="column"> 
+  {% for n in news %}
+    {% if n.has_title? %}
+      <h3>{{ n.title }}</h3>
+    {% endif %}
+      
+    {% if n.has_date? %}
+      <h4>{{ n.display_date }}</h4>
+    {% endif %}
+      
+    {% if n.has_summary? %}
+      {{ n.summary | textilize }}
+    {% else %}
+      {{ n.body | truncate:250 | textilize }}
+    {% endif %}
+      
+    <p class="news-more"><a href="{{ n.page_url }}">more &raquo;</a></p>
+
+  {% endfor %}
+</div>

@@ -1,0 +1,9 @@
+<div class="column"> 
+  <h1>{{ press_item.title | escape }}</h1>
+
+  {% if press_item.has_display_date? %}
+  <p>{{ press_item.display_date }}</p>
+  {% endif %}
+
+  {{ press_item.body | textilize }}
+</div>
