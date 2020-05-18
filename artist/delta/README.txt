@@ -1,4 +1,4 @@
-Classic template designed for 2004 launch of ArtCat Hosting artist websites.
+Responsive template for artist websites.
 
-Created by Daniel Rhatigan: http://www.ultrasparky.org/work/.
+Original design by Lukas Eigler-Harding: https://github.com/leigler/artcat-jekyll-build.
 
