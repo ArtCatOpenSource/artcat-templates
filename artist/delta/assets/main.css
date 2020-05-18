@@ -792,3 +792,45 @@ h2.resume {
   padding-top: 0.5em;
   padding-bottom: 0.25em;
 }
+
+/**** contact form ****/
+
+.sweet-honey { display: none; }
+.field {
+  padding-bottom: 0.8rem;
+}
+.contact-form label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.contact-form input,
+.contact-form textarea {
+  border-radius: 0px;
+  border: 1px solid black;
+  padding: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-family: HelveticaNeue, Helvetica, Arial, sans;
+  font-size: 1rem;
+}
+.contact-form input {
+  margin-right: 0.5rem;
+}
+.contact-form input#submit {
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+.contact-form input#submit:active {
+  transform: scale(0.95);
+}
+.contact-form textarea {
+  height: 200px;
+  width: 60%;
+}
+
+.error, .thanks {
+	font-weight: bold;
+	color: red;
+}
