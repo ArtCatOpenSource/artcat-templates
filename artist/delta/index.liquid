@@ -4,29 +4,25 @@
 
   <div class="column full-width">
     {% if home_image %}
-      <div class="home-image">
-        <!-- don't link to work if it has since been hidden -->
-        {% if website.home_image_link %}
-          <a href="{{ website.home_image_link }}">{{ home_image | responsive_image_xlarge }}</a>
-        {% else %}
-          {{ home_image | responsive_image_xlarge }}
-        {% endif %}
-        <div class="caption">{{ home_image['caption'] | textilize }}</div>
-      </div>
+      <!-- don't link to work if it has since been hidden -->
+      {% if website.home_image_link %}
+        <a href="{{ website.home_image_link }}">{{ home_image | responsive_image_xlarge }}</a>
+      {% else %}
+        {{ home_image | responsive_image_xlarge }}
+      {% endif %}
+      <div class="caption home-caption">{{ home_image['caption'] | textilize }}</div>
   {% endif %}
   </div>
 
 {% else %}
   <div class="column">
     {% if home_image %}
-      <div class="home-image-two-column">
-        {% if website.home_image_link %}
-          <a href="{{ website.home_image_link }}">{{ home_image | responsive_image_large }}</a>
-        {% else %}
-          {{ home_image | responsive_image_large }}
-        {% endif %}
-        <div class="caption">{{ home_image['caption'] | textilize }}</div>
-      </div>
+      {% if website.home_image_link %}
+        <a href="{{ website.home_image_link }}">{{ home_image | responsive_image_large }}</a>
+      {% else %}
+        {{ home_image | responsive_image_large }}
+      {% endif %}
+      <div class="caption home-caption">{{ home_image['caption'] | textilize }}</div>
   {% endif %}
   </div>
 

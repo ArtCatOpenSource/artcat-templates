@@ -3,7 +3,7 @@ html,
 body {
   width: 100vw;
   font-family: HelveticaNeue, Helvetica, Arial, sans;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 body {
@@ -29,7 +29,7 @@ li {
 @media all and (max-width: 768px) {
   html,
   body {
-    font-size: 15px;
+    font-size: 12px;
   }
 }
 /**************** media tags ****************/
@@ -87,7 +87,7 @@ h4,
 h5,
 h6 {
   font-weight: normal;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
@@ -298,16 +298,8 @@ main {
   width: 50%;
 }
 
-.home-image {
-  width: 800px;
-}
-
-.home-image-two-column {
-  width: 600px;
-}
-
-.home-image-two-column > .caption {
-  padding-right: 1rem;
+.home-caption {
+  padding-right: 1em;
 }
 
 .work-detail-image {
@@ -622,8 +614,10 @@ a.exhibition:hover {
   display: block;
   width: 100%;
 }
-.column.full-width img.full-width-image {
+.column.full-width img {
+  border: 1px solid red;
   width: 100%;
+  margin: auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -755,7 +749,7 @@ footer {
   width: 50%;
   text-align: left;
   display: inline-block;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   font-family: Helvetica, Arial, sans;
 }
 
