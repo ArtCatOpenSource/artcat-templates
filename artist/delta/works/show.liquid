@@ -1,5 +1,4 @@
 <div class="column">
-  <div class="work-detail-image">
   {% if show_media %}
     {% if work.embed_code_html_xlarge %}
       {{ work.embed_code_html_xlarge }}
@@ -11,7 +10,6 @@
   {% else %}
     {{ image | responsive_image_large }}
   {% endif %}
-  </div>
   <p class="caption">{{ image.caption | textlize_inline }}</p>
 </div>
 

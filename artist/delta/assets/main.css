@@ -163,7 +163,6 @@ nav {
   display: block;
   margin: 0 auto;
   width: 95vw;
-  max-width: 67rem;
 }
 
 a.site-title {
@@ -290,7 +289,6 @@ main {
 .content {
   margin: 0 auto;
   width: 95vw;
-  max-width: 67rem;
   font-size: 0;
 }
 
@@ -302,13 +300,6 @@ main {
   padding-right: 1em;
 }
 
-.work-detail-image {
-  width: 600px;
-}
-
-.work-detail-image > .caption {
-  padding-right: 1rem;
-}
 .image-set {
   display: inline-block;
   width: 14.66%;
@@ -615,7 +606,6 @@ a.exhibition:hover {
   width: 100%;
 }
 .column.full-width img {
-  border: 1px solid red;
   width: 100%;
   margin: auto;
   margin-top: 1rem;
@@ -684,6 +674,10 @@ a.exhibition:hover {
   margin-right: 2%;
   margin-top: 1%;
   vertical-align: top;
+}
+
+.column > .grid-item {
+  width: 29%;
 }
 
 .column.full-width > .image-set {

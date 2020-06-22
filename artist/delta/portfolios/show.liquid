@@ -4,7 +4,7 @@
 
 <div class="column full-width">
 {% for work in works %}
-	<div class="image-set grid-item">
+	<div class="image-set">
     {% if lightbox %}
       {{ work.featured_image | responsive_image_xlarge }}
     {% else %}
