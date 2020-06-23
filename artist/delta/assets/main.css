@@ -734,7 +734,6 @@ footer {
 .footer-wrapper {
   display: block;
   width: 95vw;
-  max-width: 67rem;
   margin: 0 auto;
   font-size: 0;
 }
