@@ -11,15 +11,15 @@
 		<h2 class="resume">{{ category.name }} </h2>
 			{% assign show_date = '' %}
 			{% for item in category.resume_items %}
-				<p class="resume-date">
+				<div class="resume-date">
 					{% if show_date != item.date %}
 						{% assign show_date = item.date %}
-						{{ show_date }}
+						<p>{{ show_date }}</p>
 					{% endif %}
-				</p>
-					<p class="resume-content">{{ item.text | textilize_inline }}</p>
+				</div>
+				<div class="resume-content"><p>{{ item.text | textilize_inline }}</p></div>
+				<br>
 			{% endfor %}
-			<br>
 		{% endfor %}
 </div>
 
