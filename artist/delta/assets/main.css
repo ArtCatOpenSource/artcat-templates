@@ -760,13 +760,13 @@ p.press a {
 
 .resume-date {
   display: inline-block;
-  width: 100px;
+  width: 20%;
   vertical-align: top;
 }
 
 .resume-content {
   display: inline-block;
-  width: 600px;
+  width: 60%;
   vertical-align: top;
 }
 
