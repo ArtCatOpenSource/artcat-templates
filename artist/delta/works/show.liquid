@@ -8,9 +8,9 @@
       {% video_embed('large') %}
     {% endif %}
   {% else %}
-    {{ image | responsive_image_large }}
+    {{ image | responsive_image_xlarge }}
   {% endif %}
-  <p class="caption">{{ image.caption | textlize_inline }}</p>
+  <p class="caption">{{ image.caption | textilize_inline }}</p>
 </div>
 
 <div class="column">

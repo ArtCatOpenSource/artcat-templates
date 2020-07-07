@@ -5,9 +5,6 @@
 <div class="column full-width">
 {% for work in works %}
 	<div class="image-set">
-    {% if lightbox %}
-      {{ work.featured_image | responsive_image_xlarge }}
-    {% else %}
     <a href="{{ work.page_url }}">
       {% if website.square_thumbs %}
         {{ work.featured_image | responsive_image_large_square_thumb }}
@@ -15,7 +12,6 @@
         {{ work.featured_image | responsive_image_large }}
       {% endif %}
     </a>
-    {% endif %}
     <p>{{ work.title | escape }}</p>
   </div>
 {% endfor %}
@@ -41,26 +37,4 @@
     {% endfor %}
   {% endif %}
   </div>
-{% endif %}
-
-{% if lightbox %}
-<div class="lightbox">
-	<div class="background"></div>
-	<div class="container">
-		<div class="direction prev">
-			<div class="cross"></div>
-		</div>
-		<div class="direction next">
-			<div class="cross"></div>
-			<div class="plus"></div>
-		</div>
-		<div class="counter"></div>
-		<div class="exit">
-			<div class="cross"></div>
-			<div class="plus"></div>
-		</div>
-		<img class="current-image" src="">
-		<div class="lightbox-caption"></div>
-	</div>
-</div>
 {% endif %}
