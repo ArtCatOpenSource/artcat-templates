@@ -25,6 +25,68 @@
     <meta name="description" content="{{ website_description | escape }}" />
     <meta name="keywords" content="{{ website_keywords | escape }}" />
     {% client_css %} {% client_js %}
+
+    {% if theme_customize %}
+    <style>
+      html, body, nav{
+        background-color: {{ theme_customize.background_color }};
+        color: {{ theme_customize.body_color }};
+        font: {{ theme_customize.body_size }}px {{ theme_customize.body_font }}
+      }
+
+      a:link, a:visited, a:active { color: {{ theme_customize.link_color }} }
+
+      a:hover { color: {{ theme_customize.link_hover_color }} }
+
+      h1, h2, h3, h4, h5, h6 { 
+        font: bold {{ theme_customize.header_size }}px {{ theme_customize.header_font }}; 
+        color: {{ theme_customize.header_color }} 
+      }
+
+      p, h3, h4, h5, h6{
+        font-family: ;
+        font-size: 1rem;
+        color:;
+      }
+
+      /* MENU */
+      a.site-title{
+        color: ;
+      }
+      a.hover{
+        color: ;
+      }
+
+      nav > ul > li > a, nav > ul > li > a:hover{
+        font-family:;
+        font-size:;
+        color:black;
+      }
+
+      nav > ul > li > a.current{
+        color:;
+      }
+
+      .lightbox > .container > .counter{
+        font-family: ;
+        font-size: ;
+      }
+
+      a.exhibition, a.exhibition:hover{
+        color: ;
+      }
+
+
+      body, p, p.thumb-caption {
+        background-color: {{ theme_customize.background_color }};
+        color: {{ theme_customize.body_color }};
+        font: {{ theme_customize.body_size }}px {{ theme_customize.body_font }}
+      }
+      .SiteName { font: normal {{ theme_customize.title_size }}px {{ theme_customize.title_font }};}
+      .SiteName a { color: {{ theme_customize.title_color }} }
+      h2, h2.resume { font: bold {{ theme_customize.header_size }}px {{ theme_customize.header_font }}; color: {{ theme_customize.header_color }} }
+    </style>
+    {% endif %}
   </head>
   <body>
     <nav>
