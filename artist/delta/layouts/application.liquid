@@ -34,56 +34,42 @@
         font: {{ theme_customize.body_size }}px {{ theme_customize.body_font }}
       }
 
-      a:link, a:visited, a:active { color: {{ theme_customize.link_color }} }
-
-      a:hover { color: {{ theme_customize.link_hover_color }} }
-
       h1, h2, h3, h4, h5, h6 { 
         font: bold {{ theme_customize.header_size }}px {{ theme_customize.header_font }}; 
         color: {{ theme_customize.header_color }} 
       }
 
-      p, h3, h4, h5, h6{
-        font-family: ;
-        font-size: 1rem;
-        color:;
-      }
-
       /* MENU */
-      a.site-title{
-        color: ;
-      }
-      a.hover{
-        color: ;
-      }
-
-      nav > ul > li > a, nav > ul > li > a:hover{
-        font-family:;
-        font-size:;
-        color:black;
+      nav > .nav-wrapper > ul > li > a, 
+      nav > .nav-wrapper > ul > li > a:hover, 
+      nav > .nav-wrapper > ul > li > a:link,
+      nav > .nav-wrapper > ul > li > a:visited
+      {
+        font: normal {{ theme_customize.nav_link_size }}px {{ theme_customize.nav_link_font }}!important;
+        color: {{ theme_customize.nav_link_color }};
       }
 
-      nav > ul > li > a.current{
-        color:;
+      nav > .nav-wrapper > ul > li > a.current{
+        font: normal {{ theme_customize.nav_link_size }}px {{ theme_customize.nav_link_font }}
       }
+
+      a { color: {{ theme_customize.link_color }} }
+
+      a:hover { color: {{ theme_customize.link_hover_color }} }
 
       .lightbox > .container > .counter{
-        font-family: ;
-        font-size: ;
+        font: {{ theme_customize.body_size }}px {{ theme_customize.body_font }}
       }
-
-      a.exhibition, a.exhibition:hover{
-        color: ;
-      }
-
 
       body, p, p.thumb-caption {
         background-color: {{ theme_customize.background_color }};
         color: {{ theme_customize.body_color }};
         font: {{ theme_customize.body_size }}px {{ theme_customize.body_font }}
       }
-      .SiteName { font: normal {{ theme_customize.title_size }}px {{ theme_customize.title_font }};}
-      .SiteName a { color: {{ theme_customize.title_color }} }
+      nav > .nav-wrapper > a.site-title { 
+        font: normal {{ theme_customize.title_size }}px {{ theme_customize.title_font }};
+        color: {{ theme_customize.title_color }};
+       }
       h2, h2.resume { font: bold {{ theme_customize.header_size }}px {{ theme_customize.header_font }}; color: {{ theme_customize.header_color }} }
     </style>
     {% endif %}
