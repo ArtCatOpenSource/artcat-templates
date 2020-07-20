@@ -604,7 +604,8 @@ a.exhibition:hover {
 }
 
 .column.two-thirds {
-  width: 66%
+  width: 66%;
+  padding-right: 2rem;
 }
 
 .column.one-third {
