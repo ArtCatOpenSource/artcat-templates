@@ -255,6 +255,7 @@ nav > .nav-wrapper > ul > li.selected > a {
   nav.open > .nav-wrapper > ul > li {
     display: block;
     margin-bottom: 0rem;
+    font-size: 1.5rem;
   }
 
   .mobile-icon {
@@ -297,8 +298,8 @@ main {
   width: 50%;
 }
 
-.home-caption {
-  padding-right: 1em;
+.caption.home-caption {
+  position: relative
 }
 
 .image-set {
@@ -602,6 +603,14 @@ a.exhibition:hover {
   margin-bottom: 1rem;
 }
 
+.column.two-thirds {
+  width: 66%
+}
+
+.column.one-third {
+  width: 34%
+}
+
 .column.full-width {
   display: block;
   width: 100%;
@@ -767,7 +776,7 @@ p.press a {
 
 .resume-content {
   display: inline-block;
-  width: 48%;
+  width: 50%;
   vertical-align: top;
 }
 

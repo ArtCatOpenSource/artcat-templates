@@ -15,19 +15,19 @@
   </div>
 
 {% else %}
-  <div class="column">
+  <div class="column two-thirds">
     {% if home_image %}
       {% if website.home_image_link %}
-        <a href="{{ website.home_image_link }}">{{ home_image | responsive_image_large }}</a>
+        <a href="{{ website.home_image_link }}">{{ home_image | responsive_image_xlarge }}</a>
       {% else %}
-        {{ home_image | responsive_image_large }}
+        {{ home_image | responsive_ximage_large }}
       {% endif %}
       <div class="caption home-caption">{{ home_image['caption'] | textilize }}</div>
   {% endif %}
   </div>
 
 
-  <div class="column">
+  <div class="column one-third">
 
   {% if website.home_page_announcement != '' %}
     {{ website.home_page_announcement | textilize }}
