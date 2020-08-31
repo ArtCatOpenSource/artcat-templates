@@ -6,11 +6,7 @@
 {% for work in works %}
 	<div class="image-set">
     <a href="{{ work.page_url }}">
-      {% if website.square_thumbs %}
-        {{ work.featured_image | responsive_image_large_square_thumb }}
-      {% else %}
-        {{ work.featured_image | responsive_image_large }}
-      {% endif %}
+      <img src="{{ work.featured_thumb_url }}" />
     </a>
     <p>{{ work.title | escape }}</p>
   </div>
