@@ -316,6 +316,7 @@ main {
 
 .image-set > p {
   font-size: 0.75rem;
+  text-align: center;
 }
 
 /*************** PASSWORD ****************/
