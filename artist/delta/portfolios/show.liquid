@@ -6,7 +6,7 @@
 {% for work in works %}
 	<div class="image-set">
     <a href="{{ work.page_url }}">
-      <img src="{{ work.featured_image | responsive_image_thumb }}" />
+      {{ work.featured_image | responsive_image_thumb }}
     </a>
     <p>{{ work.title | escape }}</p>
   </div>
