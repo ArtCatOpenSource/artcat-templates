@@ -318,6 +318,32 @@ main {
   font-size: 0.75rem;
 }
 
+.image-container {
+  position: relative;
+  max-width: 800px;
+  min-height: 100px;
+}
+
+.feather-minus-circle, .feather-plus-circle {
+  display: none;
+}
+
+@media all and (max-width: 768px) {
+  .feather-minus-circle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+  }
+
+  .feather-plus-circle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+  }
+}
+
 /*************** PASSWORD ****************/
 .password {
   text-align: center;
@@ -357,6 +383,12 @@ main {
   width: 100%;
   box-sizing: border-box;
   padding-left: 1%;
+}
+
+@media all and (max-width: 768px) {
+  .pagination {
+    display: none;
+  }
 }
 
 ul.pages {
