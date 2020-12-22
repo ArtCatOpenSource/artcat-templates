@@ -11,11 +11,29 @@
     <div class="image-container">
       {{ image | responsive_image_xlarge }}
       {% if work.previous_work %}
+        <script>
+          $(function(){
+            $("div.image-container").swipe({
+              swipeRight:function() {
+                window.location.assign("{{ work.previous_work.page_url | escape }}")
+              }
+            });
+          });
+        </script>
         <a href="{{ work.previous_work.page_url | escape }}">
           <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus-circle"><circle cx="18" cy="18" r="14"></circle><line x1="12" y1="18" x2="24" y2="18"></line></svg>
         </a>
       {% endif %}
       {% if work.next_work %}
+        <script>
+          $(function(){
+            $("div.image-container").swipe({
+              swipeLeft:function() {
+                window.location.assign("{{ work.next_work.page_url | escape }}")
+              }
+            });
+          });
+        </script>
         <a href="{{ work.next_work.page_url | escape }}">
           <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="18" cy="18" r="14"></circle><line x1="18" y1="12" x2="18" y2="24"></line><line x1="12" y1="18" x2="24" y2="18"></line></svg>
         </a>
