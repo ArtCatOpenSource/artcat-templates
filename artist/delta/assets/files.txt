@@ -1,3 +1,4 @@
 jquery-3.3.1.min.js
+jquery.touchSwipe-1.6.18.min.js
 main.css
 script.js
