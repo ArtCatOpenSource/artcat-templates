@@ -656,6 +656,13 @@ a.exhibition:hover {
   margin-bottom: 1rem;
 }
 
+.column.two-thirds img {
+  width: 100%;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .column > h1,
 .column > h2,
 .column > h3,
